@@ -1,0 +1,119 @@
+.logo {
+  height: 5em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.hero-image-background {
+  background-image: url("./img/welder.png"); /* Make sure this path is correct */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 800px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.01rem;
+}
+
+.hero-stats {
+  display: flex; /* Use flexbox to create a row of items */
+  height: 7em;
+  background: #333; /* Dark background */
+  padding: 0.5em 0; /* Padding around the whole section */
+  justify-content: center; /* Center the cards horizontally */
+  align-items: center; /* Center the cards vertically */
+}
+
+.card-stats {
+  flex: 1; /* Each card will take up equal space */
+  color: #ff3e3e; /* Red color for the text */
+  font-size: 2.5em; /* Large font size for impact */
+  font-weight: bold; /* Make the font bold */
+  margin: 0 1em; /* Margin between cards */
+  text-transform: uppercase; /* Uppercase text for the title */
+  position: relative; /* Position relative for pseudo-elements */
+}
+
+.card-stats::before,
+.card-stats::after {
+  content: ""; /* Add content for the pseudo-elements */
+  position: absolute; /* Absolute position within card-stats */
+  top: 50%; /* Position at the middle vertically */
+  width: 1px; /* Thin vertical line */
+  height: 60%; /* Height of the line */
+  background: #555; /* Slightly lighter line color */
+}
+
+.card-stats::before {
+  left: 0; /* Line on the left side */
+}
+
+.card-stats::after {
+  right: 0; /* Line on the right side */
+}
+
+/* Remove the border from the first and last card */
+.card-stats:first-child::before,
+.card-stats:last-child::after {
+  content: none;
+}
+
+/* Additional styling for the subtitle */
+.card-stats::after {
+  content: attr(data-subtitle); /* Use the subtitle from data attribute */
+  position: absolute;
+  bottom: -1.5em; /* Position below the main title */
+  left: 0;
+  right: 0;
+  font-size: 0.2em; /* Smaller font size for the subtitle */
+  color: white; /* White color for the subtitle */
+  font-weight: normal; /* Normal font weight for the subtitle */
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 40%;
+  background-color: #000000;
+}
+
+.metallic-gradient-text {
+  background: linear-gradient(
+    to right,
+    rgb(155, 154, 158),
+    rgb(170, 169, 173),
+    rgb(185, 184, 188)
+  );
+  -webkit-background-clip: text; /* For WebKit browsers */
+  background-clip: text; /* This is experimental and not widely supported */
+  -webkit-text-fill-color: transparent; /* For WebKit browsers */
+  display: inline;
+}
