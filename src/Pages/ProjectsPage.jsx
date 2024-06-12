@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import cityLine from "../img/cityLine.png";
 import hotel from "../img/hotel.png";
+import { useTheme } from "@mui/material/styles";
 
 const projects = [
   {
@@ -47,6 +48,8 @@ const projects = [
 ];
 
 const ProjectsPage = () => {
+  const theme = useTheme();
+
   return (
     <Box
       sx={{
@@ -112,7 +115,20 @@ const ProjectsPage = () => {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button size="small">Learn More</Button>
+                  <Button
+                    size="small"
+                    variant="outline"
+                    sx={{
+                      borderColor: theme.palette.darkblue.main,
+                      color: theme.palette.darkblue.main,
+                      "&:hover": {
+                        borderColor: theme.palette.darkblue.main,
+                        backgroundColor: "rgba(255, 0, 0, 0.1)",
+                      },
+                    }}
+                  >
+                    Learn More
+                  </Button>
                 </CardActions>
               </Card>
             </Grid>

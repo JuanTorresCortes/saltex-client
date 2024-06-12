@@ -3,9 +3,20 @@ import { Container, Typography, Box, Grid, Button } from "@mui/material";
 import steelFrame from "../img/steelFrame.png"; // Ensure this path is correct
 import cityLine from "../img/cityLine.png";
 import { useTheme } from "@mui/material/styles";
+import Stats from "../components/Stats";
+import { useNavigate } from "react-router-dom";
 
 const AboutPage = () => {
   const theme = useTheme();
+  const navigate = useNavigate();
+
+  const handleLFreeQuoteClick = () => {
+    navigate("/contact");
+  };
+
+  const handleLExploreServicesClick = () => {
+    navigate("/services");
+  };
 
   return (
     <Box
@@ -24,7 +35,7 @@ const AboutPage = () => {
         padding: "20px",
       }}
     >
-      <Container sx={{ mt: 30, padding: 3, backgroundColor: "black" }}>
+      <Container sx={{ mt: 25, padding: 3, backgroundColor: "black" }}>
         <Grid container spacing={4} alignItems="center">
           <Grid item xs={12} md={6}>
             <Box
@@ -60,6 +71,7 @@ const AboutPage = () => {
                   backgroundColor: theme.palette.darkblue.main,
                 },
               }}
+              onClick={handleLFreeQuoteClick}
             >
               Get a Free Quote
             </Button>
@@ -73,12 +85,14 @@ const AboutPage = () => {
                   backgroundColor: "rgba(255, 0, 0, 0.1)",
                 },
               }}
+              onClick={handleLExploreServicesClick}
             >
               Explore Services
             </Button>
           </Grid>
         </Grid>
       </Container>
+      <Stats />
     </Box>
   );
 };

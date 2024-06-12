@@ -18,6 +18,7 @@ import CorporateFareIcon from "@mui/icons-material/CorporateFare";
 import HotelIcon from "@mui/icons-material/Hotel";
 import cityLine from "../img/cityLine.png";
 import hotel from "../img/hotel.png";
+import { useTheme } from "@mui/material/styles";
 
 const services = [
   {
@@ -65,6 +66,8 @@ const services = [
 ];
 
 const ServicesPage = () => {
+  const theme = useTheme();
+
   return (
     <Box
       sx={{
@@ -134,7 +137,20 @@ const ServicesPage = () => {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button size="small">Learn More</Button>
+                  <Button
+                    size="small"
+                    variant="outline"
+                    sx={{
+                      borderColor: theme.palette.darkblue.main,
+                      color: theme.palette.darkblue.main,
+                      "&:hover": {
+                        borderColor: theme.palette.darkblue.main,
+                        backgroundColor: "rgba(255, 0, 0, 0.1)",
+                      },
+                    }}
+                  >
+                    Learn More
+                  </Button>
                 </CardActions>
               </Card>
             </Grid>
