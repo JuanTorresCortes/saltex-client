@@ -19,6 +19,14 @@ import HotelIcon from "@mui/icons-material/Hotel";
 import cityLine from "../img/cityLine.png";
 import hotel from "../img/hotel.png";
 import { useTheme } from "@mui/material/styles";
+import education from "../img/education.png";
+import healthcare from "../img/healthcare.png";
+import industrial from "../img/industrial.png";
+import office from "../img/office.png";
+import retail from "../img/retail.png";
+import religious from "../img/religious.png";
+import restoration from "../img/restoration.png";
+import solar from "../img/solar.png";
 
 const services = [
   {
@@ -26,35 +34,35 @@ const services = [
     description:
       "Industrial construction services including factories, warehouses, and other large-scale facilities.",
     icon: <BusinessIcon sx={{ color: "white", fontSize: 40 }} />,
-    image: hotel,
+    image: industrial,
   },
   {
     title: "RETAIL",
     description:
       "Retail construction services for shopping centers, retail stores, and more.",
     icon: <LocalMallIcon sx={{ color: "white", fontSize: 40 }} />,
-    image: hotel,
+    image: retail,
   },
   {
     title: "EDUCATION",
     description:
       "Educational facilities construction for schools, universities, and more.",
     icon: <SchoolIcon sx={{ color: "white", fontSize: 40 }} />,
-    image: hotel,
+    image: education,
   },
   {
     title: "HEALTHCARE",
     description:
       "Healthcare construction services for hospitals, clinics, and other medical facilities.",
     icon: <LocalHospitalIcon sx={{ color: "white", fontSize: 40 }} />,
-    image: hotel,
+    image: healthcare,
   },
   {
     title: "CORPORATE",
     description:
       "Corporate office construction services for businesses and enterprises.",
     icon: <CorporateFareIcon sx={{ color: "white", fontSize: 40 }} />,
-    image: hotel,
+    image: office,
   },
   {
     title: "HOTEL",
@@ -62,6 +70,27 @@ const services = [
       "Hotel construction services for building luxurious and functional hotels.",
     icon: <HotelIcon sx={{ color: "white", fontSize: 40 }} />,
     image: hotel,
+  },
+  {
+    title: "religious",
+    description:
+      "Hotel construction services for building luxurious and functional hotels.",
+    icon: <HotelIcon sx={{ color: "white", fontSize: 40 }} />,
+    image: religious,
+  },
+  {
+    title: "Restoration",
+    description:
+      "Hotel construction services for building luxurious and functional hotels.",
+    icon: <HotelIcon sx={{ color: "white", fontSize: 40 }} />,
+    image: restoration,
+  },
+  {
+    title: "Solar",
+    description:
+      "Hotel construction services for building luxurious and functional hotels.",
+    icon: <HotelIcon sx={{ color: "white", fontSize: 40 }} />,
+    image: solar,
   },
 ];
 
@@ -82,7 +111,8 @@ const ServicesPage = () => {
         alignItems: "center",
         color: "white",
         textAlign: "center",
-        pt: 22,
+        pt: 75,
+        pb: 10,
       }}
     >
       <Container>

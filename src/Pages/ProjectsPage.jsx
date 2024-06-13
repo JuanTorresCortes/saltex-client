@@ -11,39 +11,62 @@ import {
   Button,
 } from "@mui/material";
 import cityLine from "../img/cityLine.png";
-import hotel from "../img/hotel.png";
 import { useTheme } from "@mui/material/styles";
+import hotel from "../img/hotel.png";
+import education from "../img/education.png";
+import healthcare from "../img/healthcare.png";
+import industrial from "../img/industrial.png";
+import office from "../img/office.png";
+import retail from "../img/retail.png";
+import religious from "../img/religious.png";
+import restoration from "../img/restoration.png";
+import solar from "../img/solar.png";
 
 const projects = [
   {
-    title: "Project One",
-    description: "Description for Project One.",
+    name: "Education",
+    description: "Description for Education",
+    image: education,
+  },
+  {
+    name: "Healthcare",
+    description: "Description for Healthcare",
+    image: healthcare,
+  },
+  {
+    name: "Industrial",
+    description: "Description for Industrial",
+    image: industrial,
+  },
+  {
+    name: "Office",
+    description: "Description for Office",
+    image: office,
+  },
+  {
+    name: "Retail",
+    description: "Description for Office",
+    image: retail,
+  },
+  {
+    name: "Religious",
+    description: "Description for Religious",
+    image: religious,
+  },
+  {
+    name: "Restoration",
+    description: "Description for Restoration",
+    image: restoration,
+  },
+  {
+    name: "Hospitality",
+    description: "Description for hospitality",
     image: hotel,
   },
   {
-    title: "Project Two",
-    description: "Description for Project Two.",
-    image: hotel,
-  },
-  {
-    title: "Project Three",
-    description: "Description for Project Three.",
-    image: hotel,
-  },
-  {
-    title: "Project Four",
-    description: "Description for Project Four.",
-    image: hotel,
-  },
-  {
-    title: "Project Five",
-    description: "Description for Project Five.",
-    image: hotel,
-  },
-  {
-    title: "Project Six",
-    description: "Description for Project Six.",
-    image: hotel,
+    name: "Solar",
+    description: "Description for solar",
+    image: solar,
   },
 ];
 
