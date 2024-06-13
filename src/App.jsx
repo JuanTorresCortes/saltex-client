@@ -11,7 +11,16 @@ import MyNavBar from "./components/MyNavBar";
 function App() {
   return (
     <Router>
-      <Box sx={{ width: "100%", overflowX: "hidden" }}>
+      <Box
+        style={{ backgroundColor: "black" }}
+        sx={{
+          width: "90%",
+          overflowX: "hidden",
+          alignContent: "center",
+          justifyContent: "center",
+          margin: "0 auto",
+        }}
+      >
         <MyNavBar sx={{ backgroundColor: "rgba(0, 0, 0, 0.7)", mb: 5 }} />
         <Box sx={{ pt: { xs: 8, sm: 10 } }}>
           {" "}

@@ -12,10 +12,10 @@ const theme = createTheme({
       main: "#ff1744",
     },
     background: {
-      default: "#fff",
+      default: "black",
     },
     darkblue: {
-      main: "rgb(255,0,0)",
+      main: "rgb(255,0,0,0.7)",
     },
   },
   typography: {

@@ -16,6 +16,9 @@ import SchoolIcon from "@mui/icons-material/School";
 import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
 import CorporateFareIcon from "@mui/icons-material/CorporateFare";
 import HotelIcon from "@mui/icons-material/Hotel";
+import ChurchIcon from "@mui/icons-material/Church";
+import BuildIcon from "@mui/icons-material/Build";
+import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import cityLine from "../img/cityLine.png";
 import hotel from "../img/hotel.png";
 import { useTheme } from "@mui/material/styles";
@@ -72,24 +75,24 @@ const services = [
     image: hotel,
   },
   {
-    title: "religious",
+    title: "RELIGIOUS",
     description:
-      "Hotel construction services for building luxurious and functional hotels.",
-    icon: <HotelIcon sx={{ color: "white", fontSize: 40 }} />,
+      "Construction services for religious facilities, including churches and places of worship.",
+    icon: <ChurchIcon sx={{ color: "white", fontSize: 40 }} />,
     image: religious,
   },
   {
-    title: "Restoration",
+    title: "RESTORATION",
     description:
-      "Hotel construction services for building luxurious and functional hotels.",
-    icon: <HotelIcon sx={{ color: "white", fontSize: 40 }} />,
+      "Restoration services for repairing and refurbishing buildings to their former glory.",
+    icon: <BuildIcon sx={{ color: "white", fontSize: 40 }} />,
     image: restoration,
   },
   {
-    title: "Solar",
+    title: "SOLAR",
     description:
-      "Hotel construction services for building luxurious and functional hotels.",
-    icon: <HotelIcon sx={{ color: "white", fontSize: 40 }} />,
+      "Solar installation services for sustainable and renewable energy solutions.",
+    icon: <WbSunnyIcon sx={{ color: "white", fontSize: 40 }} />,
     image: solar,
   },
 ];
@@ -111,8 +114,10 @@ const ServicesPage = () => {
         alignItems: "center",
         color: "white",
         textAlign: "center",
-        pt: 75,
-        pb: 10,
+        pt: 69,
+        pb: 5,
+        pr: 5,
+        pl: 5,
       }}
     >
       <Container>

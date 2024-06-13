@@ -35,7 +35,7 @@ const AboutPage = () => {
         padding: "20px",
       }}
     >
-      <Container sx={{ mt: 25, padding: 3, backgroundColor: "black" }}>
+      <Container sx={{ mt: 16, padding: 3, backgroundColor: "black" }}>
         <Grid container spacing={4} alignItems="center">
           <Grid item xs={12} md={6}>
             <Box

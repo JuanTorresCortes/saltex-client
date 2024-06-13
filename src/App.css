@@ -117,3 +117,7 @@
   -webkit-text-fill-color: transparent; /* For WebKit browsers */
   display: inline;
 }
+
+body {
+  background-color: #000000;
+}
