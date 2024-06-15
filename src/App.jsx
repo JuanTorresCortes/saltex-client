@@ -16,7 +16,9 @@ function App() {
         sx={{
           width: "90%",
           overflowX: "hidden",
-          alignContent: "center",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
           justifyContent: "center",
           margin: "0 auto",
         }}

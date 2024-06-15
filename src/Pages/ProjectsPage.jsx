@@ -10,7 +10,6 @@ import {
   CardMedia,
   Button,
 } from "@mui/material";
-import cityLine from "../img/cityLine.png";
 import { useTheme } from "@mui/material/styles";
 import hotel from "../img/hotel.png";
 import education from "../img/education.png";
@@ -21,6 +20,7 @@ import retail from "../img/retail.png";
 import religious from "../img/religious.png";
 import restoration from "../img/restoration.png";
 import solar from "../img/solar.png";
+import workersFraming from "../img/workers-framing.png";
 
 const projects = [
   {
@@ -74,36 +74,46 @@ const ProjectsPage = () => {
   const theme = useTheme();
 
   return (
-    <Box>
+    <Box
+      sx={{
+        backgroundColor: theme.palette.darkgray.main,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        color: "white",
+        textAlign: "center",
+        padding: "20px",
+        position: "relative",
+        mt: 28,
+      }}
+    >
       <Box
         sx={{
-          backgroundColor: "rgba(0, 0, 0, 0.7)",
-          mt: 69,
-          borderRadius: 2,
-          m: 8,
-          width: "80%",
-        }}
-      ></Box>
-      <Box
-        sx={{
-          backgroundImage: `url(${cityLine})`,
-          backgroundPosition: "center center",
+          backgroundImage: `url(${workersFraming})`,
+          backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
-          minHeight: "100vh",
+          minHeight: "75vh",
           width: "100vw",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          justifyContent: "center",
+          justifyContent: "flex-end",
           color: "white",
           textAlign: "center",
           padding: "20px",
           position: "relative",
-          pt: 28,
+          mt: 69,
         }}
       >
-        <Box>
+        <Container
+          sx={{
+            backgroundColor: theme.palette.background.default,
+            padding: "20px",
+            opacity: 0.8,
+          }}
+        >
           <Typography variant="h2" gutterBottom>
             Our Projects
           </Typography>
@@ -115,58 +125,61 @@ const ProjectsPage = () => {
             showcases our ability to deliver exceptional results across various
             sectors. Here are some highlights of our most notable projects.
           </Typography>
-          <Grid container spacing={4} sx={{ mt: 2 }}>
-            {projects.map((project) => (
-              <Grid item xs={12} sm={6} md={4} key={project.title}>
-                <Card
-                  sx={{ maxWidth: 345, backgroundColor: "rgba(0, 0, 0, 0.7)" }}
-                >
-                  <CardMedia
-                    component="img"
-                    alt={`${project.title} image`}
-                    height="140"
-                    image={project.image}
-                  />
-                  <CardContent>
-                    <Typography
-                      style={{ borderBottom: "1px solid rgb(255,0,0)" }}
-                      gutterBottom
-                      variant="h5"
-                      component="div"
-                      sx={{ color: "white" }}
-                    >
-                      {project.title}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      color="text.secondary"
-                      sx={{ color: "white" }}
-                    >
-                      {project.description}
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button
-                      size="small"
-                      variant="outline"
-                      sx={{
-                        borderColor: theme.palette.darkblue.main,
-                        color: theme.palette.darkblue.main,
-                        "&:hover": {
-                          borderColor: theme.palette.darkblue.main,
-                          backgroundColor: "rgba(255, 0, 0, 0.1)",
-                        },
-                      }}
-                    >
-                      Learn More
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
+        </Container>
       </Box>
+
+      <Container>
+        <Grid container spacing={4} sx={{ mt: 2, padding: "30px" }}>
+          {projects.map((project) => (
+            <Grid item xs={12} sm={6} md={4} key={project.title}>
+              <Card
+                sx={{ maxWidth: 345, backgroundColor: "rgba(0, 0, 0, 0.7)" }}
+              >
+                <CardMedia
+                  component="img"
+                  alt={`${project.title} image`}
+                  height="140"
+                  image={project.image}
+                />
+                <CardContent>
+                  <Typography
+                    style={{ borderBottom: "1px solid rgb(255,0,0)" }}
+                    gutterBottom
+                    variant="h5"
+                    component="div"
+                    sx={{ color: "white" }}
+                  >
+                    {project.title}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ color: "white" }}
+                  >
+                    {project.description}
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Button
+                    size="small"
+                    variant="outline"
+                    sx={{
+                      borderColor: theme.palette.darkblue.main,
+                      color: theme.palette.darkblue.main,
+                      "&:hover": {
+                        borderColor: theme.palette.darkblue.main,
+                        backgroundColor: "rgba(255, 0, 0, 0.1)",
+                      },
+                    }}
+                  >
+                    Learn More
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
     </Box>
   );
 };

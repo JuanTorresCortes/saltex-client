@@ -22,7 +22,7 @@ const MyHero = () => {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
-          minHeight: "100vh",
+          minHeight: "75vh",
           width: "100vw",
           display: "flex",
           flexDirection: "column",
@@ -32,7 +32,7 @@ const MyHero = () => {
           textAlign: "center",
           padding: "20px",
           position: "relative",
-          mt: 69,
+          mt: 38,
         }}
       >
         <Container
@@ -83,7 +83,13 @@ const MyHero = () => {
       </Box>
 
       {/* START CAROUSEL */}
-      <Container sx={{ backgroundColor: "#242424", padding: "20px" }}>
+      <Container
+        sx={{
+          backgroundColor: theme.palette.darkgray.main,
+          padding: "20px",
+          mt: 4,
+        }}
+      >
         <Typography
           variant="h1"
           sx={{

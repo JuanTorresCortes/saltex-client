@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Typography, Box, Grid, Button } from "@mui/material";
 import steelFrame from "../img/steelFrame.png"; // Ensure this path is correct
+import inspector from "../img/inspector.png"; // Ensure this path is correct
 import cityLine from "../img/cityLine.png";
 import { useTheme } from "@mui/material/styles";
 import Stats from "../components/Stats";
@@ -40,7 +41,7 @@ const AboutPage = () => {
           <Grid item xs={12} md={6}>
             <Box
               component="img"
-              src={steelFrame}
+              src={inspector}
               alt="Steel Frame"
               sx={{ width: "100%", height: "auto" }}
             />

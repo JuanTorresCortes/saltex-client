@@ -17,6 +17,9 @@ const theme = createTheme({
     darkblue: {
       main: "rgb(255,0,0,0.7)",
     },
+    darkgray: {
+      main: "#242424",
+    },
   },
   typography: {
     fontFamily: [
