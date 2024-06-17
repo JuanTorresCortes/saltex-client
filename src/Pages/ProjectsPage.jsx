@@ -85,7 +85,7 @@ const ProjectsPage = () => {
         textAlign: "center",
         padding: "20px",
         position: "relative",
-        mt: 28,
+        mt: 58,
       }}
     >
       <Box
@@ -164,10 +164,10 @@ const ProjectsPage = () => {
                     size="small"
                     variant="outline"
                     sx={{
-                      borderColor: theme.palette.darkblue.main,
-                      color: theme.palette.darkblue.main,
+                      borderColor: theme.palette.darkred.main,
+                      color: theme.palette.darkred.main,
                       "&:hover": {
-                        borderColor: theme.palette.darkblue.main,
+                        borderColor: theme.palette.darkred.main,
                         backgroundColor: "rgba(255, 0, 0, 0.1)",
                       },
                     }}

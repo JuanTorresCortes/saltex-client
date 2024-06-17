@@ -47,6 +47,7 @@ const ContactPage = () => {
         color: "white",
         textAlign: "center",
         padding: "20px",
+        mt: 84,
       }}
     >
       <Container sx={{ mt: 10, backgroundColor: "black", padding: 5 }}>
@@ -108,11 +109,11 @@ const ContactPage = () => {
             sx={{
               mb: 2,
               mt: 2,
-              borderColor: theme.palette.darkblue.main,
-              color: theme.palette.darkblue.main,
+              borderColor: theme.palette.darkred.main,
+              color: theme.palette.darkred.main,
               backgroundColor: "black",
               "&:hover": {
-                borderColor: theme.palette.darkblue.main,
+                borderColor: theme.palette.darkred.main,
                 backgroundColor: "#141424",
               },
             }}

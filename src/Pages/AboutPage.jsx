@@ -34,6 +34,7 @@ const AboutPage = () => {
         color: "white",
         textAlign: "center",
         padding: "20px",
+        mt: 60,
       }}
     >
       <Container sx={{ mt: 16, padding: 3, backgroundColor: "black" }}>
@@ -66,10 +67,10 @@ const AboutPage = () => {
               variant="contained"
               sx={{
                 mr: 2,
-                backgroundColor: theme.palette.darkblue.main,
+                backgroundColor: theme.palette.darkred.main,
                 color: "white",
                 "&:hover": {
-                  backgroundColor: theme.palette.darkblue.main,
+                  backgroundColor: theme.palette.darkred.main,
                 },
               }}
               onClick={handleLFreeQuoteClick}
@@ -79,10 +80,10 @@ const AboutPage = () => {
             <Button
               variant="outlined"
               sx={{
-                borderColor: theme.palette.darkblue.main,
-                color: theme.palette.darkblue.main,
+                borderColor: theme.palette.darkred.main,
+                color: theme.palette.darkred.main,
                 "&:hover": {
-                  borderColor: theme.palette.darkblue.main,
+                  borderColor: theme.palette.darkred.main,
                   backgroundColor: "rgba(255, 0, 0, 0.1)",
                 },
               }}

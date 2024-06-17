@@ -3,10 +3,10 @@ import { Box, Typography, Button, Container } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
 import houston from "../img/houston.webp"; // Ensure this path is correct
-import Stats from "./Stats"; // Ensure this path is correct
-import ProjectsCarousel from "./ProjectsCarousel"; // Ensure this path is correct
+import Stats from "../components/Stats"; // Ensure this path is correct
+import ProjectsCarousel from "../components/ProjectsCarousel"; // Ensure this path is correct
 
-const MyHero = () => {
+const MyHeroPage = () => {
   const navigate = useNavigate();
   const theme = useTheme();
 
@@ -32,24 +32,27 @@ const MyHero = () => {
           textAlign: "center",
           padding: "20px",
           position: "relative",
-          mt: 38,
+          mt: 154,
         }}
       >
         <Container
           sx={{
             marginTop: "100px",
-            backgroundColor: "rgba(0, 0, 0, 0.2)",
+            backgroundColor: "rgba(0, 0, 0, 0.7)",
             mb: 8,
             zIndex: 2,
           }}
         >
           <Typography
-            variant="h1"
-            sx={{
-              fontWeight: 900,
-              fontSize: "calc(1.5rem + 1vw)",
-              textShadow: "3px 3px 10px rgba(0,0,0,0.2)",
-            }}
+            // variant="h1"
+            // sx={{
+            //   fontWeight: 900,
+            //   fontSize: "calc(1.5rem + 1vw)",
+            //   textShadow: "3px 3px 10px rgba(0,0,0,0.2)",
+            // }}
+            variant="h2"
+            gutterBottom
+            sx={{ color: "white" }}
           >
             SalTex Steel Construction is a premier commercial general contractor
             specializing in steel construction.
@@ -66,11 +69,11 @@ const MyHero = () => {
               sx={{
                 mb: 2,
                 mt: 2,
-                borderColor: theme.palette.darkblue.main,
-                color: theme.palette.darkblue.main,
+                borderColor: theme.palette.darkred.main,
+                color: theme.palette.darkred.main,
                 backgroundColor: "black",
                 "&:hover": {
-                  borderColor: theme.palette.darkblue.main,
+                  borderColor: theme.palette.darkred.main,
                   backgroundColor: "#141424",
                 },
               }}
@@ -90,15 +93,7 @@ const MyHero = () => {
           mt: 4,
         }}
       >
-        <Typography
-          variant="h1"
-          sx={{
-            fontWeight: 900,
-            fontSize: "calc(1.5rem + 1vw)",
-            textShadow: "3px 3px 10px rgba(0,0,0,0.2)",
-            color: "white",
-          }}
-        >
+        <Typography variant="h2" gutterBottom sx={{ color: "white" }}>
           Our Projects
         </Typography>
         <Container
@@ -122,4 +117,4 @@ const MyHero = () => {
   );
 };
 
-export default MyHero;
+export default MyHeroPage;

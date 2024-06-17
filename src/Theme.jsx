@@ -14,7 +14,7 @@ const theme = createTheme({
     background: {
       default: "black",
     },
-    darkblue: {
+    darkred: {
       main: "rgb(255,0,0,0.7)",
     },
     darkgray: {
