@@ -43,17 +43,7 @@ const MyHeroPage = () => {
             zIndex: 2,
           }}
         >
-          <Typography
-            // variant="h1"
-            // sx={{
-            //   fontWeight: 900,
-            //   fontSize: "calc(1.5rem + 1vw)",
-            //   textShadow: "3px 3px 10px rgba(0,0,0,0.2)",
-            // }}
-            variant="h2"
-            gutterBottom
-            sx={{ color: "white" }}
-          >
+          <Typography variant="h2" gutterBottom sx={{ color: "white" }}>
             SalTex Steel Construction is a premier commercial general contractor
             specializing in steel construction.
           </Typography>
@@ -89,8 +79,8 @@ const MyHeroPage = () => {
       <Container
         sx={{
           backgroundColor: theme.palette.darkgray.main,
-          padding: "20px",
-          mt: 4,
+          padding: "2px",
+          mt: 1.5,
         }}
       >
         <Typography variant="h2" gutterBottom sx={{ color: "white" }}>
@@ -109,7 +99,7 @@ const MyHeroPage = () => {
       {/* CAROUSEL END */}
 
       {/* START STATS */}
-      <Box sx={{ mt: 4 }}>
+      <Box sx={{ mt: 1.5 }}>
         <Stats sx={{ mt: 4, zIndex: 2 }} />
       </Box>
       {/* END CAROUSEL */}

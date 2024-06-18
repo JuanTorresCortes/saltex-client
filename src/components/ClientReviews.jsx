@@ -5,6 +5,7 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import GoogleIcon from "@mui/icons-material/Google";
 import { useTheme } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
 
 const reviews = [
   {
@@ -20,6 +21,7 @@ const reviews = [
 const ClientReviews = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const theme = useTheme();
+  const navigate = useNavigate();
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
@@ -31,6 +33,10 @@ const ClientReviews = () => {
     );
   };
 
+  const handleDiscoverMoreClick = () => {
+    navigate("/about");
+  };
+
   return (
     <Box
       sx={{
@@ -38,7 +44,6 @@ const ClientReviews = () => {
         padding: 4,
         display: "flex",
         justifyContent: "center",
-        margin: 4,
       }}
     >
       <Box
@@ -58,7 +63,16 @@ const ClientReviews = () => {
           </Typography>
           <Button
             variant="outlined"
-            sx={{ color: "white", borderColor: "white", mt: 2 }}
+            sx={{
+              color: "white",
+              borderColor: theme.palette.darkred.main,
+              "&:hover": {
+                borderColor: theme.palette.darkred.main,
+                backgroundColor: "#141424",
+              },
+              mt: 2,
+            }}
+            onClick={() => handleDiscoverMoreClick()}
           >
             DISCOVER MORE
           </Button>

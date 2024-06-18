@@ -507,7 +507,7 @@ const MyNavBar = () => {
                   </Box>
                 </RouterLink>
               )}
-              {["SERVICES", "ABOUT", "PROJECTS", "CONTACT"].map((text) => (
+              {["SERVICES", "PROJECTS", "ABOUT", "CONTACT"].map((text) => (
                 <RouterLink
                   key={text}
                   to={`/${text.toLowerCase().replace(/\s/g, "")}`}
