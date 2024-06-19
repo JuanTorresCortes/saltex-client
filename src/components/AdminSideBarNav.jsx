@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Drawer,
   List,
   ListItem,
   ListItemIcon,
   ListItemText,
+  Modal,
+  Fade,
+  Box,
 } from "@mui/material";
 import PostAddIcon from "@mui/icons-material/PostAdd";
 import WorkIcon from "@mui/icons-material/Work";
@@ -13,7 +16,17 @@ import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import FolderIcon from "@mui/icons-material/Folder";
 import { useAuth } from "../Authentication/AdminAuthContext"; // Import the useAuth hook
 
+import RegisterForm from "./RegisterForm";
+import { useNavigate } from "react-router-dom";
+import { registerUser } from "../API/api";
+
 const AdminSideBarNav = () => {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const navigate = useNavigate();
+
   const { logout } = useAuth(); // Get the logout function from the context
 
   const handleLogout = () => {
@@ -48,7 +61,7 @@ const AdminSideBarNav = () => {
           </ListItemIcon>
           <ListItemText primary="Create New Project Post" />
         </ListItem>
-        <ListItem button>
+        <ListItem button onClick={handleOpen}>
           <ListItemIcon>
             <PersonAddIcon />
           </ListItemIcon>
@@ -69,6 +82,32 @@ const AdminSideBarNav = () => {
           <ListItemText primary="Logout" />
         </ListItem>
       </List>
+      {/* Register Form Modal */}
+      <Modal
+        aria-labelledby="registration-form-modal"
+        aria-describedby="modal-to-register-new-users"
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+      >
+        <Fade in={open}>
+          <Box
+            sx={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              width: 800,
+              bgcolor: "background.paper",
+              boxShadow: 24,
+              p: 14,
+              outline: "none", // Removes the default focus outline
+            }}
+          >
+            <RegisterForm />
+          </Box>
+        </Fade>
+      </Modal>
     </Drawer>
   );
 };
