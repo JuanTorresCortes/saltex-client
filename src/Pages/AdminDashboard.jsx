@@ -7,6 +7,7 @@ import {
   Card,
   CardContent,
 } from "@mui/material";
+import AdminSideBarNav from "../components/AdminSideBarNav";
 
 const AdminDashboard = () => {
   const [jobTitle, setJobTitle] = useState("");
@@ -63,7 +64,24 @@ const AdminDashboard = () => {
   };
 
   return (
-    <Box sx={{ padding: "20px", backgroundColor: "white", mt: 188 }}>
+    <Box
+      sx={{
+        padding: "20px",
+        backgroundColor: "white",
+        mt: 128,
+        minHeight: "75vh",
+        width: "100vw",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        color: "white",
+        textAlign: "center",
+        // padding: "20px",
+        position: "relative",
+      }}
+    >
+      <AdminSideBarNav />
       <Typography variant="h3" gutterBottom>
         Admin Dashboard
       </Typography>

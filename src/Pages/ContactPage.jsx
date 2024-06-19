@@ -3,6 +3,7 @@ import { Container, Typography, Box, TextField, Button } from "@mui/material";
 import emailjs from "emailjs-com";
 import cityLine from "../img/cityLine.png";
 import { useTheme } from "@mui/material/styles";
+import MyNavBar from "../components/MyNavBar";
 
 const ContactPage = () => {
   const form = useRef();
@@ -50,6 +51,7 @@ const ContactPage = () => {
         mt: 84,
       }}
     >
+      <MyNavBar />
       <Container sx={{ mt: 10, backgroundColor: "black", padding: 5 }}>
         <Typography variant="h2" gutterBottom>
           Contact Us

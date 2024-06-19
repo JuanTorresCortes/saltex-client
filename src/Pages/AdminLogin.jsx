@@ -12,11 +12,7 @@ const AdminLogin = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (
-      key === "key" &&
-      email === "juan@gmail.com" &&
-      password === "Battaglia8!"
-    ) {
+    if (email === "email@gmail.com" && password === "password") {
       login();
       navigate("/admin-dashboard");
     } else {
@@ -33,7 +29,8 @@ const AdminLogin = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        height: "68vh",
+        minHeight: "48vh",
+        width: "100vw",
         mt: 58,
         backgroundColor: "white",
       }}
@@ -41,14 +38,7 @@ const AdminLogin = () => {
       <Typography variant="h4" gutterBottom>
         Admin Login
       </Typography>
-      <TextField
-        label="Key"
-        variant="outlined"
-        margin="normal"
-        value={key}
-        onChange={(e) => setKey(e.target.value)}
-        required
-      />
+
       <TextField
         label="Email"
         variant="outlined"

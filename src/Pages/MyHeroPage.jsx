@@ -5,6 +5,7 @@ import { useTheme } from "@mui/material/styles";
 import houston from "../img/houston.webp"; // Ensure this path is correct
 import Stats from "../components/Stats"; // Ensure this path is correct
 import ProjectsCarousel from "../components/ProjectsCarousel"; // Ensure this path is correct
+import MyNavBar from "../components/MyNavBar";
 
 const MyHeroPage = () => {
   const navigate = useNavigate();
@@ -16,6 +17,7 @@ const MyHeroPage = () => {
 
   return (
     <Box>
+      <MyNavBar />
       <Box
         sx={{
           backgroundImage: `url(${houston})`,
