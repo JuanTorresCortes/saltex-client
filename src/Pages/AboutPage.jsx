@@ -34,7 +34,7 @@ const AboutPage = () => {
         color: "white",
         textAlign: "center",
         padding: "20px",
-        mt: 60,
+        mt: 68,
       }}
     >
       <Container sx={{ mt: 16, padding: 3, backgroundColor: "black" }}>
@@ -73,9 +73,9 @@ const AboutPage = () => {
                   backgroundColor: theme.palette.darkred.main,
                 },
               }}
-              onClick={handleLFreeQuoteClick}
+              // onClick={handleLFreeQuoteClick}
             >
-              Get a Free Quote
+              <a href="/contact"> Get a Free Quote</a>
             </Button>
             <Button
               variant="outlined"
@@ -87,9 +87,9 @@ const AboutPage = () => {
                   backgroundColor: "rgba(255, 0, 0, 0.1)",
                 },
               }}
-              onClick={handleLExploreServicesClick}
+              // onClick={handleLExploreServicesClick}
             >
-              Explore Services
+              <a href="services">Explore Services</a>
             </Button>
           </Grid>
         </Grid>

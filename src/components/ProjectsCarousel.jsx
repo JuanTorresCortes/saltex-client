@@ -25,16 +25,22 @@ const CarouselItem = ({ item }) => {
         borderRadius: "10px",
       }}
     >
-      <img
-        src={item.image}
-        alt={item.name}
-        style={{
-          width: "100%",
-          height: "250px",
-          objectFit: "cover",
-          borderRadius: "10px",
-        }}
-      />
+      <Typography variant="body2">
+        Click for more information about our services
+      </Typography>
+      <a href="/services">
+        <img
+          src={item.image}
+          alt={item.name}
+          style={{
+            width: "100%",
+            height: "250px",
+            objectFit: "cover",
+            borderRadius: "10px",
+          }}
+        />
+      </a>
+
       <Typography variant="h5" mt={2}>
         {item.name}
       </Typography>

@@ -42,9 +42,9 @@ const ActionBanner = () => {
             backgroundColor: "#141424",
           },
         }}
-        onClick={handleGetStartedClick}
+        // onClick={handleGetStartedClick}
       >
-        Get Started
+        <a href="/contact">Get Started</a>
       </Button>
     </Box>
   );

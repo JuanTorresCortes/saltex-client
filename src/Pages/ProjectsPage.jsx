@@ -76,6 +76,8 @@ const ProjectsPage = () => {
   return (
     <Box
       sx={{
+        width: "100vw",
+        minHeight: "75vh",
         backgroundColor: theme.palette.darkgray.main,
         display: "flex",
         flexDirection: "column",

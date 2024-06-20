@@ -43,7 +43,7 @@ const Footer = () => {
             <Typography variant="h6">Quick Links</Typography>
             <Box>
               <Link
-                href="#"
+                href="/about"
                 color="inherit"
                 underline="none"
                 sx={{
@@ -58,7 +58,7 @@ const Footer = () => {
             </Box>
             <Box>
               <Link
-                href="#"
+                href="/services"
                 color="inherit"
                 underline="none"
                 sx={{
@@ -73,7 +73,7 @@ const Footer = () => {
             </Box>
             <Box>
               <Link
-                href="#"
+                href="/projects"
                 color="inherit"
                 underline="none"
                 sx={{
@@ -88,7 +88,7 @@ const Footer = () => {
             </Box>
             <Box>
               <Link
-                href="#"
+                href="/contact"
                 color="inherit"
                 underline="none"
                 sx={{
@@ -188,7 +188,7 @@ const Footer = () => {
               }}
             >
               <Link
-                href="#"
+                href="/contact"
                 sx={{
                   mt: 2,
                   border: "1px solid white",
@@ -208,10 +208,22 @@ const Footer = () => {
                 CONTACT US
               </Link>
               <Typography variant="body1" sx={{ mt: 2 }}>
-                <span role="img" aria-label="phone">
-                  📞
-                </span>{" "}
-                (281) 888-8888
+                <Link
+                  href="tel:+12818888888"
+                  sx={{
+                    color: "white",
+                    textDecoration: "none",
+                    cursor: "pointer",
+                    "&:hover": {
+                      color: theme.palette.darkred.main,
+                    },
+                  }}
+                >
+                  <span role="img" aria-label="phone">
+                    📞
+                  </span>{" "}
+                  (832) 9017158
+                </Link>
               </Typography>
             </Box>
           </Grid>

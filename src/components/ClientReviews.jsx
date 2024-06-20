@@ -72,9 +72,9 @@ const ClientReviews = () => {
               },
               mt: 2,
             }}
-            onClick={() => handleDiscoverMoreClick()}
+            // onClick={handleDiscoverMoreClick}
           >
-            DISCOVER MORE
+            <a href="/about">DISCOVER MORE</a>
           </Button>
         </Box>
         <Box sx={{ flex: 1, position: "relative", minHeight: "200px" }}>
