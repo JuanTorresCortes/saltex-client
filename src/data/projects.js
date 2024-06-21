@@ -73,6 +73,34 @@ const projects = [
     description: "Description for Solar",
     image: solar,
   },
+  // {
+  //   id: 10,
+  //   type: "solar",
+  //   name: "Solar project 10",
+  //   description: "Description for Solar",
+  //   image: solar,
+  // },
+  //   {
+  //     id: 10,
+  //     type: "solar",
+  //     name: "Solar project 10",
+  //     description: "Description for Solar",
+  //     image: solar,
+  //   },
+  //   {
+  //     id: 10,
+  //     type: "solar",
+  //     name: "Solar project 10",
+  //     description: "Description for Solar",
+  //     image: solar,
+  //   },
+  //   {
+  //     id: 10,
+  //     type: "solar",
+  //     name: "Solar project 10",
+  //     description: "Description for Solar",
+  //     image: solar,
+  //   },
 ];
 
 export default projects;

@@ -17,6 +17,7 @@ import projects from "../data/projects"; // Import the projects array
 const ProjectsPage = () => {
   const theme = useTheme();
 
+  // create a separate component for the ProjectsHero
   return (
     <Box
       sx={{
@@ -50,7 +51,7 @@ const ProjectsPage = () => {
           textAlign: "center",
           padding: "20px",
           position: "relative",
-          mt: 69,
+          mt: 148,
         }}
       >
         <Container
