@@ -11,64 +11,8 @@ import {
   Button,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import hotel from "../img/hotel.png";
-import education from "../img/education.png";
-import healthcare from "../img/healthcare.png";
-import industrial from "../img/industrial.png";
-import office from "../img/office.png";
-import retail from "../img/retail.png";
-import religious from "../img/religious.png";
-import restoration from "../img/restoration.png";
-import solar from "../img/solar.png";
 import workersFraming from "../img/workers-framing.png";
-
-const projects = [
-  {
-    name: "Education",
-    description: "Description for Education",
-    image: education,
-  },
-  {
-    name: "Healthcare",
-    description: "Description for Healthcare",
-    image: healthcare,
-  },
-  {
-    name: "Industrial",
-    description: "Description for Industrial",
-    image: industrial,
-  },
-  {
-    name: "Office",
-    description: "Description for Office",
-    image: office,
-  },
-  {
-    name: "Retail",
-    description: "Description for Office",
-    image: retail,
-  },
-  {
-    name: "Religious",
-    description: "Description for Religious",
-    image: religious,
-  },
-  {
-    name: "Restoration",
-    description: "Description for Restoration",
-    image: restoration,
-  },
-  {
-    name: "Hospitality",
-    description: "Description for hospitality",
-    image: hotel,
-  },
-  {
-    name: "Solar",
-    description: "Description for solar",
-    image: solar,
-  },
-];
+import projects from "../data/projects"; // Import the projects array
 
 const ProjectsPage = () => {
   const theme = useTheme();
@@ -133,13 +77,13 @@ const ProjectsPage = () => {
       <Container>
         <Grid container spacing={4} sx={{ mt: 2, padding: "30px" }}>
           {projects.map((project) => (
-            <Grid item xs={12} sm={6} md={4} key={project.title}>
+            <Grid item xs={12} sm={6} md={4} key={project.id}>
               <Card
                 sx={{ maxWidth: 345, backgroundColor: "rgba(0, 0, 0, 0.7)" }}
               >
                 <CardMedia
                   component="img"
-                  alt={`${project.title} image`}
+                  alt={`${project.name} image`}
                   height="140"
                   image={project.image}
                 />
@@ -151,7 +95,7 @@ const ProjectsPage = () => {
                     component="div"
                     sx={{ color: "white" }}
                   >
-                    {project.title}
+                    {project.name}
                   </Typography>
                   <Typography
                     variant="body2"
