@@ -57,6 +57,7 @@ const JobPostings = () => {
 
   return (
     <Box sx={{ mt: 58, padding: "20px" }}>
+      <MyNavBar sx={{ backgroundColor: "rgba(0, 0, 0, 0.7)", mb: 5 }} />
       <Typography variant="h3" gutterBottom sx={{ color: "white" }}>
         Job Postings
       </Typography>

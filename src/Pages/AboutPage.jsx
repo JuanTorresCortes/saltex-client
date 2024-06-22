@@ -3,9 +3,11 @@ import { Container, Typography, Box, Grid, Button } from "@mui/material";
 import steelFrame from "../img/steelFrame.png"; // Ensure this path is correct
 import inspector from "../img/inspector.png"; // Ensure this path is correct
 import cityLine from "../img/cityLine.png";
+import windowBuilding from "../img/window-Building.png"; // Ensure this path is correct
 import { useTheme } from "@mui/material/styles";
 import Stats from "../components/Stats";
 import { useNavigate } from "react-router-dom";
+import MyNavBar from "../components/MyNavBar";
 
 const AboutPage = () => {
   const theme = useTheme();
@@ -22,7 +24,7 @@ const AboutPage = () => {
   return (
     <Box
       sx={{
-        backgroundImage: `url(${cityLine})`,
+        backgroundImage: `url(${windowBuilding})`,
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
@@ -37,7 +39,8 @@ const AboutPage = () => {
         mt: 68,
       }}
     >
-      <Container sx={{ mt: 16, padding: 3, backgroundColor: "black" }}>
+      <MyNavBar sx={{ backgroundColor: "rgba(0, 0, 0, 0.7)", mb: 5 }} />
+      <Container sx={{ mt: 16, mb: 1, padding: 3, backgroundColor: "black" }}>
         <Grid container spacing={4} alignItems="center">
           <Grid item xs={12} md={6}>
             <Box

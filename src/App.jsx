@@ -9,7 +9,7 @@ import ProjectsPage from "./Pages/ProjectsPage";
 import ServicesPage from "./Pages/ServicesPage";
 import MyNavBar from "./components/MyNavBar";
 import Footer from "./components/Footer";
-import ClientReviews from "./components/ClientReviews";
+
 import ActionBanner from "./components/ActionBanner";
 import JobPostings from "./Pages/JobPosting";
 import AdminLogin from "./Pages/AdminLogin";
@@ -25,6 +25,7 @@ function App() {
           style={{ backgroundColor: "black" }}
           sx={{
             width: "90%",
+            height: "100vh",
             overflowX: "hidden",
             display: "flex",
             flexDirection: "column",
@@ -33,8 +34,7 @@ function App() {
             margin: "0 auto",
           }}
         >
-          <MyNavBar sx={{ backgroundColor: "rgba(0, 0, 0, 0.7)", mb: 5 }} />
-          <Box sx={{ pt: { xs: 8, sm: 10 } }}>
+          <Box sx={{ pt: { xs: 428, sm: 10 } }}>
             <Routes>
               <Route path="/" element={<MyHeroPage />} />
               <Route path="/about" element={<AboutPage />} />
@@ -52,7 +52,7 @@ function App() {
                 }
               />
             </Routes>
-            <ClientReviews />
+
             <ActionBanner />
             <Footer />
           </Box>

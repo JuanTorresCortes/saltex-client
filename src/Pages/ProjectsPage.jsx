@@ -13,6 +13,7 @@ import {
 import { useTheme } from "@mui/material/styles";
 import workersFraming from "../img/workers-framing.png";
 import projects from "../data/projects"; // Import the projects array
+import MyNavBar from "../components/MyNavBar";
 
 const ProjectsPage = () => {
   const theme = useTheme();
@@ -32,9 +33,10 @@ const ProjectsPage = () => {
         textAlign: "center",
         padding: "20px",
         position: "relative",
-        mt: 58,
+        mt: 0,
       }}
     >
+      <MyNavBar sx={{ backgroundColor: "rgba(0, 0, 0, 0.7)", mb: 5 }} />
       <Box
         sx={{
           backgroundImage: `url(${workersFraming})`,

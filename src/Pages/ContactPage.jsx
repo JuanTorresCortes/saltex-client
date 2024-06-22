@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { Container, Typography, Box, TextField, Button } from "@mui/material";
 import emailjs from "emailjs-com";
 import cityLine from "../img/cityLine.png";
+import workerGrinding from "../img/worker-grinding.png";
 import { useTheme } from "@mui/material/styles";
 import MyNavBar from "../components/MyNavBar";
 import CalendlyScheduler from "../components/CalendlyScheduler";
@@ -13,7 +14,7 @@ const ContactPage = () => {
   return (
     <Box
       sx={{
-        backgroundImage: `url(${cityLine})`,
+        backgroundImage: `url(${workerGrinding})`,
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
@@ -25,9 +26,10 @@ const ContactPage = () => {
         color: "white",
         textAlign: "center",
         padding: "20px",
-        mt: 118,
+        mt: 70,
       }}
     >
+      <MyNavBar sx={{ backgroundColor: "rgba(0, 0, 0, 0.7)", mb: 5 }} />
       <CalendlyScheduler />
     </Box>
   );

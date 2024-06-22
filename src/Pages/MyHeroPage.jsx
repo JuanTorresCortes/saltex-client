@@ -6,6 +6,7 @@ import houston from "../img/houston.webp"; // Ensure this path is correct
 import Stats from "../components/Stats"; // Ensure this path is correct
 import ProjectsCarousel from "../components/ProjectsCarousel"; // Ensure this path is correct
 import MyNavBar from "../components/MyNavBar";
+import ClientReviews from "../components/ClientReviews";
 
 const MyHeroPage = () => {
   const navigate = useNavigate();
@@ -40,7 +41,7 @@ const MyHeroPage = () => {
         <Container
           sx={{
             marginTop: "100px",
-            backgroundColor: "rgba(0, 0, 0, 0.7)",
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
             mb: 8,
             zIndex: 2,
           }}
@@ -104,7 +105,8 @@ const MyHeroPage = () => {
       <Box sx={{ mt: 1.5 }}>
         <Stats sx={{ mt: 4, zIndex: 2 }} />
       </Box>
-      {/* END CAROUSEL */}
+      {/* END STATS */}
+      <ClientReviews />
     </Box>
   );
 };
