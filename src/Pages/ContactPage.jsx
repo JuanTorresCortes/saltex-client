@@ -26,7 +26,7 @@ const ContactPage = () => {
         color: "white",
         textAlign: "center",
         padding: "20px",
-        mt: 70,
+        mt: { xs: 118, sm: 108, md: 49, lg: 38, xl: 38 }, // responsive brake points xs=0,sm=600,md=900,lg=1200,xl=1536}
       }}
     >
       <MyNavBar sx={{ backgroundColor: "rgba(0, 0, 0, 0.7)", mb: 5 }} />

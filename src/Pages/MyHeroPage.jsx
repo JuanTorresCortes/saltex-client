@@ -7,6 +7,7 @@ import Stats from "../components/Stats"; // Ensure this path is correct
 import ProjectsCarousel from "../components/ProjectsCarousel"; // Ensure this path is correct
 import MyNavBar from "../components/MyNavBar";
 import ClientReviews from "../components/ClientReviews";
+import ActionBanner from "../components/ActionBanner";
 
 const MyHeroPage = () => {
   const navigate = useNavigate();
@@ -107,6 +108,7 @@ const MyHeroPage = () => {
       </Box>
       {/* END STATS */}
       <ClientReviews />
+      <ActionBanner />
     </Box>
   );
 };

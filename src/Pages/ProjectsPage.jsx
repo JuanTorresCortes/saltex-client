@@ -14,6 +14,7 @@ import { useTheme } from "@mui/material/styles";
 import workersFraming from "../img/workers-framing.png";
 import projects from "../data/projects"; // Import the projects array
 import MyNavBar from "../components/MyNavBar";
+import ActionBanner from "../components/ActionBanner";
 
 const ProjectsPage = () => {
   const theme = useTheme();
@@ -129,6 +130,7 @@ const ProjectsPage = () => {
           ))}
         </Grid>
       </Container>
+      <ActionBanner />
     </Box>
   );
 };
