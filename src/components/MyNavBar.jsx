@@ -23,6 +23,7 @@ const MyNavBar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const location = useLocation();
+  const phoneNumber = "+8329017158";
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -205,7 +206,7 @@ const MyNavBar = () => {
                 }}
               >
                 <PhoneIcon sx={{ marginRight: 0.5 }} />
-                (281) 888-8888
+                {phoneNumber}
               </MuiLink>
             </Box>
           )}

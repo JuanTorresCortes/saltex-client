@@ -13,6 +13,7 @@ import { useTheme } from "@mui/material/styles";
 
 const Footer = () => {
   const theme = useTheme();
+  const phoneNumber = "+8329017158";
 
   return (
     <Box component="footer" sx={{ bgcolor: "black", color: "white", py: 4 }}>
@@ -222,7 +223,7 @@ const Footer = () => {
                   <span role="img" aria-label="phone">
                     📞
                   </span>{" "}
-                  (832) 9017158
+                  {phoneNumber}
                 </Link>
               </Typography>
             </Box>

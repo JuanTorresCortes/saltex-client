@@ -1,73 +1,3 @@
-// import React from "react";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import { Box } from "@mui/material";
-
-// import MyHeroPage from "./Pages/MyHeroPage";
-// import AboutPage from "./Pages/AboutPage";
-// import ContactPage from "./Pages/ContactPage";
-// import ProjectsPage from "./Pages/ProjectsPage";
-// import ServicesPage from "./Pages/ServicesPage";
-// import Footer from "./components/Footer";
-// import JobPostings from "./Pages/JobPosting";
-// import AdminLogin from "./Pages/AdminLogin";
-// import AdminDashboard from "./Pages/AdminDashboard";
-// import PrivateRoute from "./Authentication/PrivateRoute";
-// import { AuthProvider } from "./Authentication/AdminAuthContext";
-// import ActiveProjectsPage from "./Pages/ActiveProjectsPage";
-
-// function App() {
-//   return (
-//     <AuthProvider>
-//       <Router>
-//         <Box
-//           style={{ backgroundColor: "black" }}
-//           sx={{
-//             width: "90%",
-//             height: "100vh",
-//             overflowX: "hidden",
-//             display: "flex",
-//             flexDirection: "column",
-//             alignItems: "center",
-//             justifyContent: "center",
-//             margin: "0 auto",
-//           }}
-//         >
-//           <Box sx={{ pt: { xs: 428, sm: 10 } }}>
-//             <Routes>
-//               <Route path="/" element={<MyHeroPage />} />
-//               <Route path="/about" element={<AboutPage />} />
-//               <Route path="/contact" element={<ContactPage />} />
-//               <Route path="/projects" element={<ProjectsPage />} />
-//               <Route path="/services" element={<ServicesPage />} />
-//               <Route path="/job-postings" element={<JobPostings />} />
-//               <Route path="/admin-login" element={<AdminLogin />} />
-//               <Route
-//                 path="/admin-dashboard"
-//                 element={
-//                   <PrivateRoute>
-//                     <AdminDashboard />
-//                   </PrivateRoute>
-//                 }
-//               />
-//               <Route
-//                 path="/active-projects"
-//                 element={
-//                   <PrivateRoute>
-//                     <ActiveProjectsPage />
-//                   </PrivateRoute>
-//                 }
-//               />
-//             </Routes>
-//             <Footer />
-//           </Box>
-//         </Box>
-//       </Router>
-//     </AuthProvider>
-//   );
-// }
-
-// export default App;
-
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Box } from "@mui/material";
@@ -76,6 +6,7 @@ import MyHeroPage from "./Pages/MyHeroPage";
 import AboutPage from "./Pages/AboutPage";
 import ContactPage from "./Pages/ContactPage";
 import ProjectsPage from "./Pages/ProjectsPage";
+import ProjectsDisplayPage from "./Pages/ProjectsDisplayPage";
 import ServicesPage from "./Pages/ServicesPage";
 import Footer from "./components/Footer";
 import JobPostings from "./Pages/JobPosting";
@@ -118,6 +49,8 @@ function App() {
               <Route path="/contact" element={<ContactPage />} />{" "}
               {/* Contact page route */}
               <Route path="/projects" element={<ProjectsPage />} />{" "}
+              {/* Projects display page route */}
+              <Route path="/projects/:id" element={<ProjectsDisplayPage />} />
               {/* Projects page route */}
               <Route path="/services" element={<ServicesPage />} />{" "}
               {/* Services page route */}
