@@ -15,6 +15,7 @@ import AdminDashboard from "./Pages/AdminDashboard";
 import PrivateRoute from "./Authentication/PrivateRoute";
 import { AuthProvider } from "./Authentication/AdminAuthContext";
 import ActiveProjectsPage from "./Pages/ActiveProjectsPage";
+import ServiceDisplayPage from "./Pages/ServiceDisplayPage";
 
 function App() {
   return (
@@ -42,22 +43,22 @@ function App() {
             {" "}
             {/* Responsive padding-top */}
             <Routes>
-              <Route path="/" element={<MyHeroPage />} />{" "}
               {/* Home page route */}
-              <Route path="/about" element={<AboutPage />} />{" "}
+              <Route path="/" element={<MyHeroPage />} />{" "}
               {/* About page route */}
-              <Route path="/contact" element={<ContactPage />} />{" "}
+              <Route path="/about" element={<AboutPage />} />{" "}
               {/* Contact page route */}
+              <Route path="/contact" element={<ContactPage />} />{" "}
+              {/* Projects  route */}
               <Route path="/projects" element={<ProjectsPage />} />{" "}
-              {/* Projects display page route */}
               <Route path="/projects/:id" element={<ProjectsDisplayPage />} />
-              {/* Projects page route */}
-              <Route path="/services" element={<ServicesPage />} />{" "}
               {/* Services page route */}
-              <Route path="/job-postings" element={<JobPostings />} />{" "}
+              <Route path="/services" element={<ServicesPage />} />{" "}
+              <Route path="/services/:id" element={<ServiceDisplayPage />} />
               {/* Job postings page route */}
-              <Route path="/admin-login" element={<AdminLogin />} />{" "}
+              <Route path="/job-postings" element={<JobPostings />} />{" "}
               {/* Admin login page route */}
+              <Route path="/admin-login" element={<AdminLogin />} />{" "}
               <Route
                 path="/admin-dashboard"
                 element={

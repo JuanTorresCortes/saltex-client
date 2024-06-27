@@ -2,26 +2,25 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import MyNavBar from "../components/MyNavBar";
 import ActionBanner from "../components/ActionBanner";
-import projects from "../data/projects";
+import services from "../data/services";
 import { Container, Box, Typography, Paper, Button } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import GoogleIcon from "@mui/icons-material/Google";
+import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
-import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import "./ProjectsStyles.css";
 
-const ProjectsDisplayPage = () => {
+const ServiceDisplayPage = () => {
   const { id } = useParams();
-  const project = projects.find((project) => project.id === parseInt(id));
+  const service = services.find((service) => service.id === parseInt(id));
   const theme = useTheme();
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
-  if (!project) {
-    return <Typography variant="h4">Project not found</Typography>;
+  if (!service) {
+    return <Typography variant="h4">service not found</Typography>;
   }
 
   return (
@@ -33,24 +32,44 @@ const ProjectsDisplayPage = () => {
         color: "white",
         textAlign: "center",
         padding: "20px",
-        mt: { xs: 118, sm: 108, md: 49, lg: 38, xl: 79 }, // responsive breakpoints xs=0,sm=600,md=900,lg=1200,xl=1536}
+        mt: { xs: 118, sm: 108, md: 49, lg: 38, xl: 52 }, // responsive breakpoints xs=0,sm=600,md=900,lg=1200,xl=1536}
       }}
     >
       <MyNavBar sx={{ backgroundColor: "rgba(0, 0, 0, 0.7)", mb: 5 }} />
       <Container sx={{ mt: 5 }}>
         <Typography variant="h2" gutterBottom>
-          {project.name}
+          {service.title}
         </Typography>
         <Typography variant="body1" paragraph>
-          {project.description}
+          {service.description}
         </Typography>
-        <Typography variant="body2" paragraph>
-          {project.summary}
-        </Typography>
+        <Box>
+          <Button
+            variant="outlined"
+            sx={{
+              color: "white",
+              borderColor: theme.palette.darkred.main,
+              "&:hover": {
+                borderColor: theme.palette.darkred.main,
+                backgroundColor: "#141424",
+              },
+              mb: 2,
+            }}
+          >
+            <a
+              href="/services"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              DISCOVER MORE PROJECTS
+            </a>
+          </Button>
+        </Box>
+
         <Swiper
           style={{
             "--swiper-navigation-color": "#fff",
             "--swiper-pagination-color": "#fff",
+            backgroundColor: "rgba(0, 0, 0, 0.7)",
           }}
           loop={true}
           spaceBetween={10}
@@ -62,11 +81,11 @@ const ProjectsDisplayPage = () => {
           modules={[FreeMode, Navigation, Thumbs]}
           className="mySwiper2"
         >
-          {project.imagePortfolio.map((image, index) => (
-            <SwiperSlide key={index}>
+          {service.imagePortfolio.map((image, index) => (
+            <SwiperSlide key={index} style={{ backgroundColor: "black" }}>
               <img
                 src={image}
-                alt={`Project Portfolio ${index + 1}`}
+                alt={`service Portfolio ${index + 1}`}
                 style={{
                   width: "100%",
                   height: "250px",
@@ -87,11 +106,11 @@ const ProjectsDisplayPage = () => {
           modules={[FreeMode, Navigation, Thumbs]}
           className="mySwiper"
         >
-          {project.imagePortfolio.map((image, index) => (
+          {service.imagePortfolio.map((image, index) => (
             <SwiperSlide key={index}>
               <img
                 src={image}
-                alt={`Project Thumbnail ${index + 1}`}
+                alt={`Service Thumbnail ${index + 1}`}
                 style={{
                   width: "100%",
                   height: "100px",
@@ -103,7 +122,7 @@ const ProjectsDisplayPage = () => {
           ))}
         </Swiper>
       </Container>
-      <Box
+      {/* <Box
         sx={{
           backgroundColor: "black",
           padding: 4,
@@ -175,10 +194,10 @@ const ProjectsDisplayPage = () => {
             </Typography>
           </Paper>
         </Box>
-      </Box>
+      </Box> */}
       <ActionBanner />
     </Box>
   );
 };
 
-export default ProjectsDisplayPage;
+export default ServiceDisplayPage;
