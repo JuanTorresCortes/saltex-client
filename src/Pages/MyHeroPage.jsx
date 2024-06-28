@@ -36,7 +36,7 @@ const MyHeroPage = () => {
           textAlign: "center",
           padding: "20px",
           position: "relative",
-          mt: 154,
+          mt: { xs: 118, sm: 108, md: 49, lg: 38, xl: 144 }, // responsive breakpoints xs=0, sm=600, md=900, lg=1200, xl=1536
         }}
       >
         <Container
@@ -51,6 +51,7 @@ const MyHeroPage = () => {
             SalTex Steel Construction is a premier commercial general contractor
             specializing in steel construction.
           </Typography>
+
           <Typography variant="body1" sx={{ mt: 2 }}>
             <strong>
               Headquartered in Houston, we proudly serve clients both locally
@@ -78,30 +79,7 @@ const MyHeroPage = () => {
           </Typography>
         </Container>
       </Box>
-
-      {/* START CAROUSEL */}
-      <Container
-        sx={{
-          backgroundColor: theme.palette.darkgray.main,
-          padding: "2px",
-          mt: 1.5,
-        }}
-      >
-        <Typography variant="h2" gutterBottom sx={{ color: "white" }}>
-          Our Projects
-        </Typography>
-        <Container
-          sx={{
-            mt: 2,
-            zIndex: 2,
-            backgroundColor: "rgba(0, 0, 0, 0.2)",
-          }}
-        >
-          <ProjectsCarousel />
-        </Container>
-      </Container>
-      {/* CAROUSEL END */}
-
+      <ProjectsCarousel />
       {/* START STATS */}
       <Box sx={{ mt: 1.5 }}>
         <Stats sx={{ mt: 4, zIndex: 2 }} />

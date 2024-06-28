@@ -102,36 +102,6 @@ const Footer = () => {
                 Contact Us
               </Link>
             </Box>
-            <Box>
-              <Link
-                href="/job-postings"
-                color="inherit"
-                underline="none"
-                sx={{
-                  ":hover": {
-                    color: theme.palette.darkred.main,
-                    transition: "color 0.3s",
-                  },
-                }}
-              >
-                Jobs at SalTex
-              </Link>
-            </Box>
-            <Box>
-              <Link
-                href="/admin-login"
-                color="inherit"
-                underline="none"
-                sx={{
-                  ":hover": {
-                    color: theme.palette.darkred.main,
-                    transition: "color 0.3s",
-                  },
-                }}
-              >
-                Admin
-              </Link>
-            </Box>
           </Grid>
           <Grid item xs={12} md={3}>
             <Typography variant="h6">Address</Typography>

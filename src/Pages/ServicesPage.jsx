@@ -84,7 +84,7 @@ const ServicesPage = () => {
         padding: "20px",
         position: "relative",
         overflow: "hidden",
-        mt: 285,
+        mt: { xs: 118, sm: 108, md: 49, lg: 38, xl: 276 }, // responsive breakpoints xs=0,sm=600,md=900,lg=1200,xl=1536
       }}
     >
       <MyNavBar sx={{ backgroundColor: "rgba(0, 0, 0, 0.7)", mb: 5 }} />
@@ -254,10 +254,8 @@ const ServicesPage = () => {
             </Grid>
           ))}
         </Grid>
-        <Box>
-          <ActionBanner />
-        </Box>
       </Container>
+      <ActionBanner />
     </Box>
   );
 };
