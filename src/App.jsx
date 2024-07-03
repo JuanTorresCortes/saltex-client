@@ -27,11 +27,12 @@ function App() {
           alignItems: "center",
           justifyContent: "center",
           margin: "0 auto",
-          px: { xs: 2, md: 3 }, // Responsive padding
+          // px: { xs: 2, md: 3 }, // Responsive padding
         }}
       >
-        <Box sx={{ pt: { xs: 8, sm: 10 } }}>
+        <Box>
           {" "}
+          // responsive brake points xs=0,sm=600,md=900,lg=1200,xl=1536{" "}
           {/* Responsive padding-top */}
           <Routes>
             {/* Home page route */}

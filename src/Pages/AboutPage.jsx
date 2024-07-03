@@ -37,7 +37,7 @@ const AboutPage = () => {
         alignItems: "center",
         color: "white", // White text color for contrast
         textAlign: "center",
-        p: 2, // Padding of 2 units
+        // p: 2,
         mt: { xs: 200, sm: 128, md: 49, lg: 38, xl: 38 }, // responsive brake points xs=0,sm=600,md=900,lg=1200,xl=1536}
       }}
     >
@@ -45,7 +45,7 @@ const AboutPage = () => {
       {/* Navigation bar with semi-transparent background */}
       <Box
         sx={{
-          p: 3,
+          // p: 3,
           backgroundColor: "rgba(0, 0, 0, 0.7)", // Semi-transparent black background
         }}
       >

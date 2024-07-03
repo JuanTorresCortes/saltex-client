@@ -33,10 +33,6 @@ const ClientReviews = () => {
     );
   };
 
-  const handleDiscoverMoreClick = () => {
-    navigate("/about");
-  };
-
   return (
     <Box
       sx={{
@@ -72,7 +68,6 @@ const ClientReviews = () => {
               },
               mt: 2,
             }}
-            // onClick={handleDiscoverMoreClick}
           >
             <a href="/about">DISCOVER MORE</a>
           </Button>

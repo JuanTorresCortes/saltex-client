@@ -81,7 +81,6 @@ const ServicesPage = () => {
         justifyContent: "center",
         color: "white",
         textAlign: "center",
-        padding: "20px",
         position: "relative",
         overflow: "hidden",
         mt: { xs: 118, sm: 108, md: 49, lg: 38, xl: 276 }, // responsive breakpoints xs=0,sm=600,md=900,lg=1200,xl=1536
@@ -173,7 +172,6 @@ const ServicesPage = () => {
             bottom: 0,
             width: "100%",
             textAlign: "center",
-            mb: 1,
             color: "white",
           }}
         >

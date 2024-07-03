@@ -11,7 +11,7 @@ import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import "./ProjectsStyles.css";
+//import "../swipersStyles/ProjectsStyles.css";
 import "../swipersStyles/autoplaySwiper.css";
 
 // import required modules

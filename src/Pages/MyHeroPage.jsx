@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Box, Typography, Button, Container } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
 import houston from "../img/houston.webp"; // Ensure this path is correct
 import Stats from "../components/Stats"; // Ensure this path is correct
-import ProjectsCarousel from "../components/ProjectsCarousel"; // Ensure this path is correct
 import MyNavBar from "../components/MyNavBar";
 import ClientReviews from "../components/ClientReviews";
 import ActionBanner from "../components/ActionBanner";
+
+import pilar from "../img/pilar.png";
+import solar from "../img/solar.png";
+import welderManufacturing from "../img/welder-manufacturing.png";
+import welder from "../img/welder.png";
+import windowBuilding from "../img/window-Building.png";
+import workerGrinding from "../img/worker-grinding.png";
+import workersFraming from "../img/workers-framing.png";
 
 const MyHeroPage = () => {
   const navigate = useNavigate();
@@ -34,17 +41,20 @@ const MyHeroPage = () => {
           justifyContent: "center",
           color: "white",
           textAlign: "center",
-          padding: "20px",
+          // padding: "20px",
           position: "relative",
-          mt: { xs: 118, sm: 108, md: 49, lg: 38, xl: 144 }, // responsive breakpoints xs=0, sm=600, md=900, lg=1200, xl=1536
+          mt: { xs: 118, sm: 108, md: 49, lg: 38, xl: 184 }, // responsive breakpoints xs=0, sm=600, md=900, lg=1200, xl=1536
         }}
       >
         <Container
           sx={{
-            marginTop: "100px",
             backgroundColor: "rgba(0, 0, 0, 0.5)",
-            mb: 8,
             zIndex: 2,
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            right: 0,
+            padding: "20px",
           }}
         >
           <Typography variant="h2" gutterBottom sx={{ color: "white" }}>
@@ -79,11 +89,12 @@ const MyHeroPage = () => {
           </Typography>
         </Container>
       </Box>
-      <ProjectsCarousel />
+
       {/* START STATS */}
       <Box sx={{ mt: 1.5 }}>
         <Stats sx={{ mt: 4, zIndex: 2 }} />
       </Box>
+
       {/* END STATS */}
       <ClientReviews />
       <ActionBanner />

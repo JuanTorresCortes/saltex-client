@@ -37,8 +37,8 @@ const ProjectsPage = () => {
         justifyContent: "center",
         color: "white",
         textAlign: "center",
-        padding: "20px",
         position: "relative",
+        overflow: "hidden",
         mt: 0,
       }}
     >
@@ -67,6 +67,11 @@ const ProjectsPage = () => {
             backgroundColor: theme.palette.background.default,
             padding: "20px",
             opacity: 0.8,
+            position: "absolute",
+            bottom: 0,
+            width: "100%",
+            textAlign: "center",
+            color: "white",
           }}
         >
           <Typography variant="h2" gutterBottom>

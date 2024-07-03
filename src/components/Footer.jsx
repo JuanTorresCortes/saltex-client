@@ -180,7 +180,7 @@ const Footer = () => {
               </Link>
               <Typography variant="body1" sx={{ mt: 2 }}>
                 <Link
-                  href="tel:+12818888888"
+                  href="tel:+8329017158"
                   sx={{
                     color: "white",
                     textDecoration: "none",
