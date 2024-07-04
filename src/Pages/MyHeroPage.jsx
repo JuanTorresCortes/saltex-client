@@ -18,7 +18,6 @@ const MyHeroPage = () => {
 
   return (
     <Box>
-      <MyNavBar />
       <Box
         sx={{
           backgroundImage: `url(${houston})`,
@@ -35,9 +34,10 @@ const MyHeroPage = () => {
           textAlign: "center",
           // padding: "20px",
           position: "relative",
-          mt: { xs: 513, sm: 396, md: 281, lg: 237, xl: 237 }, // responsive breakpoints xs=0, sm=600, md=900, lg=1200, xl=1536
+          mt: { xs: 626, sm: 396, md: 281, lg: 237, xl: 311 }, // responsive breakpoints xs=0, sm=600, md=900, lg=1200, xl=1536
         }}
       >
+        <MyNavBar />
         <Container
           sx={{
             // backgroundColor: "rgba(0, 0, 0, 0.5)",
