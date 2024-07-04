@@ -7,6 +7,7 @@ import { useTheme } from "@mui/material/styles";
 import GoogleIcon from "@mui/icons-material/Google";
 import { Swiper, SwiperSlide } from "swiper/react";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
+import waveBackground from "../img/wave_background.png";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -43,7 +44,7 @@ const ProjectsDisplayPage = () => {
       sx={{
         width: "100vw",
         minHeight: "75vh",
-        backgroundColor: theme.palette.darkgray.main,
+        backgroundImage: `url(${waveBackground})`,
         color: "white",
         display: "flex",
         flexDirection: "column",
@@ -53,7 +54,12 @@ const ProjectsDisplayPage = () => {
       }}
     >
       <MyNavBar sx={{ backgroundColor: "rgba(0, 0, 0, 0.7)", mb: 5 }} />
-      <Container sx={{ backgroundColor: "black" }}>
+      <Container
+        sx={{
+          backgroundColor: "black",
+          border: `3px solid ${theme.palette.darkgray.main}`,
+        }}
+      >
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
             <Typography variant="h2" gutterBottom>

@@ -3,13 +3,14 @@ import Carousel from "react-material-ui-carousel";
 import { Paper, Typography, Box, Button, IconButton } from "@mui/material";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import GoogleIcon from "@mui/icons-material/Google";
 import { useTheme } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
+import { red } from "@mui/material/colors";
+import diagonalBackground from "../img/diagonal_Background.png";
 
 const reviews = [
   {
-    text: "SalTex has provided various scopes of construction and engineering services to my organization which have included site work (excavation and concrete), interior build out, drywall and finishing, and metal stair fabrication and railings. The proposals submitted were thorough and included a construction schedule with durations. Highlands Contracting completed their scope of work on time as expected with excellent quality. The quality of work and communication throughout pre...",
+    text: "SalTex has provided various scopes of construction and engineering services to my organization which have included site work (excavation and concrete), interior build out, drywall and finishing, and metal stair fabrication and railings. The proposals submitted were thorough and included a construction schedule with durations. Saltex completed their scope of work on time as expected with excellent quality. The quality of work and communication throughout the project was excellent. I would highly recommend SalTex for any construction and engineering services.",
     author: "Google",
   },
   {
@@ -36,7 +37,7 @@ const ClientReviews = () => {
   return (
     <Box
       sx={{
-        backgroundColor: theme.palette.darkgray.main,
+        backgroundImage: "black",
         padding: 4,
         display: "flex",
         justifyContent: "center",
@@ -47,7 +48,7 @@ const ClientReviews = () => {
           width: "80%",
           maxWidth: "1000px",
           display: "flex",
-          flexDirection: { xs: "column", md: "row" },
+          flexDirection: { xs: "column", sm: "column", md: "row" },
           alignItems: "center",
         }}
       >
@@ -60,16 +61,20 @@ const ClientReviews = () => {
           <Button
             variant="outlined"
             sx={{
-              color: "white",
+              mb: 2,
+              mt: 2,
               borderColor: theme.palette.darkred.main,
+              color: theme.palette.darkred.main,
+              backgroundColor: "black",
               "&:hover": {
                 borderColor: theme.palette.darkred.main,
                 backgroundColor: "#141424",
               },
-              mt: 2,
             }}
           >
-            <a href="/about">DISCOVER MORE</a>
+            <a href="/projects" style={{ color: theme.palette.darkred.main }}>
+              DISCOVER MORE
+            </a>
           </Button>
         </Box>
         <Box sx={{ flex: 1, position: "relative", minHeight: "200px" }}>
@@ -125,7 +130,6 @@ const ClientReviews = () => {
                   >
                     {review.text}
                   </Typography>
-                  <GoogleIcon sx={{ color: "white" }} />
                 </Box>
                 <Typography variant="body2" align="right" sx={{ mt: 2 }}>
                   {review.author}

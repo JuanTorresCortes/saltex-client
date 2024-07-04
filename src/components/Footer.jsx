@@ -170,6 +170,7 @@ const Footer = () => {
                     backgroundColor: theme.palette.darkred.main,
                     borderColor: theme.palette.darkred.main,
                     transition: "background-color 0.3s, border-color 0.3s",
+                    color: "white",
                   },
                 }}
                 variant="outlined"

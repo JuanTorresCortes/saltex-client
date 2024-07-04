@@ -6,6 +6,7 @@ import workerGrinding from "../img/worker-grinding.png";
 import { useTheme } from "@mui/material/styles";
 import MyNavBar from "../components/MyNavBar";
 import CalendlyScheduler from "../components/CalendlyScheduler";
+import diagonalBackground from "../img/diagonal_Background.png";
 
 const ContactPage = () => {
   const form = useRef();
@@ -14,7 +15,7 @@ const ContactPage = () => {
   return (
     <Box
       sx={{
-        backgroundImage: `url(${workerGrinding})`,
+        backgroundImage: `url(${diagonalBackground})`,
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",

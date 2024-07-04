@@ -30,7 +30,7 @@ const ActionBanner = () => {
       <Typography variant="h4" gutterBottom>
         Ready to start your next project?
       </Typography>
-      <Button
+      {/* <Button
         variant="outline"
         size="large"
         sx={{
@@ -45,6 +45,24 @@ const ActionBanner = () => {
         // onClick={handleGetStartedClick}
       >
         <a href="/contact">Get Started</a>
+      </Button> */}
+      <Button
+        variant="outlined"
+        sx={{
+          mb: 2,
+          mt: 2,
+          borderColor: theme.palette.darkred.main,
+          color: theme.palette.darkred.main,
+          backgroundColor: "black",
+          "&:hover": {
+            borderColor: theme.palette.darkred.main,
+            backgroundColor: "#141424",
+          },
+        }}
+      >
+        <a href="/contact" style={{ color: theme.palette.darkred.main }}>
+          GET STARTED
+        </a>
       </Button>
     </Box>
   );

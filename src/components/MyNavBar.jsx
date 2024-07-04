@@ -82,7 +82,13 @@ const MyNavBar = () => {
             <img
               src={logo}
               alt="SalTex Steel Construction"
-              style={{ width: 175, height: 48, cursor: "pointer" }}
+              style={{
+                width: 170,
+                height: "auto",
+                cursor: "pointer",
+                backgroundColor: "black",
+                paddingTop: 5,
+              }}
             />
           </a>
           {isMobile ? (

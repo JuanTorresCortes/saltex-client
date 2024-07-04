@@ -19,6 +19,7 @@ import welder from "../img/welder.png";
 import MyNavBar from "../components/MyNavBar";
 import ActionBanner from "../components/ActionBanner";
 import services from "../data/services";
+import waveBackground from "../img/wave_background.png";
 
 // Import icons
 import MenuBookIcon from "@mui/icons-material/MenuBook";
@@ -74,7 +75,7 @@ const ServicesPage = () => {
       sx={{
         width: "100vw",
         minHeight: "75vh",
-        backgroundColor: theme.palette.darkgray.main,
+        backgroundImage: `url(${waveBackground})`,
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -195,7 +196,11 @@ const ServicesPage = () => {
           {services.map((service) => (
             <Grid item xs={12} sm={6} md={4} key={service.title}>
               <Card
-                sx={{ maxWidth: 345, backgroundColor: "rgba(0, 0, 0, 0.7)" }}
+                sx={{
+                  maxWidth: 345,
+                  backgroundColor: "rgba(0, 0, 0, 0.7)",
+                  border: `3px solid ${theme.palette.darkgray.main}`,
+                }}
               >
                 <CardMedia
                   component="img"
@@ -222,14 +227,6 @@ const ServicesPage = () => {
                   >
                     {service.title}
                   </Typography>
-                  {/* <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    sx={{ color: "white" }}
-                  >
-                    {service.description}
-                  </Typography> */}
-
                   <CardActions sx={{ justifyContent: "center" }}>
                     <Button
                       onClick={handleServicesClick(service.id)}

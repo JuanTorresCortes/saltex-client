@@ -16,6 +16,7 @@ import workersFraming from "../img/workers-framing.png";
 import projects from "../data/projects"; // Import the projects array
 import MyNavBar from "../components/MyNavBar";
 import ActionBanner from "../components/ActionBanner";
+import waveBackground from "../img/wave_background.png";
 
 const ProjectsPage = () => {
   const theme = useTheme();
@@ -30,7 +31,8 @@ const ProjectsPage = () => {
       sx={{
         width: "100vw",
         minHeight: "75vh",
-        backgroundColor: theme.palette.darkgray.main,
+        // backgroundColor: theme.palette.darkgray.main,
+        backgroundImage: `url(${waveBackground})`,
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -93,7 +95,11 @@ const ProjectsPage = () => {
           {projects.map((project) => (
             <Grid item xs={12} sm={6} md={4} key={project.id}>
               <Card
-                sx={{ maxWidth: 345, backgroundColor: "rgba(0, 0, 0, 0.7)" }}
+                sx={{
+                  maxWidth: 345,
+                  backgroundColor: "rgba(0, 0, 0, 0.7)",
+                  border: `3px solid ${theme.palette.darkgray.main}`,
+                }}
               >
                 <CardMedia
                   component="img"

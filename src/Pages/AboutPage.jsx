@@ -6,6 +6,7 @@ import { useTheme } from "@mui/material/styles";
 import Stats from "../components/Stats";
 import { useNavigate } from "react-router-dom";
 import MyNavBar from "../components/MyNavBar";
+import diagonalBackground from "../img/diagonal_Background.png";
 
 const AboutPage = () => {
   const theme = useTheme(); // Use Material-UI's theme for consistent styling
@@ -25,7 +26,7 @@ const AboutPage = () => {
     <Box
       sx={{
         // Background image and styling for the main container
-        backgroundImage: `url(${welder})`,
+        backgroundImage: `url(${diagonalBackground})`,
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
@@ -37,8 +38,8 @@ const AboutPage = () => {
         alignItems: "center",
         color: "white", // White text color for contrast
         textAlign: "center",
-        // p: 2,
-        mt: { xs: 200, sm: 128, md: 49, lg: 38, xl: 38 }, // responsive brake points xs=0,sm=600,md=900,lg=1200,xl=1536}
+        p: 2,
+        mt: { xs: 220, sm: 128, md: 49, lg: 38, xl: 38 }, // responsive brake points xs=0,sm=600,md=900,lg=1200,xl=1536}
       }}
     >
       <MyNavBar sx={{ backgroundColor: "rgba(0, 0, 0, 0.7)", mb: 5 }} />{" "}
@@ -67,35 +68,39 @@ const AboutPage = () => {
               Trust SalTex Steel Construction to bring your vision to life with
               flawless execution and strategic expertise.
             </Typography>
-            <Button
-              variant="contained"
-              sx={{
-                mr: 2,
-                backgroundColor: theme.palette.darkred.main, // Use primary color from theme
-                color: "white",
-                "&:hover": {
-                  backgroundColor: "black", // Darker shade on hover
-                },
-              }}
-              onClick={handleLFreeQuoteClick} // OnClick event to navigate to contact page
-            >
-              Get a Free Quote
-            </Button>
-            <Button
-              variant="outlined"
-              sx={{
-                borderColor: theme.palette.darkred.main, // Use primary color from theme
-                color: theme.palette.darkred.main,
-                "&:hover": {
-                  borderColor: theme.palette.darkred.dark,
+            <Container sx={{ display: "flex", justifyContent: "center" }}>
+              <Button
+                variant="contained"
+                sx={{
+                  mr: 2,
+                  backgroundColor: theme.palette.darkred.main, // Use primary color from theme
                   color: "white",
-                  backgroundColor: "black", // Darker shade on hover
-                },
-              }}
-              onClick={handleLExploreServicesClick} // OnClick event to navigate to services page
-            >
-              Explore Services
-            </Button>
+                  "&:hover": {
+                    backgroundColor: "black", // Darker shade on hover
+                  },
+                }}
+                onClick={handleLFreeQuoteClick} // OnClick event to navigate to contact page
+              >
+                Get a Free Quote
+              </Button>
+
+              <Button
+                variant="outlined"
+                sx={{
+                  borderColor: theme.palette.darkred.main, // Use primary color from theme
+                  color: theme.palette.darkred.main,
+                  "&:hover": {
+                    borderColor: theme.palette.darkred.dark,
+                    color: "white",
+                    backgroundColor: "black", // Darker shade on hover
+                  },
+                }}
+                onClick={handleLExploreServicesClick} // OnClick event to navigate to services page
+              >
+                Explore Services
+              </Button>
+            </Container>
+
             <Box>
               <Stats />
             </Box>

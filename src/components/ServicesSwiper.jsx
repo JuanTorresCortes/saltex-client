@@ -1,13 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import MyNavBar from "../components/MyNavBar";
+import MyNavBar from "./MyNavBar";
 import services from "../data/services";
 import { Container, Box, Typography, Button, Grid } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { Swiper, SwiperSlide } from "swiper/react";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
-import waveBackground from "../img/wave_background.png";
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -18,9 +16,53 @@ import "../swipersStyles/autoplaySwiper.css";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
-const ServiceDisplayPage = () => {
-  const { id } = useParams();
-  const service = services.find((service) => service.id === parseInt(id));
+import workersFraming from "../img/workers-framing.png";
+import hotel from "../img/hotel.png";
+import education from "../img/education.png";
+import healthcare from "../img/healthcare.png";
+import industrial from "../img/industrial.png";
+import office from "../img/office.png";
+import retail from "../img/retail.png";
+import religious from "../img/religious.png";
+import restoration from "../img/restoration.png";
+import solar from "../img/solar.png";
+import workerGrinding from "../img/worker-grinding.png";
+import welder from "../img/welder.png";
+import welderOnTop from "../img/welder-on-top.png";
+import welderManufacturing from "../img/welder-manufacturing.png";
+import welderInLift from "../img/welder-in-lift.png";
+import inspector from "../img/inspector.png";
+import pilar from "../img/pilar.png";
+
+const ServicesSwiper = () => {
+  const service = {
+    id: 1,
+    title: "OUR SERVICES",
+    description:
+      "SalTex Steel Construction offers a diverse range of services designed to meet the needs of various industries. Our Structural Steel service specializes in the erection and assembly of steel frameworks, ensuring precision and stability for construction projects. We also provide Custom Manufacturing solutions, tailoring production to meet specific client requirements with high-quality and reliable products. Our Solar Installation services deliver sustainable energy solutions, designing and installing systems to help clients achieve energy independence. In the Healthcare sector, we construct hospitals and clinics, focusing on patient safety and efficient workflow. Our Corporate Office Construction services create modern and functional office spaces that enhance productivity and reflect company culture. Finally, our Hotel Construction services build luxurious and functional hotels that offer exceptional guest experiences, from concept to completion.",
+    icon: "ConstructionIcon",
+    image: welder,
+    imagePortfolio: [
+      pilar,
+      welderInLift,
+      welderManufacturing,
+      welderOnTop,
+      workerGrinding,
+      solar,
+      restoration,
+      religious,
+      inspector,
+      retail,
+      office,
+      industrial,
+      healthcare,
+      education,
+      hotel,
+      welder,
+      workersFraming,
+    ],
+  };
+
   const theme = useTheme();
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
@@ -34,31 +76,21 @@ const ServiceDisplayPage = () => {
     window.speechSynthesis.speak(speech);
   };
 
-  if (!service) {
-    return <Typography variant="h4">Service not found</Typography>;
-  }
-
   return (
     <Box
       sx={{
         width: "100vw",
         minHeight: "75vh",
-        backgroundImage: `url(${waveBackground})`,
+        backgroundColor: "black",
         color: "white",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        mt: { xs: 118, sm: 108, md: 49, lg: 38, xl: 15 }, // responsive breakpoints xs=0,sm=600,md=900,lg=1200,xl=1536
+        // mt: { xs: 118, sm: 108, md: 49, lg: 38, xl: 15 }, // responsive breakpoints xs=0,sm=600,md=900,lg=1200,xl=1536
       }}
     >
-      <MyNavBar sx={{ backgroundColor: "rgba(0, 0, 0, 0.7)", mb: 5 }} />
-      <Container
-        sx={{
-          backgroundColor: "black",
-          border: `3px solid ${theme.palette.darkgray.main}`,
-        }}
-      >
+      <Container sx={{ backgroundColor: "black" }}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
             <Typography variant="h2" gutterBottom>
@@ -148,4 +180,4 @@ const ServiceDisplayPage = () => {
   );
 };
 
-export default ServiceDisplayPage;
+export default ServicesSwiper;

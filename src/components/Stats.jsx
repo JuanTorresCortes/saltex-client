@@ -1,12 +1,13 @@
 import React from "react";
 import { Grid, Typography, Box } from "@mui/material";
 import cityLine from "../img/cityLine.png"; // Adjust the path as needed
+import diagonalBackground from "../img/diagonal_Background.png";
 
 const Stats = () => {
   return (
     <Box
       sx={{
-        backgroundImage: `url(${cityLine})`,
+        backgroundImage: `url(${diagonalBackground})`,
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",

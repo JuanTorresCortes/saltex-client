@@ -2,27 +2,19 @@ import React, { useRef } from "react";
 import { Box, Typography, Button, Container } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import houston from "../img/houston.webp"; // Ensure this path is correct
 import Stats from "../components/Stats"; // Ensure this path is correct
 import MyNavBar from "../components/MyNavBar";
 import ClientReviews from "../components/ClientReviews";
 import ActionBanner from "../components/ActionBanner";
-
-import pilar from "../img/pilar.png";
-import solar from "../img/solar.png";
-import welderManufacturing from "../img/welder-manufacturing.png";
-import welder from "../img/welder.png";
-import windowBuilding from "../img/window-Building.png";
-import workerGrinding from "../img/worker-grinding.png";
-import workersFraming from "../img/workers-framing.png";
+import ServicesSwiper from "../components/servicesSwiper";
+import ProjectsSwiper from "../components/ProjectsSwiper";
 
 const MyHeroPage = () => {
-  const navigate = useNavigate();
   const theme = useTheme();
-
-  const handleLearnMoreClick = () => {
-    navigate("/about");
-  };
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const navigate = useNavigate();
 
   return (
     <Box>
@@ -43,21 +35,26 @@ const MyHeroPage = () => {
           textAlign: "center",
           // padding: "20px",
           position: "relative",
-          mt: { xs: 118, sm: 108, md: 49, lg: 38, xl: 184 }, // responsive breakpoints xs=0, sm=600, md=900, lg=1200, xl=1536
+          mt: { xs: 513, sm: 396, md: 281, lg: 237, xl: 237 }, // responsive breakpoints xs=0, sm=600, md=900, lg=1200, xl=1536
         }}
       >
         <Container
           sx={{
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            // backgroundColor: "rgba(0, 0, 0, 0.5)",
             zIndex: 2,
             position: "absolute",
             bottom: 0,
             left: 0,
             right: 0,
             padding: "20px",
+            paddingTop: isSmallScreen ? "80px" : "20px", // Add padding on top for smaller screens
           }}
         >
-          <Typography variant="h2" gutterBottom sx={{ color: "white" }}>
+          <Typography
+            variant={isSmallScreen ? "h4" : "h2"} // Adjust variant for smaller screens
+            gutterBottom
+            sx={{ color: "white" }}
+          >
             SalTex Steel Construction is a premier commercial general contractor
             specializing in steel construction.
           </Typography>
@@ -82,22 +79,26 @@ const MyHeroPage = () => {
                   backgroundColor: "#141424",
                 },
               }}
-              onClick={handleLearnMoreClick}
             >
-              Learn More
+              <a href="/about" style={{ color: theme.palette.darkred.main }}>
+                LEARN MORE
+              </a>
             </Button>
           </Typography>
         </Container>
       </Box>
+      <ServicesSwiper />
+      <Container>
+        <Stats />
+      </Container>
 
-      {/* START STATS */}
-      <Box sx={{ mt: 1.5 }}>
-        <Stats sx={{ mt: 4, zIndex: 2 }} />
-      </Box>
-
-      {/* END STATS */}
-      <ClientReviews />
-      <ActionBanner />
+      <ProjectsSwiper />
+      <Container>
+        <ClientReviews />
+      </Container>
+      <Container>
+        <ActionBanner />
+      </Container>
     </Box>
   );
 };
