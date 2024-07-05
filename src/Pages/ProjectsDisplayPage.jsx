@@ -15,6 +15,8 @@ import "swiper/css/navigation";
 //import "../swipersStyles/ProjectsStyles.css";
 import "../swipersStyles/autoplaySwiper.css";
 
+import Transition from "../components/Transition";
+
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
@@ -209,4 +211,4 @@ const ProjectsDisplayPage = () => {
   );
 };
 
-export default ProjectsDisplayPage;
+export default Transition(ProjectsDisplayPage);

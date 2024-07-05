@@ -37,6 +37,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import BuildCircleIcon from "@mui/icons-material/BuildCircle";
 import ConstructionIcon from "@mui/icons-material/Construction";
+import Transition from "../components/Transition";
 
 const iconMapping = {
   MenuBookIcon: <MenuBookIcon sx={{ color: "white", fontSize: 40 }} />,
@@ -200,6 +201,10 @@ const ServicesPage = () => {
                   maxWidth: 345,
                   backgroundColor: "rgba(0, 0, 0, 0.7)",
                   border: `3px solid ${theme.palette.darkgray.main}`,
+                  "&:hover": {
+                    transform: "scale(1.05)",
+                    transition: "all 0.3s ease-in-out",
+                  },
                 }}
               >
                 <CardMedia
@@ -236,8 +241,9 @@ const ServicesPage = () => {
                         backgroundColor: theme.palette.darkred.main,
                         color: "white",
                         "&:hover": {
-                          borderColor: theme.palette.darkred.main,
-                          backgroundColor: "rgba(255, 0, 0, 0.1)",
+                          backgroundColor: theme.palette.darkred.main,
+                          transform: "scale(1.05)",
+                          transition: "all 0.3s ease-in-out",
                         },
                       }}
                     >
@@ -255,4 +261,4 @@ const ServicesPage = () => {
   );
 };
 
-export default ServicesPage;
+export default Transition(ServicesPage);

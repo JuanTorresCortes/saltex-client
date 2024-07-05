@@ -11,6 +11,9 @@ import ServicesPage from "./Pages/ServicesPage";
 import Footer from "./components/Footer";
 import ServiceDisplayPage from "./Pages/ServiceDisplayPage";
 
+import "./TransitionStyles.css";
+import { AnimatePresence } from "framer-motion";
+
 function App() {
   return (
     <Router>
@@ -31,23 +34,24 @@ function App() {
         }}
       >
         <Box>
-          {" "}
-          // responsive brake points xs=0,sm=600,md=900,lg=1200,xl=1536{" "}
           {/* Responsive padding-top */}
-          <Routes>
-            {/* Home page route */}
-            <Route path="/" element={<MyHeroPage />} /> {/* About page route */}
-            {/* About page route */}
-            <Route path="/about" element={<AboutPage />} />{" "}
-            {/* Contact page route */}
-            <Route path="/contact" element={<ContactPage />} />{" "}
-            {/* Projects  route */}
-            <Route path="/projects" element={<ProjectsPage />} />{" "}
-            <Route path="/projects/:id" element={<ProjectsDisplayPage />} />
-            {/* Services page route */}
-            <Route path="/services" element={<ServicesPage />} />{" "}
-            <Route path="/services/:id" element={<ServiceDisplayPage />} />
-          </Routes>
+          <AnimatePresence mode="wait">
+            <Routes>
+              {/* Home page route */}
+              <Route path="/" element={<MyHeroPage />} />{" "}
+              {/* About page route */}
+              {/* About page route */}
+              <Route path="/about" element={<AboutPage />} />{" "}
+              {/* Contact page route */}
+              <Route path="/contact" element={<ContactPage />} />{" "}
+              {/* Projects  route */}
+              <Route path="/projects" element={<ProjectsPage />} />{" "}
+              <Route path="/projects/:id" element={<ProjectsDisplayPage />} />
+              {/* Services page route */}
+              <Route path="/services" element={<ServicesPage />} />{" "}
+              <Route path="/services/:id" element={<ServiceDisplayPage />} />
+            </Routes>
+          </AnimatePresence>
           <Footer /> {/* Footer component */}
         </Box>
       </Box>

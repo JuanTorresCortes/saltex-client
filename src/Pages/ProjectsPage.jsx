@@ -17,6 +17,7 @@ import projects from "../data/projects"; // Import the projects array
 import MyNavBar from "../components/MyNavBar";
 import ActionBanner from "../components/ActionBanner";
 import waveBackground from "../img/wave_background.png";
+import Transition from "../components/Transition";
 
 const ProjectsPage = () => {
   const theme = useTheme();
@@ -61,7 +62,7 @@ const ProjectsPage = () => {
           textAlign: "center",
           padding: "20px",
           position: "relative",
-          mt: 148,
+          mt: { xs: 480, sm: 312, md: 281, lg: 200, xl: 177 }, // responsive breakpoints xs=0, sm=600, md=900, lg=1200, xl=1536
         }}
       >
         <Container
@@ -99,6 +100,10 @@ const ProjectsPage = () => {
                   maxWidth: 345,
                   backgroundColor: "rgba(0, 0, 0, 0.7)",
                   border: `3px solid ${theme.palette.darkgray.main}`,
+                  "&:hover": {
+                    transform: "scale(1.05)",
+                    transition: "all 0.3s ease-in-out",
+                  },
                 }}
               >
                 <CardMedia
@@ -151,8 +156,9 @@ const ProjectsPage = () => {
                       backgroundColor: theme.palette.darkred.main,
                       color: "white",
                       "&:hover": {
-                        borderColor: theme.palette.darkred.main,
-                        backgroundColor: "rgba(255, 0, 0, 0.1)",
+                        backgroundColor: theme.palette.darkred.main,
+                        transform: "scale(1.05)",
+                        transition: "all 0.3s ease-in-out",
                       },
                     }}
                   >
@@ -169,4 +175,4 @@ const ProjectsPage = () => {
   );
 };
 
-export default ProjectsPage;
+export default Transition(ProjectsPage);

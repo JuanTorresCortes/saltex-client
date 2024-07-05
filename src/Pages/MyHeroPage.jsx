@@ -10,6 +10,7 @@ import ClientReviews from "../components/ClientReviews";
 import ActionBanner from "../components/ActionBanner";
 import ServicesSwiper from "../components/servicesSwiper";
 import ProjectsSwiper from "../components/ProjectsSwiper";
+import Transition from "../components/Transition";
 
 const MyHeroPage = () => {
   const theme = useTheme();
@@ -46,7 +47,7 @@ const MyHeroPage = () => {
             bottom: 0,
             left: 0,
             right: 0,
-            padding: "20px",
+            padding: "2px",
             paddingTop: isSmallScreen ? "80px" : "20px", // Add padding on top for smaller screens
           }}
         >
@@ -59,32 +60,35 @@ const MyHeroPage = () => {
             specializing in steel construction.
           </Typography>
 
-          <Typography variant="body1" sx={{ mt: 2 }}>
+          <Typography
+            variant="body1"
+            sx={{ mt: 2, backgroundColor: "rgba(0, 0, 0, 0.8)" }}
+          >
             <strong>
               Headquartered in Houston, we proudly serve clients both locally
               and across the nation, delivering unparalleled quality and
               expertise in every project.
             </strong>
             <br />
-            <Button
-              variant="outlined"
-              sx={{
-                mb: 2,
-                mt: 2,
-                borderColor: theme.palette.darkred.main,
-                color: theme.palette.darkred.main,
-                backgroundColor: "black",
-                "&:hover": {
-                  borderColor: theme.palette.darkred.main,
-                  backgroundColor: "#141424",
-                },
-              }}
-            >
-              <a href="/about" style={{ color: theme.palette.darkred.main }}>
-                LEARN MORE
-              </a>
-            </Button>
           </Typography>
+          <Button
+            variant="outlined"
+            sx={{
+              mb: 2,
+              mt: 2,
+              borderColor: theme.palette.darkred.main,
+              color: theme.palette.darkred.main,
+              backgroundColor: "black",
+              "&:hover": {
+                borderColor: theme.palette.darkred.main,
+                backgroundColor: "#141424",
+              },
+            }}
+          >
+            <a href="/about" style={{ color: theme.palette.darkred.main }}>
+              LEARN MORE
+            </a>
+          </Button>
         </Container>
       </Box>
       <ServicesSwiper />
@@ -103,4 +107,4 @@ const MyHeroPage = () => {
   );
 };
 
-export default MyHeroPage;
+export default Transition(MyHeroPage);

@@ -7,6 +7,7 @@ import Stats from "../components/Stats";
 import { useNavigate } from "react-router-dom";
 import MyNavBar from "../components/MyNavBar";
 import diagonalBackground from "../img/diagonal_Background.png";
+import Transition from "../components/Transition";
 
 const AboutPage = () => {
   const theme = useTheme(); // Use Material-UI's theme for consistent styling
@@ -120,4 +121,4 @@ const AboutPage = () => {
   );
 };
 
-export default AboutPage;
+export default Transition(AboutPage);

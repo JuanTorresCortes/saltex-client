@@ -17,6 +17,7 @@ import "../swipersStyles/autoplaySwiper.css";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import Transition from "../components/Transition";
 
 const ServiceDisplayPage = () => {
   const { id } = useParams();
@@ -148,4 +149,4 @@ const ServiceDisplayPage = () => {
   );
 };
 
-export default ServiceDisplayPage;
+export default Transition(ServiceDisplayPage);

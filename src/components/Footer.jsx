@@ -179,7 +179,7 @@ const Footer = () => {
               >
                 CONTACT US
               </Link>
-              <Typography variant="body1" sx={{ mt: 2 }}>
+              {/* <Typography variant="body1" sx={{ mt: 2 }}>
                 <Link
                   href="tel:+8329017158"
                   sx={{
@@ -196,7 +196,7 @@ const Footer = () => {
                   </span>{" "}
                   {phoneNumber}
                 </Link>
-              </Typography>
+              </Typography> */}
             </Box>
           </Grid>
         </Grid>

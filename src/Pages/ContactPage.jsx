@@ -7,6 +7,7 @@ import { useTheme } from "@mui/material/styles";
 import MyNavBar from "../components/MyNavBar";
 import CalendlyScheduler from "../components/CalendlyScheduler";
 import diagonalBackground from "../img/diagonal_Background.png";
+import Transition from "../components/Transition";
 
 const ContactPage = () => {
   const form = useRef();
@@ -36,4 +37,4 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage;
+export default Transition(ContactPage);
