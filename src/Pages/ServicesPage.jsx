@@ -181,13 +181,15 @@ const ServicesPage = () => {
             Our Services
           </Typography>
           <Typography variant="body1" paragraph>
-            At SalTex Steel Construction, we offer a comprehensive range of
-            construction services tailored to meet the unique needs of each
-            project. Our expert team ensures the highest standards of quality,
-            safety, and efficiency in every job we undertake. From initial
-            planning and design to final construction and project management, we
-            are committed to delivering exceptional results on time and within
-            budget.
+            <strong>
+              At SalTex Steel Construction, we offer a comprehensive range of
+              construction services tailored to meet the unique needs of each
+              project. Our expert team ensures the highest standards of quality,
+              safety, and efficiency in every job we undertake. From initial
+              planning and design to final construction and project management,
+              we are committed to delivering exceptional results on time and
+              within budget.
+            </strong>
           </Typography>
         </Container>
       </Box>

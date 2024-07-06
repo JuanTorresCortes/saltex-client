@@ -82,7 +82,7 @@ const ServiceDisplayPage = () => {
               READ
             </Button>
             <Typography variant="body1" paragraph>
-              {service.description}
+              <strong>{service.description}</strong>
             </Typography>
             <Button
               variant="outlined"

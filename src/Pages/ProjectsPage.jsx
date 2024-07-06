@@ -78,15 +78,18 @@ const ProjectsPage = () => {
           }}
         >
           <Typography variant="h2" gutterBottom>
-            Our Projects
+            Our Portfolio
           </Typography>
           <Typography variant="body1" paragraph>
-            At SalTex Steel Construction, we take immense pride in the diverse
-            range of projects we have successfully completed. Each project is a
-            testament to our commitment to quality, innovation, and excellence.
-            From commercial buildings to residential complexes, our portfolio
-            showcases our ability to deliver exceptional results across various
-            sectors. Here are some highlights of our most notable projects.
+            <strong>
+              At SalTex Steel Construction, we take immense pride in the diverse
+              range of projects we have successfully completed. Each project is
+              a testament to our commitment to quality, innovation, and
+              excellence. From commercial buildings to residential complexes,
+              our portfolio showcases our ability to deliver exceptional results
+              across various sectors. Here are some highlights of our most
+              notable projects.
+            </strong>
           </Typography>
         </Container>
       </Box>

@@ -6,7 +6,7 @@ const CalendlyScheduler = () => {
   return (
     <Container>
       <Typography variant="h4" gutterBottom>
-        Schedule an Appointment
+        Schedule a consultation with us today!
       </Typography>
       <InlineWidget url="https://calendly.com/your-calendly-link" />
     </Container>

@@ -67,9 +67,9 @@ const ProjectsDisplayPage = () => {
             <Typography variant="h2" gutterBottom>
               {project.name}
             </Typography>
-            <Typography variant="body1" paragraph>
+            {/* <Typography variant="body1" paragraph>
               {project.description}
-            </Typography>
+            </Typography> */}
             <Button
               variant="outlined"
               startIcon={<VolumeUpIcon />}
@@ -179,9 +179,9 @@ const ProjectsDisplayPage = () => {
                 >
                   {project.clientReview.review}
                 </Typography>
-                <GoogleIcon sx={{ color: "white" }} />
+                {/* <GoogleIcon sx={{ color: "white" }} /> */}
               </Box>
-              <Typography variant="body2" align="right" sx={{ mt: 2 }}>
+              <Typography variant="body2" align="right">
                 {project.clientReview.author}
               </Typography>
             </Paper>
