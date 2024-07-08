@@ -17,7 +17,7 @@ import projects from "../data/projects"; // Import the projects array
 import MyNavBar from "../components/MyNavBar";
 import ActionBanner from "../components/ActionBanner";
 import waveBackground from "../img/wave_background.png";
-import Transition from "../components/Transition";
+import { motion } from "framer-motion";
 
 const ProjectsPage = () => {
   const theme = useTheme();
@@ -77,20 +77,27 @@ const ProjectsPage = () => {
             color: "white",
           }}
         >
-          <Typography variant="h2" gutterBottom>
-            Our Portfolio
-          </Typography>
-          <Typography variant="body1" paragraph>
-            <strong>
-              At SalTex Steel Construction, we take immense pride in the diverse
-              range of projects we have successfully completed. Each project is
-              a testament to our commitment to quality, innovation, and
-              excellence. From commercial buildings to residential complexes,
-              our portfolio showcases our ability to deliver exceptional results
-              across various sectors. Here are some highlights of our most
-              notable projects.
-            </strong>
-          </Typography>
+          <motion.p
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            exit={{ y: "-100%" }}
+            transition={{ duration: 0.5, delay: 0 }}
+          >
+            <Typography variant="h2" gutterBottom>
+              Our Portfolio
+            </Typography>
+            <Typography variant="body1" paragraph>
+              <strong>
+                At SalTex Steel Construction, we take immense pride in the
+                diverse range of projects we have successfully completed. Each
+                project is a testament to our commitment to quality, innovation,
+                and excellence. From commercial buildings to residential
+                complexes, our portfolio showcases our ability to deliver
+                exceptional results across various sectors. Here are some
+                highlights of our most notable projects.
+              </strong>
+            </Typography>
+          </motion.p>
         </Container>
       </Box>
 
@@ -178,4 +185,4 @@ const ProjectsPage = () => {
   );
 };
 
-export default Transition(ProjectsPage);
+export default ProjectsPage;

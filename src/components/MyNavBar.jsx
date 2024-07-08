@@ -72,8 +72,8 @@ const MyNavBar = () => {
       style={{
         backgroundColor: "black",
         boxShadow: "none",
-        borderBottom: `2px solid ${theme.palette.darkred.main}`,
-        borderTop: `2px solid ${theme.palette.darkred.main}`,
+        borderBottom: `1px solid ${theme.palette.darkred.main}`,
+        borderTop: `1px solid ${theme.palette.darkred.main}`,
       }}
     >
       <Container>

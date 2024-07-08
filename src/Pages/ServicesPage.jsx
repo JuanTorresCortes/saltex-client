@@ -37,7 +37,9 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import BuildCircleIcon from "@mui/icons-material/BuildCircle";
 import ConstructionIcon from "@mui/icons-material/Construction";
-import Transition from "../components/Transition";
+// import Transition from "../components/Transition";
+
+import { motion } from "framer-motion";
 
 const iconMapping = {
   MenuBookIcon: <MenuBookIcon sx={{ color: "white", fontSize: 40 }} />,
@@ -165,6 +167,7 @@ const ServicesPage = () => {
             }}
           />
         </Box>
+
         <Container
           sx={{
             backgroundColor: theme.palette.background.default,
@@ -177,20 +180,27 @@ const ServicesPage = () => {
             color: "white",
           }}
         >
-          <Typography variant="h2" gutterBottom>
-            Our Services
-          </Typography>
-          <Typography variant="body1" paragraph>
-            <strong>
-              At SalTex Steel Construction, we offer a comprehensive range of
-              construction services tailored to meet the unique needs of each
-              project. Our expert team ensures the highest standards of quality,
-              safety, and efficiency in every job we undertake. From initial
-              planning and design to final construction and project management,
-              we are committed to delivering exceptional results on time and
-              within budget.
-            </strong>
-          </Typography>
+          <motion.p
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            exit={{ y: "-100%" }}
+            transition={{ duration: 0.5, delay: 0 }}
+          >
+            <Typography variant="h2" gutterBottom>
+              Our Services
+            </Typography>
+            <Typography variant="body1" paragraph>
+              <strong>
+                At SalTex Steel Construction, we offer a comprehensive range of
+                construction services tailored to meet the unique needs of each
+                project. Our expert team ensures the highest standards of
+                quality, safety, and efficiency in every job we undertake. From
+                initial planning and design to final construction and project
+                management, we are committed to delivering exceptional results
+                on time and within budget.
+              </strong>
+            </Typography>
+          </motion.p>
         </Container>
       </Box>
 
@@ -263,4 +273,4 @@ const ServicesPage = () => {
   );
 };
 
-export default Transition(ServicesPage);
+export default ServicesPage;

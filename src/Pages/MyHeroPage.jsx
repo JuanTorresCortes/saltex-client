@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { Box, Typography, Button, Container } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import houston from "../img/houston.webp"; // Ensure this path is correct
@@ -11,11 +10,12 @@ import ActionBanner from "../components/ActionBanner";
 import ServicesSwiper from "../components/servicesSwiper";
 import ProjectsSwiper from "../components/ProjectsSwiper";
 import Transition from "../components/Transition";
+import { motion } from "framer-motion";
+import "../TitleStyles.css";
 
 const MyHeroPage = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
-  const navigate = useNavigate();
 
   return (
     <Box>
@@ -43,7 +43,7 @@ const MyHeroPage = () => {
           sx={{
             // backgroundColor: "rgba(0, 0, 0, 0.5)",
             zIndex: 2,
-            position: "absolute",
+            // position: "absolute",
             bottom: 0,
             left: 0,
             right: 0,
@@ -52,43 +52,70 @@ const MyHeroPage = () => {
           }}
         >
           <Typography
+            className="title-container"
             variant={isSmallScreen ? "h4" : "h2"} // Adjust variant for smaller screens
             gutterBottom
             sx={{ color: "white" }}
           >
-            SalTex Steel Construction is a premier commercial general contractor
-            specializing in steel construction.
+            <motion.p
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "-100%" }}
+              transition={{ duration: 0.5, delay: 0 }}
+            >
+              <span
+                style={{
+                  fontWeight: "bold",
+                  fontSize: isSmallScreen ? "1em" : "1em", // Adjust size as needed
+                  fontFamily: "Arial, sans-serif", // Choose a professional font
+                  color: "#fff", // Ensure the color matches the theme
+                }}
+              >
+                Saltex Steel Construction
+              </span>{" "}
+              is a premier commercial general contractor specializing in steel
+              construction.
+            </motion.p>
           </Typography>
 
-          <Typography
-            variant="body1"
-            sx={{ mt: 2, backgroundColor: "rgba(0, 0, 0, 0.8)" }}
+          <motion.p
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "-100%" }}
+            transition={{ duration: 0.5, delay: 0 }}
           >
-            <strong>
+            <Typography
+              variant="body1"
+              sx={{
+                mt: 2,
+                backgroundColor: "rgba(0, 0, 0, 0.8)",
+                overflow: "hidden",
+              }}
+            >
               Headquartered in Houston, we proudly serve clients both locally
               and across the nation, delivering unparalleled quality and
               expertise in every project.
-            </strong>
-            <br />
-          </Typography>
-          <Button
-            variant="outlined"
-            sx={{
-              mb: 2,
-              mt: 2,
-              borderColor: theme.palette.darkred.main,
-              color: theme.palette.darkred.main,
-              backgroundColor: "black",
-              "&:hover": {
+              <br />
+            </Typography>
+            <Button
+              variant="outlined"
+              sx={{
+                mb: 2,
+                mt: 2,
                 borderColor: theme.palette.darkred.main,
-                backgroundColor: "#141424",
-              },
-            }}
-          >
-            <a href="/about" style={{ color: theme.palette.darkred.main }}>
-              LEARN MORE
-            </a>
-          </Button>
+                color: theme.palette.darkred.main,
+                backgroundColor: "black",
+                "&:hover": {
+                  borderColor: theme.palette.darkred.main,
+                  backgroundColor: "#141424",
+                },
+              }}
+            >
+              <a href="/about" style={{ color: theme.palette.darkred.main }}>
+                LEARN MORE
+              </a>
+            </Button>
+          </motion.p>
         </Container>
       </Box>
       <ServicesSwiper />

@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import { Box } from "@mui/material";
 
 import MyHeroPage from "./Pages/MyHeroPage";
@@ -15,10 +20,9 @@ import "./TransitionStyles.css";
 import { AnimatePresence } from "framer-motion";
 
 function App() {
+  const location = useLocation();
   return (
-    <Router>
-      {" "}
-      {/* Setup router */}
+    <>
       <Box
         sx={{
           backgroundColor: "black",
@@ -36,7 +40,7 @@ function App() {
         <Box>
           {/* Responsive padding-top */}
           <AnimatePresence mode="wait">
-            <Routes>
+            <Routes location={location} key={location.pathname}>
               {/* Home page route */}
               <Route path="/" element={<MyHeroPage />} />{" "}
               {/* About page route */}
@@ -55,7 +59,7 @@ function App() {
           <Footer /> {/* Footer component */}
         </Box>
       </Box>
-    </Router>
+    </>
   );
 }
 

@@ -18,9 +18,9 @@ const Transition = (Page) => {
               <motion.div
                 key={blockIndex}
                 className="block"
-                initial={{ scaleY: 0 }}
-                animate={{ scaleY: 0 }}
-                exit={{ scaleY: 1 }}
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 0 }}
+                exit={{ scaleX: 1 }}
                 transition={{
                   duration: 1,
                   ease: [0.22, 1, 0.36, 1],
@@ -39,9 +39,9 @@ const Transition = (Page) => {
               <motion.div
                 key={blockIndex}
                 className="block"
-                initial={{ scaleY: 1 }}
-                animate={{ scaleY: 0 }}
-                exit={{ scaleY: 0 }}
+                initial={{ scaleX: 1 }}
+                animate={{ scaleX: 0 }}
+                exit={{ scaleX: 0 }}
                 transition={{
                   duration: 1,
                   ease: [0.22, 1, 0.36, 1],
