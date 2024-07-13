@@ -7,11 +7,13 @@ import Stats from "../components/Stats"; // Ensure this path is correct
 import MyNavBar from "../components/MyNavBar";
 import ClientReviews from "../components/ClientReviews";
 import ActionBanner from "../components/ActionBanner";
-import ServicesSwiper from "../components/servicesSwiper";
+import ServicesSwiper from "../components/ServicesSwiper";
 import ProjectsSwiper from "../components/ProjectsSwiper";
-import Transition from "../components/Transition";
 import { motion } from "framer-motion";
 import "../TitleStyles.css";
+import "../TransitionUpDown.css";
+
+import TransitionUpDown from "../components/TransitionUpDown";
 
 const MyHeroPage = () => {
   const theme = useTheme();
@@ -35,7 +37,7 @@ const MyHeroPage = () => {
           textAlign: "center",
           // padding: "20px",
           position: "relative",
-          mt: { xs: 626, sm: 396, md: 281, lg: 237, xl: 311 }, // responsive breakpoints xs=0, sm=600, md=900, lg=1200, xl=1536
+          mt: { xs: 626, sm: 396, md: 281, lg: 237, xl: 250 }, // responsive breakpoints xs=0, sm=600, md=900, lg=1200, xl=1536
         }}
       >
         <MyNavBar />
@@ -134,4 +136,4 @@ const MyHeroPage = () => {
   );
 };
 
-export default Transition(MyHeroPage);
+export default TransitionUpDown(MyHeroPage);

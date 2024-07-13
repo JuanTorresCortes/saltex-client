@@ -37,7 +37,7 @@ import pilar from "../img/pilar.png";
 const ProjectsSwiper = () => {
   const service = {
     id: 1,
-    title: "OUR PROJECTS",
+    title: "OUR PORTFOLIO",
     description:
       "SalTex Steel Construction has completed a variety of impactful projects across different sectors of our community. Our work spans education, healthcare, industrial, office, retail, religious, and more, showcasing our versatility and expertise. We have consistently delivered high-quality results, earning praise for our professionalism, attention to detail, and commitment to exceeding client expectations. Our projects are marked by innovative design, advanced technology integration, and a focus on creating functional and aesthetically pleasing spaces. Clients appreciate our responsiveness, adherence to budgets and timelines, and our dedication to quality and safety. At SalTex Steel Construction, we go above and beyond to ensure our clients' visions are realized with excellence.",
     icon: "ConstructionIcon",
@@ -80,7 +80,7 @@ const ProjectsSwiper = () => {
     <Box
       sx={{
         width: "100vw",
-        minHeight: "75vh",
+        minHeight: "auto",
         backgroundColor: "black",
         color: "white",
         display: "flex",
@@ -170,7 +170,7 @@ const ProjectsSwiper = () => {
                 href="/projects"
                 style={{ textDecoration: "none", color: "white" }}
               >
-                DISCOVER MORE PROJECTS
+                DISCOVER OUR PORTFOLIO
               </a>
             </Button>
           </Grid>

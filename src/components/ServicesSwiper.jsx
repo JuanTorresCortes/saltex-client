@@ -39,9 +39,7 @@ const ServicesSwiper = () => {
     id: 1,
     title: "OUR SERVICES",
     description:
-      "SalTex Steel Construction offers a diverse range of services designed to meet the needs of various industries. Our Structural Steel service specializes in the erection and assembly of steel frameworks, ensuring precision and stability for construction projects. We also provide Custom Manufacturing solutions, tailoring production to meet specific client requirements with high-quality and reliable products. Our Solar Installation services deliver sustainable energy solutions, designing and installing systems to help clients achieve energy independence. In the Healthcare sector, we construct hospitals and clinics, focusing on patient safety and efficient workflow. Our Corporate Office Construction services create modern and functional office spaces that enhance productivity and reflect company culture. Finally, our Hotel Construction services build luxurious and functional hotels that offer exceptional guest experiences, from concept to completion.",
-    icon: "ConstructionIcon",
-    image: welder,
+      "SalTex Steel Construction offers a diverse range of services designed to meet the needs of various industries. Our Structural Steel service specializes in the erection and assembly of steel frameworks, ensuring precision and stability for construction projects. We also provide Custom Manufacturing solutions, tailoring production to meet specific client requirements with high-quality and reliable products. Below is a comprehensive list of our services:",
     imagePortfolio: [
       pilar,
       welderInLift,
@@ -60,6 +58,23 @@ const ServicesSwiper = () => {
       hotel,
       welder,
       workersFraming,
+    ],
+    servicesProvided: [
+      "STRUCTURAL STEEL",
+      "CUSTOM MANUFACTURING",
+      "SOLAR",
+      "HEALTHCARE",
+      "CORPORATE",
+      "HOTEL",
+      "RELIGIOUS",
+      "RESTORATION",
+      "EDUCATION",
+      "RETAIL",
+      "GREEN BUILDING",
+      "DEMOLITION",
+      "PROJECT MANAGEMENT",
+      "MAINTENANCE SERVICES",
+      "INDUSTRIAL",
     ],
   };
 
@@ -80,7 +95,7 @@ const ServicesSwiper = () => {
     <Box
       sx={{
         width: "100vw",
-        minHeight: "75vh",
+        minHeight: "auto",
         backgroundColor: "black",
         color: "white",
         display: "flex",
@@ -131,7 +146,7 @@ const ServicesSwiper = () => {
                 href="/services"
                 style={{ textDecoration: "none", color: "white" }}
               >
-                DISCOVER MORE SERVICES
+                DISCOVER OUR SERVICES
               </a>
             </Button>
           </Grid>

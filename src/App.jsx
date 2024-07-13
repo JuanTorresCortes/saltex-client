@@ -17,6 +17,7 @@ import Footer from "./components/Footer";
 import ServiceDisplayPage from "./Pages/ServiceDisplayPage";
 
 import "./TransitionStyles.css";
+import "./TransitionUpDown.css";
 import { AnimatePresence } from "framer-motion";
 
 function App() {
