@@ -39,6 +39,8 @@ const ClientReviews = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        borderTop: `1px solid ${theme.palette.darkred.main}`,
+        borderBottom: `1px solid ${theme.palette.darkred.main}`,
       }}
     >
       <Box
@@ -50,7 +52,12 @@ const ClientReviews = () => {
           alignItems: "center",
         }}
       >
-        <Box sx={{ textAlign: "center", paddingBottom: 4 }}>
+        <Box
+          sx={{
+            textAlign: "center",
+            paddingBottom: 4,
+          }}
+        >
           <Typography variant="h4" sx={{ color: "white", fontWeight: "bold" }}>
             WHAT
             <br />

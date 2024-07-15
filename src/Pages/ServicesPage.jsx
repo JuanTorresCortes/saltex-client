@@ -87,10 +87,9 @@ const ServicesPage = () => {
         textAlign: "center",
         position: "relative",
         overflow: "hidden",
-        mt: { xs: 118, sm: 108, md: 49, lg: 38, xl: 276 }, // responsive breakpoints xs=0,sm=600,md=900,lg=1200,xl=1536
+        mt: { xs: 800, sm: 440, md: 281, lg: 237, xl: 250 }, // responsive breakpoints xs=0, sm=600, md=900, lg=1200, xl=1536
       }}
     >
-      <MyNavBar sx={{ backgroundColor: "rgba(0, 0, 0, 0.7)", mb: 5 }} />
       <Box
         sx={{
           display: "flex",

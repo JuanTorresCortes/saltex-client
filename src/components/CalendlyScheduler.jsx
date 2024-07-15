@@ -13,7 +13,7 @@ const CalendlyScheduler = () => {
           exit={{ x: "-100%" }}
           transition={{ duration: 0.5, delay: 0 }}
         >
-          Schedule a consultation with us today!
+          Schedule a consultation.
         </motion.p>
       </Typography>
       <InlineWidget url="https://calendly.com/your-calendly-link" />

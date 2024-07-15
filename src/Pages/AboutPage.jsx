@@ -43,8 +43,6 @@ const AboutPage = () => {
         mt: { xs: 220, sm: 128, md: 49, lg: 38, xl: 38 }, // responsive brake points xs=0,sm=600,md=900,lg=1200,xl=1536}
       }}
     >
-      <MyNavBar sx={{ backgroundColor: "rgba(0, 0, 0, 0.7)", mb: 5 }} />{" "}
-      {/* Navigation bar with semi-transparent background */}
       <Box
         sx={{
           // p: 3,
@@ -55,7 +53,7 @@ const AboutPage = () => {
           <Grid item xs={12} md={6}>
             {/* Text content */}
             <Typography variant="h2" gutterBottom>
-              About SalTex Steel Construction
+              Who we are
             </Typography>
             <Typography variant="body1" paragraph>
               Excellence on Time, Within Your Budget. Located in the heart of

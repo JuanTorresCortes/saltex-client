@@ -45,7 +45,6 @@ const ProjectsPage = () => {
         mt: 0,
       }}
     >
-      <MyNavBar sx={{ backgroundColor: "rgba(0, 0, 0, 0.7)", mb: 5 }} />
       <Box
         sx={{
           backgroundImage: `url(${workersFraming})`,
@@ -62,7 +61,7 @@ const ProjectsPage = () => {
           textAlign: "center",
           padding: "20px",
           position: "relative",
-          mt: { xs: 480, sm: 312, md: 281, lg: 200, xl: 177 }, // responsive breakpoints xs=0, sm=600, md=900, lg=1200, xl=1536
+          mt: { xs: 475, sm: 296, md: 169, lg: 184, xl: 177 }, // responsive breakpoints xs=0, sm=600, md=900, lg=1200, xl=1536
         }}
       >
         <Container
@@ -140,23 +139,6 @@ const ProjectsPage = () => {
                     {project.description}
                   </Typography>
                 </CardContent>
-                {/* <CardActions>
-                  <Button
-                    onClick={handleProjectClick(project.id)}
-                    size="small"
-                    variant="outline"
-                    sx={{
-                      borderColor: theme.palette.darkred.main,
-                      color: theme.palette.darkred.main,
-                      "&:hover": {
-                        borderColor: theme.palette.darkred.main,
-                        backgroundColor: "rgba(255, 0, 0, 0.1)",
-                      },
-                    }}
-                  >
-                    Learn More
-                  </Button>
-                </CardActions> */}
                 <CardActions sx={{ justifyContent: "center" }}>
                   <Button
                     onClick={handleProjectClick(project.id)}

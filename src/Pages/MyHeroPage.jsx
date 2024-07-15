@@ -4,7 +4,6 @@ import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import houston from "../img/houston.webp"; // Ensure this path is correct
 import Stats from "../components/Stats"; // Ensure this path is correct
-import MyNavBar from "../components/MyNavBar";
 import ClientReviews from "../components/ClientReviews";
 import ActionBanner from "../components/ActionBanner";
 import ServicesSwiper from "../components/ServicesSwiper";
@@ -27,7 +26,7 @@ const MyHeroPage = () => {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
-          minHeight: "75vh",
+          minHeight: "100vh",
           width: "100vw",
           display: "flex",
           flexDirection: "column",
@@ -35,12 +34,10 @@ const MyHeroPage = () => {
           justifyContent: "center",
           color: "white",
           textAlign: "center",
-          // padding: "20px",
           position: "relative",
-          mt: { xs: 626, sm: 396, md: 281, lg: 237, xl: 250 }, // responsive breakpoints xs=0, sm=600, md=900, lg=1200, xl=1536
+          mt: { xs: 574, sm: 440, md: 281, lg: 237, xl: 250 }, // responsive breakpoints xs=0, sm=600, md=900, lg=1200, xl=1536
         }}
       >
-        <MyNavBar />
         <Container
           sx={{
             // backgroundColor: "rgba(0, 0, 0, 0.5)",
@@ -64,18 +61,14 @@ const MyHeroPage = () => {
               animate={{ y: 0 }}
               exit={{ y: "-100%" }}
               transition={{ duration: 0.5, delay: 0 }}
+              style={{
+                fontWeight: "bold",
+                fontSize: isSmallScreen ? "1em" : "1em", // Adjust size as needed
+                fontFamily: "Arial, sans-serif", // Choose a professional font
+                color: "#fff", // Ensure the color matches the theme
+              }}
             >
-              <span
-                style={{
-                  fontWeight: "bold",
-                  fontSize: isSmallScreen ? "1em" : "1em", // Adjust size as needed
-                  fontFamily: "Arial, sans-serif", // Choose a professional font
-                  color: "#fff", // Ensure the color matches the theme
-                }}
-              >
-                Saltex Steel Construction
-              </span>{" "}
-              is a premier commercial general contractor specializing in steel
+              A commercial general contractor specializing in steel
               construction.
             </motion.p>
           </Typography>
@@ -89,7 +82,6 @@ const MyHeroPage = () => {
             <Typography
               variant="body1"
               sx={{
-                mt: 2,
                 backgroundColor: "rgba(0, 0, 0, 0.8)",
                 overflow: "hidden",
               }}
@@ -102,8 +94,8 @@ const MyHeroPage = () => {
             <Button
               variant="outlined"
               sx={{
-                mb: 2,
-                mt: 2,
+                mb: 1,
+                mt: 1,
                 borderColor: theme.palette.darkred.main,
                 color: theme.palette.darkred.main,
                 backgroundColor: "black",
@@ -120,15 +112,19 @@ const MyHeroPage = () => {
           </motion.p>
         </Container>
       </Box>
+
       <ServicesSwiper />
-      <Container>
+
+      <Container sx={{ mt: 3, mb: 3 }}>
         <Stats />
       </Container>
 
       <ProjectsSwiper />
+
       <Container>
         <ClientReviews />
       </Container>
+
       <Container>
         <ActionBanner />
       </Container>
