@@ -50,7 +50,7 @@ const ServiceDisplayPage = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        mt: { xs: 146, sm: 128, md: 49, lg: 38, xl: 38 }, // responsive brake points xs=0,sm=600,md=900,lg=1200,xl=1536}
+        mt: { xs: 148, sm: 128, md: 49, lg: 38, xl: 38 }, // responsive brake points xs=0,sm=600,md=900,lg=1200,xl=1536}
       }}
     >
       <MyNavBar sx={{ backgroundColor: "rgba(0, 0, 0, 0.7)", mb: 5 }} />
@@ -61,7 +61,14 @@ const ServiceDisplayPage = () => {
         }}
       >
         <Grid container spacing={3}>
-          <Grid item xs={12} md={6}>
+          <Grid
+            item
+            xs={12}
+            md={6}
+            sx={{
+              order: { xs: 2, md: 1 }, // Typography on bottom for xs screens
+            }}
+          >
             <Typography variant="h2" gutterBottom>
               {service.title}
             </Typography>
@@ -84,27 +91,36 @@ const ServiceDisplayPage = () => {
             <Typography variant="body1" paragraph>
               <strong>{service.description}</strong>
             </Typography>
-            <Button
-              variant="outlined"
-              sx={{
-                color: "white",
-                borderColor: theme.palette.darkred.main,
-                "&:hover": {
+            <Box sx={{ display: "flex", justifyContent: "center" }}>
+              <Button
+                variant="outlined"
+                sx={{
+                  color: "white",
                   borderColor: theme.palette.darkred.main,
-                  backgroundColor: "#141424",
-                },
-                mb: 2,
-              }}
-            >
-              <a
-                href="/services"
-                style={{ textDecoration: "none", color: "white" }}
+                  "&:hover": {
+                    borderColor: theme.palette.darkred.main,
+                    backgroundColor: "#141424",
+                  },
+                  mb: 2,
+                }}
               >
-                DISCOVER MORE SERVICES
-              </a>
-            </Button>
+                <a
+                  href="/services"
+                  style={{ textDecoration: "none", color: "white" }}
+                >
+                  DISCOVER MORE SERVICES
+                </a>
+              </Button>
+            </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid
+            item
+            xs={12}
+            md={6}
+            sx={{
+              order: { xs: 1, md: 2 }, // Swiper on top for xs screens
+            }}
+          >
             <Swiper
               spaceBetween={30}
               centeredSlides={true}

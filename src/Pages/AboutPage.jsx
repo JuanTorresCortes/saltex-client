@@ -40,7 +40,7 @@ const AboutPage = () => {
         color: "white", // White text color for contrast
         textAlign: "center",
         p: 2,
-        mt: { xs: 220, sm: 128, md: 49, lg: 38, xl: 38 }, // responsive brake points xs=0,sm=600,md=900,lg=1200,xl=1536}
+        mt: { xs: 200, sm: 128, md: 49, lg: 38, xl: 38 }, // responsive brake points xs=0,sm=600,md=900,lg=1200,xl=1536}
       }}
     >
       <Box
@@ -50,7 +50,7 @@ const AboutPage = () => {
         }}
       >
         <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} sx={{ order: { xs: 2, md: 1 } }}>
             {/* Text content */}
             <Typography variant="h2" gutterBottom>
               Who we are
@@ -104,7 +104,7 @@ const AboutPage = () => {
               <Stats />
             </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} sx={{ order: { xs: 1, md: 2 } }}>
             {/* Image container for the inspector image */}
             <Box
               component="img"
