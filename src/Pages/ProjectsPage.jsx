@@ -129,7 +129,7 @@ const ProjectsPage = () => {
                     component="div"
                     sx={{ color: "white" }}
                   >
-                    {project.name}
+                    {project.type}
                   </Typography>
                   <Typography
                     variant="body2"

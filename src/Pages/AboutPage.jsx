@@ -56,13 +56,12 @@ const AboutPage = () => {
               Who we are
             </Typography>
             <Typography variant="body1" paragraph>
-              Excellence on Time, Within Your Budget. Located in the heart of
-              Houston, SalTex Steel Construction is your premier commercial
-              general contractor. With a rich portfolio that spans the
-              commercial, retail, healthcare, office, hotel, and industrial
-              sectors, we excel in delivering custom-built construction
-              solutions. From crafting new interior build-outs to managing
-              comprehensive renovations and ground-up construction, our
+              Located in the heart of Houston, SalTex Steel Construction is your
+              premier commercial steel general contractor. With a rich portfolio
+              that spans the commercial, retail, healthcare, office, hotel, and
+              industrial sectors, we excel in delivering custom-built
+              construction solutions. From crafting new interior build-outs to
+              managing comprehensive renovations and ground-up construction, our
               commitment to punctuality and budget precision sets us apart.
               Trust SalTex Steel Construction to bring your vision to life with
               flawless execution and strategic expertise.

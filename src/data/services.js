@@ -21,7 +21,7 @@ const services = [
     description:
       "We specialize in the erection and assembly of structural steel frameworks for a variety of construction projects. Our team is experienced in working with complex steel structures, ensuring precision and stability in every project. We use high-quality materials and advanced techniques to construct durable and reliable frameworks. Our services include everything from initial design and planning to final assembly and inspection. Our goal is to provide strong and dependable structural solutions that support the overall integrity and longevity of the building.",
     icon: "ConstructionIcon",
-    image: welder,
+    image: welderInLift,
     imagePortfolio: [
       welder,
       hotel,
@@ -314,7 +314,7 @@ const services = [
     description:
       "Our ongoing maintenance services are designed to keep commercial buildings in excellent condition. We offer a range of maintenance services, including regular inspections, repairs, and preventative maintenance. Our team works proactively to identify and address potential issues before they become major problems. We tailor our maintenance plans to meet the specific needs of each building, ensuring that it remains functional and safe for occupants. Our goal is to extend the lifespan of buildings and reduce the need for costly repairs and downtime.",
     icon: "BuildCircleIcon",
-    image: welderInLift,
+    image: welder,
     imagePortfolio: [
       welderInLift,
       hotel,

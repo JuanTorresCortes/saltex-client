@@ -15,9 +15,9 @@ import welderInLift from "../img/welder-in-lift.png";
 const projects = [
   {
     id: 1,
-    type: "education",
-    name: "Education project 1",
-    description: "Description for Education",
+    type: "Education Project",
+    name: "Magnolia ISD",
+    description: "Magnolia ISD: 2022",
     summary:
       "This project focused on enhancing educational facilities to create a better learning environment for students. We implemented modern classroom technologies, upgraded libraries, and constructed new learning spaces to support diverse educational needs.",
     image: education,
@@ -48,9 +48,9 @@ const projects = [
   },
   {
     id: 2,
-    type: "healthcare",
-    name: "Healthcare project 2",
-    description: "Description for Healthcare",
+    type: "Healthcare Project",
+    name: "Quest Diagnostics",
+    description: "Quest Diagnostics: 2022",
     summary:
       "This project aimed at improving healthcare infrastructure to provide better medical services and facilities. We developed state-of-the-art medical centers, equipped them with advanced medical technologies, and ensured the highest standards of patient care and comfort.",
     image: healthcare,
@@ -70,7 +70,7 @@ const projects = [
       welderInLift,
     ],
     clientReview: {
-      company: "Quest",
+      company: "Quest Diagnostics",
       name: "Giana Torres",
       review:
         "The team was responsive and professional, and the work was completed on time and within budget. We were impressed with the quality of the work and the attention to detail.",
@@ -81,9 +81,9 @@ const projects = [
   },
   {
     id: 3,
-    type: "industrial",
-    name: "Industrial project 3",
-    description: "Description for Industrial",
+    type: "Industrial Project",
+    name: "Amazon",
+    description: "Amazon: 2018",
     summary:
       "This project involved upgrading industrial sites to boost productivity and efficiency in manufacturing processes. We restructured production lines, implemented new machinery, and optimized workflows to meet the demands of modern industrial operations.",
     image: industrial,
@@ -114,9 +114,9 @@ const projects = [
   },
   {
     id: 4,
-    type: "office",
-    name: "Office project 4",
-    description: "Description for Office",
+    type: "Office project",
+    name: "ITT Technologies",
+    description: "ITT Technologies: 2020",
     summary:
       "This project was focused on designing and constructing modern office spaces to enhance workplace productivity. We incorporated open-plan layouts, ergonomic furniture, and advanced communication systems to create a conducive working environment.",
     image: office,
@@ -136,7 +136,7 @@ const projects = [
       welderInLift,
     ],
     clientReview: {
-      company: "Yo-Mama IT",
+      company: "ITT Technologies",
       name: "Monica Sanchez",
       review:
         "The team was responsive and professional, and the work was completed on time and within budget. We were impressed with the quality of the work and the attention to detail.",
@@ -147,9 +147,9 @@ const projects = [
   },
   {
     id: 5,
-    type: "retail",
-    name: "Retail project 5",
-    description: "Description for Retail",
+    type: "Retail Project",
+    name: "Quick-y Mart",
+    description: "Quick-y Mart: 2017",
     summary:
       "This project included developing retail spaces to provide a better shopping experience for customers. We designed inviting store layouts, improved accessibility, and integrated technology-driven solutions to enhance customer engagement and sales.",
     image: retail,
@@ -180,9 +180,9 @@ const projects = [
   },
   {
     id: 6,
-    type: "religious",
-    name: "Religious project 6",
-    description: "Description for Religious",
+    type: "Religious Project",
+    name: "Al Mosque",
+    description: "Al Mosque: 2019",
     summary:
       "This project involved constructing and renovating religious buildings to support community worship and gatherings. We focused on creating serene and inspiring spaces, preserving architectural heritage, and accommodating the needs of diverse congregations.",
     image: religious,
@@ -201,8 +201,8 @@ const projects = [
       welderInLift,
     ],
     clientReview: {
-      company: "al-Quran-Boom",
-      name: "Mohamed Jehad",
+      company: "Al Mosque",
+      name: "john doe",
       review:
         "The team was responsive and professional, and the work was completed on time and within budget. We were impressed with the quality of the work and the attention to detail.",
       author: "Google",
@@ -212,9 +212,9 @@ const projects = [
   },
   {
     id: 7,
-    type: "restoration",
-    name: "Restoration project 7",
-    description: "Description for Restoration",
+    type: "Restoration Project",
+    name: "The Apartments",
+    description: "The Apartments: 2020",
     summary:
       "This project focused on restoring and preserving historic buildings to maintain cultural heritage. We employed traditional techniques and materials to retain the original character while ensuring the structures meet modern safety and usability standards.",
     image: restoration,
@@ -234,7 +234,7 @@ const projects = [
       welderInLift,
     ],
     clientReview: {
-      company: "Google",
+      company: "The Apartments",
       name: "John Stone",
       review:
         "The team was responsive and professional, and the work was completed on time and within budget. We were impressed with the quality of the work and the attention to detail.",
@@ -245,9 +245,9 @@ const projects = [
   },
   {
     id: 8,
-    type: "hospitality",
-    name: "Hospitality project 8",
-    description: "Description for Hospitality",
+    type: "Hospitality Project",
+    name: "Hilton",
+    description: "Hilton: 2021",
     summary:
       "This project aimed at developing hospitality facilities to enhance guest experiences and services. We designed luxurious hotel interiors, upgraded amenities, and incorporated sustainable practices to provide a memorable and eco-friendly stay for guests.",
     image: hotel,
@@ -268,7 +268,7 @@ const projects = [
     ],
     clientReview: {
       company: "Hilton",
-      name: "Bill Clinton",
+      name: "Paris Hilton",
       review:
         "The team was responsive and professional, and the work was completed on time and within budget. We were impressed with the quality of the work and the attention to detail.",
       author: "Google",
@@ -278,9 +278,9 @@ const projects = [
   },
   {
     id: 9,
-    type: "solar",
-    name: "Solar project 9",
-    description: "Description for Solar",
+    type: "Solar Project",
+    name: "University of Houston",
+    description: "University of Houston: 2022",
     summary:
       "This project was focused on installing solar energy systems to promote sustainable and renewable energy use. We deployed high-efficiency solar panels, optimized energy storage solutions, and provided comprehensive maintenance to ensure long-term benefits.",
     image: solar,
