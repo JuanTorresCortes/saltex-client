@@ -167,7 +167,7 @@ const ProjectsSwiper = () => {
               }}
             >
               <a
-                href="/projects"
+                href="/portfolio"
                 style={{ textDecoration: "none", color: "white" }}
               >
                 DISCOVER OUR PORTFOLIO

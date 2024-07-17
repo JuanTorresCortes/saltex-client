@@ -155,9 +155,9 @@ const MyNavBar = () => {
                 SERVICES
               </MuiLink>
               <MuiLink
-                href="/projects"
+                href="/portfolio"
                 sx={{
-                  color: location.pathname.includes("projects")
+                  color: location.pathname.includes("portfolio")
                     ? theme.palette.darkred.main
                     : "white",
                   textDecoration: "none",

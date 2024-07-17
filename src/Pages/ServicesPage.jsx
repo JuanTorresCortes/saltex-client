@@ -87,7 +87,7 @@ const ServicesPage = () => {
         textAlign: "center",
         position: "relative",
         overflow: "hidden",
-        mt: { xs: 800, sm: 440, md: 281, lg: 237, xl: 250 }, // responsive breakpoints xs=0, sm=600, md=900, lg=1200, xl=1536
+        mt: { xs: 802, sm: 440, md: 281, lg: 237, xl: 250 }, // responsive breakpoints xs=0, sm=600, md=900, lg=1200, xl=1536
       }}
     >
       <Box

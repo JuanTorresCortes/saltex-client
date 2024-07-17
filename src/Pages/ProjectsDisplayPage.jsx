@@ -219,7 +219,7 @@ const ProjectsDisplayPage = () => {
             }}
           >
             <a
-              href="/projects"
+              href="/portfolio"
               style={{ textDecoration: "none", color: "white" }}
             >
               DISCOVER MORE PROJECTS
