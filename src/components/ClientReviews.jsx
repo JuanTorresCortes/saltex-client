@@ -5,21 +5,21 @@ import { useNavigate } from "react-router-dom";
 
 const reviews = [
   {
-    client: "Mark Zuckerberg",
+    client: "Mark Zucker",
     company: "Facebook",
     text: `"The quality of work and communication throughout the project was excellent. I would highly recommend SalTex for any construction and engineering services."`,
     author: "Google",
     rating: 5,
   },
   {
-    client: "Elon Musk",
+    client: "Elon Musketeer",
     company: "SpaceX",
     text: `"The construction work was top-notch and completed on time with great attention to detail. I Highly recommend SalTex Steel Construction for any commercial construction project."`,
     author: "Yelp",
     rating: 4.5,
   },
   {
-    client: "Jeff Bezos",
+    client: "Jeff Bozos",
     company: "Amazon",
     text: `"SalTex Steel Construction has been a great partner for us. They have provided excellent service and have been very responsive to our needs. I highly recommend them for any construction project."`,
     author: "LinkedIn",
