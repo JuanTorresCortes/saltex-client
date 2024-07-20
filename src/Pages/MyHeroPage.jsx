@@ -35,7 +35,7 @@ const MyHeroPage = () => {
           color: "white",
           textAlign: "center",
           position: "relative",
-          mt: { xs: 600, sm: 440, md: 300, lg: 237, xl: 250 }, // responsive breakpoints xs=0, sm=600, md=900, lg=1200, xl=1536
+          mt: { xs: 630, sm: 440, md: 300, lg: 237, xl: 250 }, // responsive breakpoints xs=0, sm=600, md=900, lg=1200, xl=1536
         }}
       >
         <Container
