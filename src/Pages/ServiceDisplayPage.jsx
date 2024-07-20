@@ -7,6 +7,7 @@ import { useTheme } from "@mui/material/styles";
 import { Swiper, SwiperSlide } from "swiper/react";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import waveBackground from "../img/wave_background.png";
+import { useNavigate } from "react-router-dom";
 
 // Import Swiper styles
 import "swiper/css";
@@ -20,6 +21,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Transition from "../components/Transition";
 
 const ServiceDisplayPage = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
   const service = services.find((service) => service.id === parseInt(id));
   const theme = useTheme();
@@ -38,6 +40,10 @@ const ServiceDisplayPage = () => {
   if (!service) {
     return <Typography variant="h4">Service not found</Typography>;
   }
+
+  const handleDiscoverMoreServices = () => {
+    navigate("/services");
+  };
 
   return (
     <Box
@@ -91,7 +97,24 @@ const ServiceDisplayPage = () => {
             <Typography variant="body1" paragraph>
               <strong>{service.description}</strong>
             </Typography>
-            <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <Box sx={{ display: "flex", justifyContent: "space-evenly" }}>
+              <Button
+                onClick={() => handleDiscoverMoreServices()}
+                variant="outlined"
+                sx={{
+                  color: "white",
+                  borderColor: theme.palette.darkred.main,
+                  "&:hover": {
+                    borderColor: theme.palette.darkred.main,
+                    backgroundColor: "#141424",
+                  },
+                  mb: 2,
+                }}
+              >
+                DISCOVER MORE SERVICES
+              </Button>
+
+              <br />
               <Button
                 variant="outlined"
                 sx={{
@@ -105,10 +128,10 @@ const ServiceDisplayPage = () => {
                 }}
               >
                 <a
-                  href="/services"
+                  href="/contact"
                   style={{ textDecoration: "none", color: "white" }}
                 >
-                  DISCOVER MORE SERVICES
+                  SCHEDULE A ONE ON ONE
                 </a>
               </Button>
             </Box>

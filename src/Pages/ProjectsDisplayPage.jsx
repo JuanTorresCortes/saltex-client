@@ -205,7 +205,7 @@ const ProjectsDisplayPage = () => {
             </Paper>
           </Box>
         </Box>
-        <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
+        <Box sx={{ display: "flex", justifyContent: "space-evenly", mt: 2 }}>
           <Button
             variant="outlined"
             sx={{
@@ -223,6 +223,26 @@ const ProjectsDisplayPage = () => {
               style={{ textDecoration: "none", color: "white" }}
             >
               DISCOVER MORE PROJECTS
+            </a>
+          </Button>
+          <br />
+          <Button
+            variant="outlined"
+            sx={{
+              color: "white",
+              borderColor: theme.palette.darkred.main,
+              "&:hover": {
+                borderColor: theme.palette.darkred.main,
+                backgroundColor: "#141424",
+              },
+              mb: 2,
+            }}
+          >
+            <a
+              href="/contact"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              SCHEDULE A ONE ON ONE
             </a>
           </Button>
         </Box>

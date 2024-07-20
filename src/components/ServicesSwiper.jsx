@@ -38,8 +38,14 @@ const ServicesSwiper = () => {
   const service = {
     id: 1,
     title: "OUR SERVICES",
-    description:
-      "SalTex Steel Construction offers a diverse range of services designed to meet the needs of various industries. Our Structural Steel service specializes in the erection and assembly of steel frameworks, ensuring precision and stability for construction projects. We also provide Custom Manufacturing solutions, tailoring production to meet specific client requirements with high-quality and reliable products. Below is a comprehensive list of our services:",
+    description: `SalTex Steel Construction offers a diverse range of services designed to meet the needs of various industries. 
+  Our Structural Steel service specializes in the erection and assembly of steel frameworks, ensuring precision and stability for construction projects. 
+  We also provide Custom Manufacturing solutions, tailoring production to meet specific client requirements with high-quality and reliable products.
+  Our Engineering services deliver comprehensive solutions for construction projects, from design to maintenance.
+  Our Light Gauge Framing service offers cost-effective and versatile solutions for commercial projects.
+  The Ground Up Package provides a complete construction service from concept to completion.
+  We also offer Consultation services, providing expert advice and planning for commercial construction projects.
+  Below is a comprehensive list of our services:`,
     imagePortfolio: [
       pilar,
       welderInLift,

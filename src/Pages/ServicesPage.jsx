@@ -1,4 +1,7 @@
 import React from "react";
+import { useTheme } from "@mui/material/styles";
+import { motion } from "framer-motion";
+
 import {
   Container,
   Typography,
@@ -10,7 +13,7 @@ import {
   CardMedia,
   Button,
 } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
+
 import workerGrinding from "../img/worker-grinding.png";
 import solar from "../img/solar.png";
 import welderOnTop from "../img/welder-on-top.png";
@@ -22,49 +25,27 @@ import services from "../data/services";
 import waveBackground from "../img/wave_background.png";
 
 // Import icons
-import MenuBookIcon from "@mui/icons-material/MenuBook";
 import PrecisionManufacturingIcon from "@mui/icons-material/PrecisionManufacturing";
-import BusinessIcon from "@mui/icons-material/Business";
-import LocalMallIcon from "@mui/icons-material/LocalMall";
-import SchoolIcon from "@mui/icons-material/School";
-import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
+import FoundationIcon from "@mui/icons-material/Foundation";
+import EngineeringIcon from "@mui/icons-material/Engineering";
+import HouseSidingIcon from "@mui/icons-material/HouseSiding";
+import SettingsSuggestIcon from "@mui/icons-material/SettingsSuggest";
 import CorporateFareIcon from "@mui/icons-material/CorporateFare";
-import HotelIcon from "@mui/icons-material/Hotel";
-import BuildIcon from "@mui/icons-material/Build";
-import WbSunnyIcon from "@mui/icons-material/WbSunny";
-import ForestIcon from "@mui/icons-material/Forest";
-import DeleteIcon from "@mui/icons-material/Delete";
-import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
-import BuildCircleIcon from "@mui/icons-material/BuildCircle";
-import ConstructionIcon from "@mui/icons-material/Construction";
-// import Transition from "../components/Transition";
-
-import { motion } from "framer-motion";
 
 const iconMapping = {
-  MenuBookIcon: <MenuBookIcon sx={{ color: "white", fontSize: 40 }} />,
-  PrecisionManufacturingIcon: (
+  ManufacturingIcon: (
     <PrecisionManufacturingIcon sx={{ color: "white", fontSize: 40 }} />
-  ),
-  BusinessIcon: <BusinessIcon sx={{ color: "white", fontSize: 40 }} />,
-  LocalMallIcon: <LocalMallIcon sx={{ color: "white", fontSize: 40 }} />,
-  SchoolIcon: <SchoolIcon sx={{ color: "white", fontSize: 40 }} />,
-  LocalHospitalIcon: (
-    <LocalHospitalIcon sx={{ color: "white", fontSize: 40 }} />
   ),
   CorporateFareIcon: (
     <CorporateFareIcon sx={{ color: "white", fontSize: 40 }} />
   ),
-  HotelIcon: <HotelIcon sx={{ color: "white", fontSize: 40 }} />,
-  BuildIcon: <BuildIcon sx={{ color: "white", fontSize: 40 }} />,
-  WbSunnyIcon: <WbSunnyIcon sx={{ color: "white", fontSize: 40 }} />,
-  ForestIcon: <ForestIcon sx={{ color: "white", fontSize: 40 }} />,
-  DeleteIcon: <DeleteIcon sx={{ color: "white", fontSize: 40 }} />,
-  CalendarTodayIcon: (
-    <CalendarTodayIcon sx={{ color: "white", fontSize: 40 }} />
+
+  FoundationIcon: <FoundationIcon sx={{ color: "white", fontSize: 40 }} />,
+  EngineeringIcon: <EngineeringIcon sx={{ color: "white", fontSize: 40 }} />,
+  HouseSidingIcon: <HouseSidingIcon sx={{ color: "white", fontSize: 40 }} />,
+  SettingsSuggestIcon: (
+    <SettingsSuggestIcon sx={{ color: "white", fontSize: 40 }} />
   ),
-  BuildCircleIcon: <BuildCircleIcon sx={{ color: "white", fontSize: 40 }} />,
-  ConstructionIcon: <ConstructionIcon sx={{ color: "white", fontSize: 40 }} />,
 };
 
 const ServicesPage = () => {
@@ -87,7 +68,7 @@ const ServicesPage = () => {
         textAlign: "center",
         position: "relative",
         overflow: "hidden",
-        mt: { xs: 802, sm: 440, md: 281, lg: 237, xl: 250 }, // responsive breakpoints xs=0, sm=600, md=900, lg=1200, xl=1536
+        mt: { xs: 370, sm: 244, md: 148, lg: 155, xl: 148 }, // responsive breakpoints xs=0, sm=600, md=900, lg=1200, xl=1536
       }}
     >
       <Box

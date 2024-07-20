@@ -106,7 +106,7 @@ const Footer = () => {
           <Grid item xs={12} md={3}>
             <Typography variant="h6">Address</Typography>
             <Typography variant="body1">
-              20 Hall dr. North, Suite 430 Montgomery, Texas 77316
+              18640 FM 1488 RD STE A-362 MAGNOLIA TX 77354-8516
             </Typography>
             <Typography variant="h6" sx={{ mt: 2 }}>
               Follow us
