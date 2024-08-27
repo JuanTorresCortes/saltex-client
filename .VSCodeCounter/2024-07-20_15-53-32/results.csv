@@ -1,0 +1,35 @@
+"filename", "language", "CSS", "JavaScript JSX", "JavaScript", "JSON", "Markdown", "HTML", "comment", "blank", "total"
+"/Users/juan/Desktop/saltex-website/saltex-client/README.md", "Markdown", 0, 0, 0, 0, 5, 0, 0, 4, 9
+"/Users/juan/Desktop/saltex-website/saltex-client/index.html", "HTML", 0, 0, 0, 0, 0, 12, 1, 2, 15
+"/Users/juan/Desktop/saltex-website/saltex-client/package-lock.json", "JSON", 0, 0, 0, 5882, 0, 0, 0, 1, 5883
+"/Users/juan/Desktop/saltex-website/saltex-client/package.json", "JSON", 0, 0, 0, 50, 0, 0, 0, 1, 51
+"/Users/juan/Desktop/saltex-website/saltex-client/src/App.css", "CSS", 126, 0, 0, 0, 0, 0, 2, 16, 144
+"/Users/juan/Desktop/saltex-website/saltex-client/src/App.jsx", "JavaScript JSX", 0, 41, 0, 0, 0, 0, 6, 5, 52
+"/Users/juan/Desktop/saltex-website/saltex-client/src/Pages/AboutPage.jsx", "JavaScript JSX", 0, 108, 0, 0, 0, 0, 6, 8, 122
+"/Users/juan/Desktop/saltex-website/saltex-client/src/Pages/ContactPage.jsx", "JavaScript JSX", 0, 35, 0, 0, 0, 0, 0, 4, 39
+"/Users/juan/Desktop/saltex-website/saltex-client/src/Pages/MyHeroPage.jsx", "JavaScript JSX", 0, 123, 0, 0, 0, 0, 2, 11, 136
+"/Users/juan/Desktop/saltex-website/saltex-client/src/Pages/ProjectsDisplayPage.jsx", "JavaScript JSX", 0, 244, 0, 0, 0, 0, 0, 11, 255
+"/Users/juan/Desktop/saltex-website/saltex-client/src/Pages/ProjectsPage.jsx", "JavaScript JSX", 0, 163, 0, 0, 0, 0, 2, 6, 171
+"/Users/juan/Desktop/saltex-website/saltex-client/src/Pages/ServiceDisplayPage.jsx", "JavaScript JSX", 0, 179, 0, 0, 0, 0, 3, 10, 192
+"/Users/juan/Desktop/saltex-website/saltex-client/src/Pages/ServicesPage.jsx", "JavaScript JSX", 0, 245, 0, 0, 0, 0, 1, 11, 257
+"/Users/juan/Desktop/saltex-website/saltex-client/src/Theme.jsx", "JavaScript JSX", 0, 34, 0, 0, 0, 0, 0, 3, 37
+"/Users/juan/Desktop/saltex-website/saltex-client/src/TitleStyles.css", "CSS", 5, 0, 0, 0, 0, 0, 0, 1, 6
+"/Users/juan/Desktop/saltex-website/saltex-client/src/TransitionStyles.css", "CSS", 27, 0, 0, 0, 0, 0, 0, 5, 32
+"/Users/juan/Desktop/saltex-website/saltex-client/src/TransitionUpDown.css", "CSS", 18, 0, 0, 0, 0, 0, 0, 2, 20
+"/Users/juan/Desktop/saltex-website/saltex-client/src/components/ActionBanner.jsx", "JavaScript JSX", 0, 52, 0, 0, 0, 0, 16, 4, 72
+"/Users/juan/Desktop/saltex-website/saltex-client/src/components/CalendlyScheduler.jsx", "JavaScript JSX", 0, 22, 0, 0, 0, 0, 0, 3, 25
+"/Users/juan/Desktop/saltex-website/saltex-client/src/components/ClientReviews.jsx", "JavaScript JSX", 0, 133, 0, 0, 0, 0, 0, 6, 139
+"/Users/juan/Desktop/saltex-website/saltex-client/src/components/Footer.jsx", "JavaScript JSX", 0, 192, 0, 0, 0, 0, 18, 4, 214
+"/Users/juan/Desktop/saltex-website/saltex-client/src/components/MyNavBar.jsx", "JavaScript JSX", 0, 208, 0, 0, 0, 0, 0, 6, 214
+"/Users/juan/Desktop/saltex-website/saltex-client/src/components/ProjectsSwiper.jsx", "JavaScript JSX", 0, 172, 0, 0, 0, 0, 4, 8, 184
+"/Users/juan/Desktop/saltex-website/saltex-client/src/components/ServicesSwiper.jsx", "JavaScript JSX", 0, 193, 0, 0, 0, 0, 4, 8, 205
+"/Users/juan/Desktop/saltex-website/saltex-client/src/components/Stats.jsx", "JavaScript JSX", 0, 63, 0, 0, 0, 0, 0, 3, 66
+"/Users/juan/Desktop/saltex-website/saltex-client/src/components/Transition.jsx", "JavaScript JSX", 0, 55, 0, 0, 0, 0, 0, 5, 60
+"/Users/juan/Desktop/saltex-website/saltex-client/src/components/TransitionUpDown.jsx", "JavaScript JSX", 0, 24, 0, 0, 0, 0, 0, 3, 27
+"/Users/juan/Desktop/saltex-website/saltex-client/src/data/projects.js", "JavaScript", 0, 0, 312, 0, 0, 0, 0, 3, 315
+"/Users/juan/Desktop/saltex-website/saltex-client/src/data/services.js", "JavaScript", 0, 0, 159, 0, 0, 0, 159, 4, 322
+"/Users/juan/Desktop/saltex-website/saltex-client/src/index.css", "CSS", 71, 0, 0, 0, 0, 0, 0, 10, 81
+"/Users/juan/Desktop/saltex-website/saltex-client/src/main.jsx", "JavaScript JSX", 0, 17, 0, 0, 0, 0, 0, 3, 20
+"/Users/juan/Desktop/saltex-website/saltex-client/src/swipersStyles/autoplaySwiper.css", "CSS", 62, 0, 0, 0, 0, 0, 1, 8, 71
+"/Users/juan/Desktop/saltex-website/saltex-client/vite.config.js", "JavaScript", 0, 0, 5, 0, 0, 0, 1, 2, 8
+"Total", "-", 309, 2303, 476, 5932, 5, 12, 226, 181, 9444

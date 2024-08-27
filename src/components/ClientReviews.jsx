@@ -3,24 +3,48 @@ import { Paper, Typography, Box, Button, Rating } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
 
+// const reviews = [
+//   {
+//     client: "Mark Zucker",
+//     company: "Facebook",
+//     text: `"The quality of work and communication throughout the project was excellent. I would highly recommend SalTex for any construction and engineering services."`,
+//     author: "Google",
+//     rating: 5,
+//   },
+//   {
+//     client: "Elon Musketeer",
+//     company: "SpaceX",
+//     text: `"The construction work was top-notch and completed on time with great attention to detail. I Highly recommend SalTex Steel Construction for any commercial construction project."`,
+//     author: "Yelp",
+//     rating: 4.5,
+//   },
+//   {
+//     client: "Jeff Bozos",
+//     company: "Amazon",
+//     text: `"SalTex Steel Construction has been a great partner for us. They have provided excellent service and have been very responsive to our needs. I highly recommend them for any construction project."`,
+//     author: "LinkedIn",
+//     rating: 4,
+//   },
+// ];
+
 const reviews = [
   {
-    client: "Mark Zucker",
-    company: "Facebook",
+    client: "Michael Turner",
+    company: null,
     text: `"The quality of work and communication throughout the project was excellent. I would highly recommend SalTex for any construction and engineering services."`,
     author: "Google",
     rating: 5,
   },
   {
-    client: "Elon Musketeer",
-    company: "SpaceX",
-    text: `"The construction work was top-notch and completed on time with great attention to detail. I Highly recommend SalTex Steel Construction for any commercial construction project."`,
+    client: "Elliot Marston",
+    company: null,
+    text: `"The construction work was top-notch and completed on time with great attention to detail. I highly recommend SalTex Steel Construction for any commercial construction project."`,
     author: "Yelp",
     rating: 4.5,
   },
   {
-    client: "Jeff Bozos",
-    company: "Amazon",
+    client: "Jessica Brown",
+    company: null,
     text: `"SalTex Steel Construction has been a great partner for us. They have provided excellent service and have been very responsive to our needs. I highly recommend them for any construction project."`,
     author: "LinkedIn",
     rating: 4,

@@ -1,0 +1,69 @@
+Date : 2024-07-20 15:53:32
+Directory : /Users/juan/Desktop/saltex-website/saltex-client
+Total : 33 files,  9037 codes, 226 comments, 181 blanks, all 9444 lines
+
+Languages
++----------------+------------+------------+------------+------------+------------+
+| language       | files      | code       | comment    | blank      | total      |
++----------------+------------+------------+------------+------------+------------+
+| JSON           |          2 |      5,932 |          0 |          2 |      5,934 |
+| JavaScript JSX |         20 |      2,303 |         62 |        122 |      2,487 |
+| JavaScript     |          3 |        476 |        160 |          9 |        645 |
+| CSS            |          6 |        309 |          3 |         42 |        354 |
+| HTML           |          1 |         12 |          1 |          2 |         15 |
+| Markdown       |          1 |          5 |          0 |          4 |          9 |
++----------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                  | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                     |         33 |      9,037 |        226 |        181 |      9,444 |
+| . (Files)                                                                             |          5 |      5,954 |          2 |         10 |      5,966 |
+| src                                                                                   |         28 |      3,083 |        224 |        171 |      3,478 |
+| src (Files)                                                                           |          8 |        339 |          8 |         45 |        392 |
+| src/Pages                                                                             |          7 |      1,097 |         14 |         61 |      1,172 |
+| src/components                                                                        |         10 |      1,114 |         42 |         50 |      1,206 |
+| src/data                                                                              |          2 |        471 |        159 |          7 |        637 |
+| src/swipersStyles                                                                     |          1 |         62 |          1 |          8 |         71 |
++---------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| filename                                                                              | language       | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| /Users/juan/Desktop/saltex-website/saltex-client/README.md                            | Markdown       |          5 |          0 |          4 |          9 |
+| /Users/juan/Desktop/saltex-website/saltex-client/index.html                           | HTML           |         12 |          1 |          2 |         15 |
+| /Users/juan/Desktop/saltex-website/saltex-client/package-lock.json                    | JSON           |      5,882 |          0 |          1 |      5,883 |
+| /Users/juan/Desktop/saltex-website/saltex-client/package.json                         | JSON           |         50 |          0 |          1 |         51 |
+| /Users/juan/Desktop/saltex-website/saltex-client/src/App.css                          | CSS            |        126 |          2 |         16 |        144 |
+| /Users/juan/Desktop/saltex-website/saltex-client/src/App.jsx                          | JavaScript JSX |         41 |          6 |          5 |         52 |
+| /Users/juan/Desktop/saltex-website/saltex-client/src/Pages/AboutPage.jsx              | JavaScript JSX |        108 |          6 |          8 |        122 |
+| /Users/juan/Desktop/saltex-website/saltex-client/src/Pages/ContactPage.jsx            | JavaScript JSX |         35 |          0 |          4 |         39 |
+| /Users/juan/Desktop/saltex-website/saltex-client/src/Pages/MyHeroPage.jsx             | JavaScript JSX |        123 |          2 |         11 |        136 |
+| /Users/juan/Desktop/saltex-website/saltex-client/src/Pages/ProjectsDisplayPage.jsx    | JavaScript JSX |        244 |          0 |         11 |        255 |
+| /Users/juan/Desktop/saltex-website/saltex-client/src/Pages/ProjectsPage.jsx           | JavaScript JSX |        163 |          2 |          6 |        171 |
+| /Users/juan/Desktop/saltex-website/saltex-client/src/Pages/ServiceDisplayPage.jsx     | JavaScript JSX |        179 |          3 |         10 |        192 |
+| /Users/juan/Desktop/saltex-website/saltex-client/src/Pages/ServicesPage.jsx           | JavaScript JSX |        245 |          1 |         11 |        257 |
+| /Users/juan/Desktop/saltex-website/saltex-client/src/Theme.jsx                        | JavaScript JSX |         34 |          0 |          3 |         37 |
+| /Users/juan/Desktop/saltex-website/saltex-client/src/TitleStyles.css                  | CSS            |          5 |          0 |          1 |          6 |
+| /Users/juan/Desktop/saltex-website/saltex-client/src/TransitionStyles.css             | CSS            |         27 |          0 |          5 |         32 |
+| /Users/juan/Desktop/saltex-website/saltex-client/src/TransitionUpDown.css             | CSS            |         18 |          0 |          2 |         20 |
+| /Users/juan/Desktop/saltex-website/saltex-client/src/components/ActionBanner.jsx      | JavaScript JSX |         52 |         16 |          4 |         72 |
+| /Users/juan/Desktop/saltex-website/saltex-client/src/components/CalendlyScheduler.jsx | JavaScript JSX |         22 |          0 |          3 |         25 |
+| /Users/juan/Desktop/saltex-website/saltex-client/src/components/ClientReviews.jsx     | JavaScript JSX |        133 |          0 |          6 |        139 |
+| /Users/juan/Desktop/saltex-website/saltex-client/src/components/Footer.jsx            | JavaScript JSX |        192 |         18 |          4 |        214 |
+| /Users/juan/Desktop/saltex-website/saltex-client/src/components/MyNavBar.jsx          | JavaScript JSX |        208 |          0 |          6 |        214 |
+| /Users/juan/Desktop/saltex-website/saltex-client/src/components/ProjectsSwiper.jsx    | JavaScript JSX |        172 |          4 |          8 |        184 |
+| /Users/juan/Desktop/saltex-website/saltex-client/src/components/ServicesSwiper.jsx    | JavaScript JSX |        193 |          4 |          8 |        205 |
+| /Users/juan/Desktop/saltex-website/saltex-client/src/components/Stats.jsx             | JavaScript JSX |         63 |          0 |          3 |         66 |
+| /Users/juan/Desktop/saltex-website/saltex-client/src/components/Transition.jsx        | JavaScript JSX |         55 |          0 |          5 |         60 |
+| /Users/juan/Desktop/saltex-website/saltex-client/src/components/TransitionUpDown.jsx  | JavaScript JSX |         24 |          0 |          3 |         27 |
+| /Users/juan/Desktop/saltex-website/saltex-client/src/data/projects.js                 | JavaScript     |        312 |          0 |          3 |        315 |
+| /Users/juan/Desktop/saltex-website/saltex-client/src/data/services.js                 | JavaScript     |        159 |        159 |          4 |        322 |
+| /Users/juan/Desktop/saltex-website/saltex-client/src/index.css                        | CSS            |         71 |          0 |         10 |         81 |
+| /Users/juan/Desktop/saltex-website/saltex-client/src/main.jsx                         | JavaScript JSX |         17 |          0 |          3 |         20 |
+| /Users/juan/Desktop/saltex-website/saltex-client/src/swipersStyles/autoplaySwiper.css | CSS            |         62 |          1 |          8 |         71 |
+| /Users/juan/Desktop/saltex-website/saltex-client/vite.config.js                       | JavaScript     |          5 |          1 |          2 |          8 |
+| Total                                                                                 |                |      9,037 |        226 |        181 |      9,444 |
++---------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
