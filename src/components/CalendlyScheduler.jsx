@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const CalendlyScheduler = () => {
   return (
     <Container>
-      <Typography variant="h2" gutterBottom fontFamily={"satoshi"}>
+      <Typography variant="h5" gutterBottom fontFamily={"satoshi"}>
         <motion.p
           initial={{ x: "100%" }}
           animate={{ x: 0 }}

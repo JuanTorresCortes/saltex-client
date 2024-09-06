@@ -56,7 +56,8 @@ const ProjectsDisplayPage = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        mt: { xs: 174, sm: 128, md: 49, lg: 38, xl: 38 },
+        // responsive brake points xs=0,sm=600,md=900,lg=1200,xl=1536}
+        mt: { xs: 9, sm: 9, md: 2, lg: 8, xl: 7 },
       }}
     >
       <MyNavBar sx={{ backgroundColor: "rgba(0, 0, 0, 0.7)", mb: 5 }} />
@@ -68,7 +69,7 @@ const ProjectsDisplayPage = () => {
       >
         <Grid container spacing={3}>
           <Grid item xs={12} md={6} sx={{ order: { xs: 2, md: 1 } }}>
-            <Typography variant="h2" gutterBottom>
+            <Typography variant="h5" gutterBottom>
               {project.name}
             </Typography>
             <Button
@@ -159,7 +160,7 @@ const ProjectsDisplayPage = () => {
               }}
             >
               <Typography
-                variant="h4"
+                variant="h5"
                 sx={{ color: "white", fontWeight: "bold" }}
               >
                 OUR CLIENT REVIEW

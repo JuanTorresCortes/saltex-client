@@ -56,7 +56,8 @@ const ServiceDisplayPage = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        mt: { xs: 148, sm: 128, md: 49, lg: 38, xl: 38 }, // responsive brake points xs=0,sm=600,md=900,lg=1200,xl=1536}
+        // responsive brake points xs=0,sm=600,md=900,lg=1200,xl=1536}
+        mt: { xs: 9, sm: 8, md: 2, lg: 8, xl: 7 },
       }}
     >
       <MyNavBar sx={{ backgroundColor: "rgba(0, 0, 0, 0.7)", mb: 5 }} />
@@ -75,7 +76,7 @@ const ServiceDisplayPage = () => {
               order: { xs: 2, md: 1 }, // Typography on bottom for xs screens
             }}
           >
-            <Typography variant="h2" gutterBottom>
+            <Typography variant="h5" gutterBottom>
               {service.title}
             </Typography>
             <Button

@@ -61,7 +61,7 @@ const ProjectsPage = () => {
           textAlign: "center",
           padding: "20px",
           position: "relative",
-          mt: { xs: 475, sm: 296, md: 169, lg: 184, xl: 177 }, // responsive breakpoints xs=0, sm=600, md=900, lg=1200, xl=1536
+          mt: { xs: 8, sm: "auto", md: "600", lg: "200", xl: 7 }, // responsive breakpoints xs=0, sm=600, md=900, lg=1200, xl=1536
         }}
       >
         <Container

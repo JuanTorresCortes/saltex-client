@@ -22,12 +22,12 @@ const MyHeroPage = () => {
     <Box>
       <Box
         sx={{
+          width: "100%",
+          minHeight: "100vh", // Ensure the hero section takes the full height of the viewport
           backgroundImage: `url(${houston})`,
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
-          minHeight: "100vh",
-          width: "100vw",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -35,7 +35,9 @@ const MyHeroPage = () => {
           color: "white",
           textAlign: "center",
           position: "relative",
-          mt: { xs: 630, sm: 440, md: 300, lg: 237, xl: 250 }, // responsive breakpoints xs=0, sm=600, md=900, lg=1200, xl=1536
+          zIndex: 1,
+          // paddingTop: isSmallScreen ? "100px" : "200px",
+          mt: { xs: 8, sm: "auto", md: "600", lg: "200", xl: 7 },
         }}
       >
         <Container

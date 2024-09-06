@@ -40,7 +40,9 @@ const AboutPage = () => {
         color: "white", // White text color for contrast
         textAlign: "center",
         p: 2,
-        mt: { xs: 200, sm: 128, md: 49, lg: 38, xl: 38 }, // responsive brake points xs=0,sm=600,md=900,lg=1200,xl=1536}
+        // mt: { xs: 200, sm: 128, md: 49, lg: 38, xl: 38 }, // responsive brake points xs=0,sm=600,md=900,lg=1200,xl=1536}
+        // responsive brake points xs=0,sm=600,md=900,lg=1200,xl=1536}
+        mt: { xs: 9, sm: 9, md: 2, lg: 8, xl: 7 },
       }}
     >
       <Box
@@ -52,7 +54,7 @@ const AboutPage = () => {
         <Grid container spacing={4} alignItems="center">
           <Grid item xs={12} md={6} sx={{ order: { xs: 2, md: 1 } }}>
             {/* Text content */}
-            <Typography variant="h2" gutterBottom>
+            <Typography variant="h5" gutterBottom>
               Who we are
             </Typography>
             <Typography variant="body1" paragraph>

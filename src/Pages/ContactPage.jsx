@@ -27,7 +27,8 @@ const ContactPage = () => {
         alignItems: "center",
         color: "white",
         textAlign: "center",
-        mt: { xs: 128, sm: 100, md: 100, lg: 48, xl: 48 }, // responsive brake points xs=0,sm=600,md=900,lg=1200,xl=1536}
+        // responsive brake points xs=0,sm=600,md=900,lg=1200,xl=1536}
+        mt: { xs: 7, sm: 9, md: 2, lg: 8, xl: 7 },
       }}
     >
       <CalendlyScheduler />
