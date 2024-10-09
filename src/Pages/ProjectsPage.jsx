@@ -13,8 +13,8 @@ import {
 import { useTheme } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import workersFraming from "../img/workers-framing.png";
+import workersFramingDarkened from "../img/workers-framing-dark.png";
 import projects from "../data/projects"; // Import the projects array
-import MyNavBar from "../components/MyNavBar";
 import ActionBanner from "../components/ActionBanner";
 import waveBackground from "../img/wave_background.png";
 import { motion } from "framer-motion";
@@ -47,7 +47,7 @@ const ProjectsPage = () => {
     >
       <Box
         sx={{
-          backgroundImage: `url(${workersFraming})`,
+          backgroundImage: `url(${workersFramingDarkened})`,
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
@@ -82,7 +82,7 @@ const ProjectsPage = () => {
             exit={{ y: "-100%" }}
             transition={{ duration: 0.5, delay: 0 }}
           >
-            <Typography variant="h2" gutterBottom>
+            <Typography variant="h4" gutterBottom>
               Our Portfolio
             </Typography>
             <Typography variant="body1" paragraph>

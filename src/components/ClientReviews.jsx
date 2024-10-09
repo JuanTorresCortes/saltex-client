@@ -3,6 +3,7 @@ import { Paper, Typography, Box, Button, Rating } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
 
+// Sample data for client reviews
 const reviews = [
   {
     client: "Michael Turner",
@@ -26,6 +27,11 @@ const reviews = [
     rating: 4,
   },
 ];
+
+// Function to handle button click
+const handleClickForReviews = () => {
+  window.location.href = "/portfolio";
+};
 
 const ClientReviews = () => {
   const theme = useTheme();
@@ -76,7 +82,7 @@ const ClientReviews = () => {
                 backgroundColor: "#141424",
               },
             }}
-            onClick={() => navigate("/projects")}
+            onClick={() => handleClickForReviews()}
           >
             DISCOVER MORE
           </Button>
