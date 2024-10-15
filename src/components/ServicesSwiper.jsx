@@ -33,6 +33,7 @@ import welderManufacturing from "../img/welder-manufacturing.png";
 import welderInLift from "../img/welder-in-lift.png";
 import inspector from "../img/inspector.png";
 import pilar from "../img/pilar.png";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const ServicesSwiper = () => {
   const service = {
@@ -85,6 +86,8 @@ const ServicesSwiper = () => {
   };
 
   const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
   const onAutoplayTimeLeft = (s, time, progress) => {
@@ -114,18 +117,31 @@ const ServicesSwiper = () => {
       <Container sx={{ backgroundColor: "black" }}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
-            <Typography variant="h2" gutterBottom>
+            <Typography
+              variant={isSmallScreen ? "h5" : "h3"} // Larger font for larger screens
+              component="h1"
+              gutterBottom
+              sx={{
+                fontWeight: 300, // Make the heading bold
+                letterSpacing: "2px", // Add letter spacing for a more elegant look
+                lineHeight: 1.2, // Slightly increase line height for readability
+                textTransform: "uppercase", // Make the heading text all uppercase
+              }}
+            >
               {service.title}
             </Typography>
             <Button
-              variant="outlined"
+              variant="contained"
               startIcon={<VolumeUpIcon />}
               sx={{
-                color: "white",
-                borderColor: theme.palette.darkred.main,
+                backgroundColor: "black", // Custom button color
+                color: "white", // Text color for contrast
+                border: ` 2px solid ${theme.palette.darkred.main}`, // Add a border
+                //padding: theme.spacing(1.5, 4), // Increase padding for a bigger button
+                fontWeight: 600, // Make the text bold
                 "&:hover": {
-                  borderColor: theme.palette.darkred.main,
-                  backgroundColor: "#141424",
+                  backgroundColor: theme.palette.darkred.main, // Slightly darken the hover effect
+                  color: "black", // Revert text color to black on hover
                 },
                 mb: 2,
               }}
@@ -139,11 +155,14 @@ const ServicesSwiper = () => {
             <Button
               variant="outlined"
               sx={{
-                color: "white",
-                borderColor: theme.palette.darkred.main,
+                backgroundColor: "black", // Custom button color
+                color: "white", // Text color for contrast
+                border: ` 2px solid ${theme.palette.darkred.main}`, // Add a border
+                padding: theme.spacing(1.5, 4), // Increase padding for a bigger button
+                fontWeight: 600, // Make the text bold
                 "&:hover": {
-                  borderColor: theme.palette.darkred.main,
-                  backgroundColor: "#141424",
+                  backgroundColor: theme.palette.darkred.main, // Slightly darken the hover effect
+                  color: "black", // Revert text color to black on hover
                 },
                 mb: 2,
               }}
