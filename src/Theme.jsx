@@ -20,6 +20,9 @@ const theme = createTheme({
     darkgray: {
       main: "#242424",
     },
+    cardColor: {
+      main: "#2b2b2b",
+    },
   },
   typography: {
     fontFamily: [

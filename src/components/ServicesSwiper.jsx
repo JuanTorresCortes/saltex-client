@@ -1,21 +1,16 @@
-import React, { useState, useRef, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import MyNavBar from "./MyNavBar";
-import services from "../data/services";
+import React, { useRef, useState } from "react";
 import { Container, Box, Typography, Button, Grid } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { Swiper, SwiperSlide } from "swiper/react";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-//import "../swipersStyles/ProjectsStyles.css";
 import "../swipersStyles/autoplaySwiper.css";
-
-// import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
+// Import image assets
 import workersFraming from "../img/workers-framing.png";
 import hotel from "../img/hotel.png";
 import education from "../img/education.png";
@@ -33,20 +28,15 @@ import welderManufacturing from "../img/welder-manufacturing.png";
 import welderInLift from "../img/welder-in-lift.png";
 import inspector from "../img/inspector.png";
 import pilar from "../img/pilar.png";
-import useMediaQuery from "@mui/material/useMediaQuery";
 
 const ServicesSwiper = () => {
+  // State to track if text is currently being spoken
+  const [isSpeaking, setIsSpeaking] = useState(null);
+
+  // Service data for the swiper and text content
   const service = {
-    id: 1,
     title: "OUR SERVICES",
-    description: `SalTex Steel Construction offers a diverse range of services designed to meet the needs of various industries. 
-  Our Structural Steel service specializes in the erection and assembly of steel frameworks, ensuring precision and stability for construction projects. 
-  We also provide Custom Manufacturing solutions, tailoring production to meet specific client requirements with high-quality and reliable products.
-  Our Engineering services deliver comprehensive solutions for construction projects, from design to maintenance.
-  Our Light Gauge Framing service offers cost-effective and versatile solutions for commercial projects.
-  The Ground Up Package provides a complete construction service from concept to completion.
-  We also offer Consultation services, providing expert advice and planning for commercial construction projects.
-  Below is a comprehensive list of our services:`,
+    description: ` SalTex Steel Construction offers a wide range of services tailored to meet the needs of diverse industries. Our Structural Steel service ensures precise and stable steel frameworks for construction projects. We also provide Custom Manufacturing, creating high-quality products customized to your specific needs. Our Engineering services cover everything from design to maintenance, while Light Gauge Framing offers cost-effective, flexible solutions for commercial projects. For a complete construction experience, our Ground Up Package takes you from concept to completion. Plus, our Consultation services provide expert guidance and planning for your commercial builds.`,
     imagePortfolio: [
       pilar,
       welderInLift,
@@ -66,38 +56,42 @@ const ServicesSwiper = () => {
       welder,
       workersFraming,
     ],
-    servicesProvided: [
-      "STRUCTURAL STEEL",
-      "CUSTOM MANUFACTURING",
-      "SOLAR",
-      "HEALTHCARE",
-      "CORPORATE",
-      "HOTEL",
-      "RELIGIOUS",
-      "RESTORATION",
-      "EDUCATION",
-      "RETAIL",
-      "GREEN BUILDING",
-      "DEMOLITION",
-      "PROJECT MANAGEMENT",
-      "MAINTENANCE SERVICES",
-      "INDUSTRIAL",
-    ],
   };
 
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm")); // Media query to handle responsive behavior
 
-  const progressCircle = useRef(null);
-  const progressContent = useRef(null);
+  const progressCircle = useRef(null); // Ref for autoplay progress circle
+  const progressContent = useRef(null); // Ref for autoplay progress content
+
+  // Update progress circle and time content during autoplay
   const onAutoplayTimeLeft = (s, time, progress) => {
     progressCircle.current.style.setProperty("--progress", 1 - progress);
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
 
-  const handleReadAloud = (text) => {
+  // Function to handle text-to-speech for the service description
+  const handleReadAloud = (text, index) => {
+    window.speechSynthesis.cancel(); // Cancel any ongoing speech
+
+    // If the same section is clicked again, stop reading
+    if (isSpeaking === index) {
+      setIsSpeaking(null);
+      return;
+    }
+
+    // Start reading the text
     const speech = new SpeechSynthesisUtterance(text);
     window.speechSynthesis.speak(speech);
+    setIsSpeaking(index); // Track the currently reading section
+
+    // Reset state when speaking ends
+    speech.onend = () => setIsSpeaking(null);
+  };
+
+  // Handle the click event to navigate to the services page
+  const handleClick = () => {
+    window.location.href = "/services";
   };
 
   return (
@@ -111,92 +105,41 @@ const ServicesSwiper = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        // mt: { xs: 118, sm: 108, md: 49, lg: 38, xl: 15 }, // responsive breakpoints xs=0,sm=600,md=900,lg=1200,xl=1536
+        borderBottom: `.1px solid ${theme.palette.darkred.main}`, // Custom bottom border
       }}
     >
       <Container sx={{ backgroundColor: "black" }}>
         <Grid container spacing={3}>
-          <Grid item xs={12} md={6}>
-            <Typography
-              variant={isSmallScreen ? "h5" : "h3"} // Larger font for larger screens
-              component="h1"
-              gutterBottom
-              sx={{
-                fontWeight: 300, // Make the heading bold
-                letterSpacing: "2px", // Add letter spacing for a more elegant look
-                lineHeight: 1.2, // Slightly increase line height for readability
-                textTransform: "uppercase", // Make the heading text all uppercase
-              }}
-            >
-              {service.title}
-            </Typography>
-            <Button
-              variant="contained"
-              startIcon={<VolumeUpIcon />}
-              sx={{
-                backgroundColor: "black", // Custom button color
-                color: "white", // Text color for contrast
-                border: ` 2px solid ${theme.palette.darkred.main}`, // Add a border
-                //padding: theme.spacing(1.5, 4), // Increase padding for a bigger button
-                fontWeight: 600, // Make the text bold
-                "&:hover": {
-                  backgroundColor: theme.palette.darkred.main, // Slightly darken the hover effect
-                  color: "black", // Revert text color to black on hover
-                },
-                mb: 2,
-              }}
-              onClick={() => handleReadAloud(service.description)}
-            >
-              READ
-            </Button>
-            <Typography variant="body1" paragraph>
-              <strong>{service.description}</strong>
-            </Typography>
-            <Button
-              variant="outlined"
-              sx={{
-                backgroundColor: "black", // Custom button color
-                color: "white", // Text color for contrast
-                border: ` 2px solid ${theme.palette.darkred.main}`, // Add a border
-                padding: theme.spacing(1.5, 4), // Increase padding for a bigger button
-                fontWeight: 600, // Make the text bold
-                "&:hover": {
-                  backgroundColor: theme.palette.darkred.main, // Slightly darken the hover effect
-                  color: "black", // Revert text color to black on hover
-                },
-                mb: 2,
-              }}
-            >
-              <a
-                href="/services"
-                style={{ textDecoration: "none", color: "white" }}
-              >
-                DISCOVER OUR SERVICES
-              </a>
-            </Button>
-          </Grid>
-          <Grid item xs={12} md={6}>
+          {/* Swiper Section */}
+          <Grid
+            item
+            xs={12}
+            md={6}
+            order={{ xs: -1, md: 1 }} // Swiper moves to top on small screens
+          >
             <Swiper
               spaceBetween={30}
               centeredSlides={true}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              pagination={{
-                clickable: true,
-              }}
+              autoplay={{ delay: 2500, disableOnInteraction: false }}
+              pagination={{ clickable: true }}
               navigation={true}
               modules={[Autoplay, Pagination, Navigation]}
               onAutoplayTimeLeft={onAutoplayTimeLeft}
               className="mySwiper"
               style={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}
             >
+              {/* Dynamically render images in SwiperSlide with lazy loading and ARIA roles */}
               {service.imagePortfolio.map((image, index) => (
-                <SwiperSlide key={index} style={{ backgroundColor: "black" }}>
+                <SwiperSlide
+                  key={index}
+                  style={{ backgroundColor: "black" }}
+                  role="group" // ARIA role for grouping related content
+                  aria-label={`Service Portfolio slide ${index + 1}`} // ARIA label for each slide
+                >
                   <img
                     src={image}
-                    alt={`service Portfolio ${index + 1}`}
+                    alt={`Service Portfolio ${index + 1}`}
+                    loading="lazy" // Lazy loading for images
                     style={{
                       width: "100%",
                       height: "250px",
@@ -206,6 +149,7 @@ const ServicesSwiper = () => {
                   />
                 </SwiperSlide>
               ))}
+              {/* Autoplay progress bar */}
               <div className="autoplay-progress" slot="container-end">
                 <svg viewBox="0 0 48 48" ref={progressCircle}>
                   <circle cx="24" cy="24" r="20"></circle>
@@ -213,6 +157,75 @@ const ServicesSwiper = () => {
                 <span ref={progressContent}></span>
               </div>
             </Swiper>
+          </Grid>
+
+          {/* Text Section */}
+          <Grid
+            item
+            xs={12}
+            md={6}
+            order={{ xs: 0, md: 0 }} // Text stays at bottom on small screens, left on larger
+          >
+            {/* Title */}
+            <Typography
+              variant={isSmallScreen ? "h5" : "h3"} // Responsive typography based on screen size
+              component="h1"
+              gutterBottom
+              sx={{
+                fontWeight: 300,
+                letterSpacing: "2px",
+                lineHeight: 1.2,
+                textTransform: "uppercase",
+              }}
+            >
+              {service.title}
+            </Typography>
+
+            {/* Button to trigger text-to-speech */}
+            <Button
+              variant="contained"
+              startIcon={<VolumeUpIcon />}
+              color={isSpeaking ? "error" : "primary"}
+              onClick={() => handleReadAloud(service.description, 1)}
+              sx={{
+                backgroundColor: "black",
+                color: "white",
+                border: `.1px solid ${theme.palette.darkred.main}`,
+                fontWeight: 600,
+                "&:hover": {
+                  backgroundColor: theme.palette.darkred.main,
+                  color: "black",
+                },
+                mb: 2,
+              }}
+            >
+              {isSpeaking ? "Stop" : "Read"}
+            </Button>
+
+            {/* Service description */}
+            <Typography variant="body1" paragraph>
+              <strong>{service.description}</strong>
+            </Typography>
+
+            {/* Button to navigate to services page */}
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "black",
+                color: "white",
+                border: `.1px solid ${theme.palette.darkred.main}`,
+                padding: theme.spacing(1.5, 4),
+                fontWeight: 600,
+                "&:hover": {
+                  backgroundColor: theme.palette.darkred.main,
+                  color: "black",
+                },
+                mb: 2,
+              }}
+              onClick={() => handleClick()}
+            >
+              DISCOVER OUR SERVICES
+            </Button>
           </Grid>
         </Grid>
       </Container>

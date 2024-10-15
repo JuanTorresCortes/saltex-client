@@ -6,6 +6,7 @@ import {
   Typography,
   Link,
   IconButton,
+  Button,
 } from "@mui/material";
 import { Facebook, LinkedIn, Instagram } from "@mui/icons-material";
 import logo from "../img/logo.png";
@@ -14,6 +15,10 @@ import { useTheme } from "@mui/material/styles";
 const Footer = () => {
   const theme = useTheme();
   const phoneNumber = "+8329017158";
+
+  const handleClick = () => {
+    navigate("/contact");
+  };
 
   return (
     <Box component="footer" sx={{ bgcolor: "black", color: "white", py: 4 }}>
@@ -102,6 +107,21 @@ const Footer = () => {
                 Contact Us
               </Link>
             </Box>
+            <Box>
+              <Link
+                href="/careers-jobs"
+                color="inherit"
+                underline="none"
+                sx={{
+                  ":hover": {
+                    color: theme.palette.darkred.main,
+                    transition: "color 0.3s",
+                  },
+                }}
+              >
+                Careers/Jobs
+              </Link>
+            </Box>
           </Grid>
           <Grid item xs={12} md={3}>
             <Typography variant="h6">Address</Typography>
@@ -158,27 +178,24 @@ const Footer = () => {
                 alignItems: "center",
               }}
             >
-              <Link
-                href="/contact"
+              <Button
+                variant="contained"
                 sx={{
-                  mt: 2,
-                  border: "1px solid white",
-                  padding: "8px 16px",
-                  borderRadius: "4px",
-                  textAlign: "center",
-                  ":hover": {
+                  backgroundColor: "black",
+                  color: "white",
+                  border: `.1px solid ${theme.palette.darkred.main}`,
+                  padding: theme.spacing(1.5, 4),
+                  fontWeight: 600,
+                  "&:hover": {
                     backgroundColor: theme.palette.darkred.main,
-                    borderColor: theme.palette.darkred.main,
-                    transition: "background-color 0.3s, border-color 0.3s",
-                    color: "white",
+                    color: "black",
                   },
+                  mb: 2,
                 }}
-                variant="outlined"
-                color="inherit"
-                underline="none"
+                onClick={() => handleClick()}
               >
-                CONTACT US
-              </Link>
+                contact us
+              </Button>
               {/* <Typography variant="body1" sx={{ mt: 2 }}>
                 <Link
                   href="tel:+8329017158"

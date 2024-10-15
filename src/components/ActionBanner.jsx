@@ -7,7 +7,7 @@ const ActionBanner = () => {
   const theme = useTheme();
   const navigate = useNavigate();
 
-  const handleGetStartedClick = () => {
+  const handleClick = () => {
     navigate("/contact");
   };
 
@@ -47,22 +47,22 @@ const ActionBanner = () => {
         <a href="/contact">Get Started</a>
       </Button> */}
       <Button
-        variant="outlined"
+        variant="contained"
         sx={{
-          mb: 2,
-          mt: 2,
-          borderColor: theme.palette.darkred.main,
-          color: theme.palette.darkred.main,
           backgroundColor: "black",
+          color: "white",
+          border: `.1px solid ${theme.palette.darkred.main}`,
+          padding: theme.spacing(1.5, 4),
+          fontWeight: 600,
           "&:hover": {
-            borderColor: theme.palette.darkred.main,
-            backgroundColor: "#141424",
+            backgroundColor: theme.palette.darkred.main,
+            color: "black",
           },
+          mb: 2,
         }}
+        onClick={() => handleClick()}
       >
-        <a href="/contact" style={{ color: theme.palette.darkred.main }}>
-          GET STARTED
-        </a>
+        GET STARTED
       </Button>
     </Box>
   );

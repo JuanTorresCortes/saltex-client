@@ -1,39 +1,16 @@
-import React from "react";
-import { Paper, Typography, Box, Button, Rating } from "@mui/material";
+import React, { useContext } from "react";
+import { AppContext } from "../context/AppContext";
+import { Paper, Typography, Box, Button, Rating, Avatar } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
-
-// Sample data for client reviews
-const reviews = [
-  {
-    client: "Michael Turner",
-    company: null,
-    text: `"The quality of work and communication throughout the project was excellent. I would highly recommend SalTex for any construction and engineering services."`,
-    author: "Google",
-    rating: 5,
-  },
-  {
-    client: "Elliot Marston",
-    company: null,
-    text: `"The construction work was top-notch and completed on time with great attention to detail. I highly recommend SalTex Steel Construction for any commercial construction project."`,
-    author: "Yelp",
-    rating: 4.5,
-  },
-  {
-    client: "Jessica Brown",
-    company: null,
-    text: `"SalTex Steel Construction has been a great partner for us. They have provided excellent service and have been very responsive to our needs. I highly recommend them for any construction project."`,
-    author: "LinkedIn",
-    rating: 4,
-  },
-];
 
 // Function to handle button click
 const handleClickForReviews = () => {
   window.location.href = "/portfolio";
 };
 
-const ClientReviews = () => {
+const CustomerReviews = () => {
+  const { customerReviews } = useContext(AppContext);
   const theme = useTheme();
 
   return (
@@ -44,8 +21,8 @@ const ClientReviews = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        borderTop: `1px solid ${theme.palette.darkred.main}`,
-        borderBottom: `1px solid ${theme.palette.darkred.main}`,
+        //borderTop: `.1px solid ${theme.palette.darkred.main}`,
+        //borderBottom: `.1px solid ${theme.palette.darkred.main}`,
       }}
     >
       <Box
@@ -74,12 +51,13 @@ const ClientReviews = () => {
               backgroundColor: "black",
               color: "white",
               border: `.1px solid ${theme.palette.darkred.main}`,
-              padding: theme.spacing(1.5, 4),
+              //padding: theme.spacing(1.5, 4),
               fontWeight: 600,
               "&:hover": {
                 backgroundColor: theme.palette.darkred.main,
                 color: "black",
               },
+              mt: 2,
               mb: 2,
             }}
             onClick={() => handleClickForReviews()}
@@ -97,12 +75,12 @@ const ClientReviews = () => {
             width: "100%",
           }}
         >
-          {reviews.map((review, i) => (
+          {customerReviews.map((customerReview, i) => (
             <Paper
               key={i}
               elevation={3}
               sx={{
-                backgroundColor: "black",
+                backgroundColor: "#2b2b2b",
                 color: "white",
                 padding: 3,
                 borderRadius: 2,
@@ -111,27 +89,50 @@ const ClientReviews = () => {
                 minHeight: "200px",
               }}
             >
+              {/* Avatar and Name Section */}
+              <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
+                {/* Circular Image */}
+                <Avatar
+                  src={customerReview.image}
+                  alt={customerReview.client}
+                  sx={{
+                    width: 60,
+                    height: 60,
+                    mr: 2, // Add margin to the right
+                    border: "2px solid white", // Add a border for better visibility
+                  }}
+                />
+                <Box>
+                  <Typography variant="body2" sx={{ fontWeight: "bold" }}>
+                    {customerReview.client}
+                  </Typography>
+                  {customerReview.company && (
+                    <Typography variant="body2">
+                      {customerReview.company}
+                    </Typography>
+                  )}
+                </Box>
+              </Box>
+
+              {/* Rating */}
               <Rating
                 name={`rating-${i}`}
-                value={review.rating}
+                value={customerReview.rating}
                 readOnly
                 precision={0.5}
                 sx={{ mt: 2 }}
               />
+
+              {/* Review Text */}
               <Typography
                 variant="body1"
                 sx={{
                   maxHeight: "none",
                   overflowY: "visible",
+                  mt: 2,
                 }}
               >
-                {review.text}
-              </Typography>
-              <Typography variant="body2" align="right" sx={{ mt: 2 }}>
-                {review.author}
-              </Typography>
-              <Typography variant="body2" align="right" sx={{ mt: 2 }}>
-                {review.client}, {review.company}
+                {customerReview.text}
               </Typography>
             </Paper>
           ))}
@@ -141,4 +142,4 @@ const ClientReviews = () => {
   );
 };
 
-export default ClientReviews;
+export default CustomerReviews;

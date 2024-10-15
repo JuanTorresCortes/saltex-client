@@ -15,6 +15,8 @@ import ProjectsDisplayPage from "./Pages/ProjectsDisplayPage";
 import ServicesPage from "./Pages/ServicesPage";
 import Footer from "./components/Footer";
 import ServiceDisplayPage from "./Pages/ServiceDisplayPage";
+import CareersJobsApplicationPage from "./Pages/CareersJobsApplicationPage";
+import CareersJobsPage from "./Pages/CareersJobsPage";
 
 import "./TransitionStyles.css";
 import "./TransitionUpDown.css";
@@ -41,6 +43,12 @@ function App() {
           {/* Services page route */}
           <Route path="/services" element={<ServicesPage />} />{" "}
           <Route path="/services/:id" element={<ServiceDisplayPage />} />
+          {/* Careers Jobs Application page route */}
+          <Route path="/careers-jobs" element={<CareersJobsPage />} />
+          <Route
+            path="/careers-jobs-application"
+            element={<CareersJobsApplicationPage />}
+          />
         </Routes>
       </AnimatePresence>
       <Footer /> {/* Footer component */}

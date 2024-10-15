@@ -152,6 +152,7 @@ import "../TitleStyles.css";
 import "../TransitionUpDown.css";
 import MyHero from "../components/MyHero";
 import CompanyStats from "../components/CompanyStats";
+import CustomerReviews from "../components/CustomerReviews";
 
 import TransitionUpDown from "../components/TransitionUpDown";
 
@@ -169,9 +170,7 @@ const MyHeroPage = () => {
 
       <ProjectsSwiper />
 
-      <Container>
-        <ClientReviews />
-      </Container>
+      <CustomerReviews />
 
       <Container>
         <ActionBanner />
