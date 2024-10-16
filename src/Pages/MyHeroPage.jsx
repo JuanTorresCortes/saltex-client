@@ -3,8 +3,6 @@ import { Box, Typography, Button, Container } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import houston from "../img/houston.webp"; // Ensure this path is correct
-import Stats from "../components/Stats"; // Ensure this path is correct
-import ClientReviews from "../components/ClientReviews";
 import ActionBanner from "../components/ActionBanner";
 import ServicesSwiper from "../components/ServicesSwiper";
 import ProjectsSwiper from "../components/ProjectsSwiper";

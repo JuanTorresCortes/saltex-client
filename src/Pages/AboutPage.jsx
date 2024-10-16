@@ -1,13 +1,11 @@
 import React from "react";
 import { Container, Typography, Box, Grid, Button } from "@mui/material";
 import inspector from "../img/inspector.png";
-import welder from "../img/welder.png";
 import { useTheme } from "@mui/material/styles";
-import Stats from "../components/Stats";
 import { useNavigate } from "react-router-dom";
-import MyNavBar from "../components/MyNavBar";
 import diagonalBackground from "../img/diagonal_Background.png";
 import Transition from "../components/Transition";
+import CompanyStats from "../components/CompanyStats";
 
 const AboutPage = () => {
   const theme = useTheme(); // Use Material-UI's theme for consistent styling
@@ -70,39 +68,45 @@ const AboutPage = () => {
             </Typography>
             <Container sx={{ display: "flex", justifyContent: "center" }}>
               <Button
+                onClick={handleLFreeQuoteClick} // OnClick event to navigate to contact page
                 variant="contained"
                 sx={{
-                  mr: 2,
-                  backgroundColor: theme.palette.darkred.main, // Use primary color from theme
+                  backgroundColor: "black",
                   color: "white",
+                  border: `.1px solid ${theme.palette.darkred.main}`,
+                  fontWeight: 600,
                   "&:hover": {
-                    backgroundColor: "black", // Darker shade on hover
+                    backgroundColor: theme.palette.darkred.main,
+                    color: "black",
                   },
+                  mb: 2,
+                  mr: 2,
                 }}
-                onClick={handleLFreeQuoteClick} // OnClick event to navigate to contact page
               >
                 Get a Free Quote
               </Button>
 
               <Button
-                variant="outlined"
-                sx={{
-                  borderColor: theme.palette.darkred.main, // Use primary color from theme
-                  color: theme.palette.darkred.main,
-                  "&:hover": {
-                    borderColor: theme.palette.darkred.dark,
-                    color: "white",
-                    backgroundColor: "black", // Darker shade on hover
-                  },
-                }}
                 onClick={handleLExploreServicesClick} // OnClick event to navigate to services page
+                variant="contained"
+                sx={{
+                  backgroundColor: "black",
+                  color: "white",
+                  border: `.1px solid ${theme.palette.darkred.main}`,
+                  fontWeight: 600,
+                  "&:hover": {
+                    backgroundColor: theme.palette.darkred.main,
+                    color: "black",
+                  },
+                  mb: 2,
+                }}
               >
                 Explore Services
               </Button>
             </Container>
 
             <Box>
-              <Stats />
+              <CompanyStats />
             </Box>
           </Grid>
           <Grid item xs={12} md={6} sx={{ order: { xs: 1, md: 2 } }}>

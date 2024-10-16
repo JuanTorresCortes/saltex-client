@@ -1,7 +1,8 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext, useState } from "react";
+import { AppContext } from "../context/AppContext";
 import { useParams } from "react-router-dom";
 import MyNavBar from "../components/MyNavBar";
-import projects from "../data/projects";
+//import projects from "../data/projects";
 import {
   Container,
   Box,
@@ -25,6 +26,9 @@ import Transition from "../components/Transition";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 const ProjectsDisplayPage = () => {
+  // State to track whether a section is being spoken aloud
+  const [isSpeaking, setIsSpeaking] = useState(null);
+  const { projects } = useContext(AppContext);
   const { id } = useParams();
   const project = projects.find((project) => project.id === parseInt(id));
   const theme = useTheme();
@@ -36,9 +40,25 @@ const ProjectsDisplayPage = () => {
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
 
-  const handleReadAloud = (text) => {
+  // Handles reading text aloud using the Web Speech API
+  const handleReadAloud = (text, index) => {
+    window.speechSynthesis.cancel(); // Cancel any ongoing speech
+    if (isSpeaking === index) {
+      setIsSpeaking(null); // Stop reading if the same section is clicked
+      return;
+    }
     const speech = new SpeechSynthesisUtterance(text);
     window.speechSynthesis.speak(speech);
+    setIsSpeaking(index); // Track the currently speaking section
+    speech.onend = () => setIsSpeaking(null); // Reset state when speech finishes
+  };
+
+  const handleBackToProjects = () => {
+    window.location.href = "/portfolio";
+  };
+
+  const handleOneOnOneClick = () => {
+    window.location.href = "/contact";
   };
 
   if (!project) {
@@ -73,20 +93,23 @@ const ProjectsDisplayPage = () => {
               {project.name}
             </Typography>
             <Button
-              variant="outlined"
+              variant="contained"
               startIcon={<VolumeUpIcon />}
+              color={isSpeaking ? "error" : "primary"}
+              onClick={() => handleReadAloud(project.text, 1)}
               sx={{
+                backgroundColor: "black",
                 color: "white",
-                borderColor: theme.palette.darkred.main,
+                border: `.1px solid ${theme.palette.darkred.main}`,
+                fontWeight: 600,
                 "&:hover": {
-                  borderColor: theme.palette.darkred.main,
-                  backgroundColor: "#141424",
+                  backgroundColor: theme.palette.darkred.main,
+                  color: "black",
                 },
                 mb: 2,
               }}
-              onClick={() => handleReadAloud(project.text)}
             >
-              READ
+              {isSpeaking ? "Stop" : "Read"}
             </Button>
             <Typography variant="body2" paragraph>
               {project.summary}
@@ -208,43 +231,39 @@ const ProjectsDisplayPage = () => {
         </Box>
         <Box sx={{ display: "flex", justifyContent: "space-evenly", mt: 2 }}>
           <Button
-            variant="outlined"
+            onClick={() => handleBackToProjects()}
+            variant="contained"
             sx={{
+              backgroundColor: "black",
               color: "white",
-              borderColor: theme.palette.darkred.main,
+              border: `.1px solid ${theme.palette.darkred.main}`,
+              fontWeight: 600,
               "&:hover": {
-                borderColor: theme.palette.darkred.main,
-                backgroundColor: "#141424",
+                backgroundColor: theme.palette.darkred.main,
+                color: "black",
               },
               mb: 2,
             }}
           >
-            <a
-              href="/portfolio"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              DISCOVER MORE PROJECTS
-            </a>
+            back to Projects
           </Button>
-          <br />
+
           <Button
-            variant="outlined"
+            onClick={() => handleOneOnOneClick()}
+            variant="contained"
             sx={{
+              backgroundColor: "black",
               color: "white",
-              borderColor: theme.palette.darkred.main,
+              border: `.1px solid ${theme.palette.darkred.main}`,
+              fontWeight: 600,
               "&:hover": {
-                borderColor: theme.palette.darkred.main,
-                backgroundColor: "#141424",
+                backgroundColor: theme.palette.darkred.main,
+                color: "black",
               },
               mb: 2,
             }}
           >
-            <a
-              href="/contact"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              SCHEDULE A ONE ON ONE
-            </a>
+            SCHEDULE A ONE ON ONE
           </Button>
         </Box>
       </Container>

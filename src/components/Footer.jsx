@@ -14,10 +14,10 @@ import { useTheme } from "@mui/material/styles";
 
 const Footer = () => {
   const theme = useTheme();
-  const phoneNumber = "+8329017158";
+  //const phoneNumber = "+8329017158";
 
   const handleClick = () => {
-    navigate("/contact");
+    window.location.href = `/contact`;
   };
 
   return (

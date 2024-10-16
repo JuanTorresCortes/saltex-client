@@ -1,23 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../context/AppContext";
 import {
   Container,
   Typography,
   Box,
   Grid,
   Card,
-  CardActions,
   CardContent,
   CardMedia,
-  Button,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { motion } from "framer-motion"; // Import for animations
-import projects from "../data/projects"; // Import the projects array
+import projects from "../data/projects/projects"; // Import the projects array
 import ActionBanner from "../components/ActionBanner"; // Action Banner component
-import waveBackground from "../img/wave_background.png";
 import heroProjects from "../img/hero-images/hero-projects.png"; // Hero background image
+import hero1 from "../img/hero-images/hero_1.jpg";
 
 const ProjectsPage = () => {
+  const { projects } = useContext(AppContext);
   const theme = useTheme(); // Theme from Material UI for consistent styling
 
   // Handle click to navigate to specific project details
@@ -30,7 +30,7 @@ const ProjectsPage = () => {
       sx={{
         width: "100vw",
         minHeight: "100vh",
-        backgroundImage: `url(${waveBackground})`, // Parallax background
+        backgroundImage: `url(${hero1})`, // Parallax background
         backgroundAttachment: "fixed", // Parallax effect for background
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -90,7 +90,7 @@ const ProjectsPage = () => {
       </Box>
 
       {/* Projects Cards Section */}
-      <Container sx={{ mt: 4 }}>
+      <Container sx={{ mt: 4, mb: 4 }}>
         <Grid container spacing={4}>
           {projects.map((project) => (
             <Grid item xs={12} sm={6} md={4} key={project.id}>
@@ -108,7 +108,7 @@ const ProjectsPage = () => {
                     flexDirection: "column",
                     justifyContent: "space-between",
                     backgroundColor: "rgba(0, 0, 0, 0.8)", // Dark background for card
-                    border: `.1px solid ${theme.palette.darkred.main}`, // Red border
+                    border: `.1px solid ${theme.palette.cardColor.main}`, // Red border
                     boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.8)", // Subtle shadow
                     transition: "transform 0.3s ease, box-shadow 0.3s ease",
                     "&:hover": {

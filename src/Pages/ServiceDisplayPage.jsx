@@ -1,7 +1,8 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useContext } from "react";
+import { AppContext } from "../context/AppContext";
 import { useParams } from "react-router-dom";
 import MyNavBar from "../components/MyNavBar";
-import services from "../data/services";
+//import services from "../data/services";
 import { Container, Box, Typography, Button, Grid } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -21,6 +22,8 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Transition from "../components/Transition";
 
 const ServiceDisplayPage = () => {
+  const { services } = useContext(AppContext);
+  const [isSpeaking, setIsSpeaking] = useState(null);
   const navigate = useNavigate();
   const { id } = useParams();
   const service = services.find((service) => service.id === parseInt(id));
@@ -32,17 +35,29 @@ const ServiceDisplayPage = () => {
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
 
-  const handleReadAloud = (text) => {
+  // Handles reading text aloud using the Web Speech API
+  const handleReadAloud = (text, index) => {
+    window.speechSynthesis.cancel(); // Cancel any ongoing speech
+    if (isSpeaking === index) {
+      setIsSpeaking(null); // Stop reading if the same section is clicked
+      return;
+    }
     const speech = new SpeechSynthesisUtterance(text);
     window.speechSynthesis.speak(speech);
+    setIsSpeaking(index); // Track the currently speaking section
+    speech.onend = () => setIsSpeaking(null); // Reset state when speech finishes
   };
 
   if (!service) {
     return <Typography variant="h4">Service not found</Typography>;
   }
 
-  const handleDiscoverMoreServices = () => {
+  const handleBackToServices = () => {
     navigate("/services");
+  };
+
+  const handleOneOnOneClick = () => {
+    window.location.href = "/contact";
   };
 
   return (
@@ -80,60 +95,63 @@ const ServiceDisplayPage = () => {
               {service.title}
             </Typography>
             <Button
-              variant="outlined"
+              variant="contained"
               startIcon={<VolumeUpIcon />}
+              color={isSpeaking ? "error" : "primary"}
+              onClick={() => handleReadAloud(service.description, 1)}
               sx={{
+                backgroundColor: "black",
                 color: "white",
-                borderColor: theme.palette.darkred.main,
+                border: `.1px solid ${theme.palette.darkred.main}`,
+                fontWeight: 600,
                 "&:hover": {
-                  borderColor: theme.palette.darkred.main,
-                  backgroundColor: "#141424",
+                  backgroundColor: theme.palette.darkred.main,
+                  color: "black",
                 },
                 mb: 2,
               }}
-              onClick={() => handleReadAloud(service.description)}
             >
-              READ
+              {isSpeaking ? "Stop" : "Read"}
             </Button>
             <Typography variant="body1" paragraph>
               <strong>{service.description}</strong>
             </Typography>
             <Box sx={{ display: "flex", justifyContent: "space-evenly" }}>
               <Button
-                onClick={() => handleDiscoverMoreServices()}
-                variant="outlined"
+                onClick={() => handleBackToServices()}
+                variant="contained"
                 sx={{
+                  backgroundColor: "black",
                   color: "white",
-                  borderColor: theme.palette.darkred.main,
+                  border: `.1px solid ${theme.palette.darkred.main}`,
+                  fontWeight: 600,
                   "&:hover": {
-                    borderColor: theme.palette.darkred.main,
-                    backgroundColor: "#141424",
+                    backgroundColor: theme.palette.darkred.main,
+                    color: "black",
                   },
                   mb: 2,
                 }}
               >
-                DISCOVER MORE SERVICES
+                BACK TO SERVICES
               </Button>
 
               <br />
               <Button
-                variant="outlined"
+                onClick={() => handleOneOnOneClick()}
+                variant="contained"
                 sx={{
+                  backgroundColor: "black",
                   color: "white",
-                  borderColor: theme.palette.darkred.main,
+                  border: `.1px solid ${theme.palette.darkred.main}`,
+                  fontWeight: 600,
                   "&:hover": {
-                    borderColor: theme.palette.darkred.main,
-                    backgroundColor: "#141424",
+                    backgroundColor: theme.palette.darkred.main,
+                    color: "black",
                   },
                   mb: 2,
                 }}
               >
-                <a
-                  href="/contact"
-                  style={{ textDecoration: "none", color: "white" }}
-                >
-                  SCHEDULE A ONE ON ONE
-                </a>
+                SCHEDULE A ONE ON ONE
               </Button>
             </Box>
           </Grid>

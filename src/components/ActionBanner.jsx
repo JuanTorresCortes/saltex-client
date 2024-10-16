@@ -8,7 +8,7 @@ const ActionBanner = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/contact");
+    window.location.href = `/contact`;
   };
 
   return (
@@ -30,22 +30,6 @@ const ActionBanner = () => {
       <Typography variant="h4" gutterBottom>
         Ready to start your next project?
       </Typography>
-      {/* <Button
-        variant="outline"
-        size="large"
-        sx={{
-          borderColor: theme.palette.darkred.main,
-          color: theme.palette.darkred.main,
-          backgroundColor: "black",
-          "&:hover": {
-            borderColor: theme.palette.darkred.main,
-            backgroundColor: "#141424",
-          },
-        }}
-        // onClick={handleGetStartedClick}
-      >
-        <a href="/contact">Get Started</a>
-      </Button> */}
       <Button
         variant="contained"
         sx={{

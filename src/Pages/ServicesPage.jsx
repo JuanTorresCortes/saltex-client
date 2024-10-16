@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../context/AppContext";
 import { useTheme } from "@mui/material/styles";
 import { motion } from "framer-motion";
 import {
@@ -7,22 +8,16 @@ import {
   Box,
   Grid,
   Card,
-  CardActions,
   CardContent,
   CardMedia,
-  Button,
 } from "@mui/material";
 import workerGrinding from "../img/worker-grinding.png";
 import solar from "../img/solar.png";
 import welderOnTop from "../img/welder-on-top.png";
-import welderInLift from "../img/welder-in-lift.png";
 import welder from "../img/welder.png";
 import ActionBanner from "../components/ActionBanner";
-import services from "../data/services";
-import waveBackground from "../img/wave_background.png";
-import iBeam from "../img/i-beam.png";
-import building12 from "../img/buildingImages/building_12.png";
 import workersOnTop from "../img/workersOnTop-2.png";
+import hero1 from "../img/hero-images/hero_1.jpg";
 
 // Import icons
 import PrecisionManufacturingIcon from "@mui/icons-material/PrecisionManufacturing";
@@ -49,6 +44,7 @@ const iconMapping = {
 };
 
 const ServicesPage = () => {
+  const { services } = useContext(AppContext);
   const theme = useTheme();
 
   // Handle click to navigate to specific service details
@@ -61,7 +57,7 @@ const ServicesPage = () => {
       sx={{
         width: "100vw",
         minHeight: "100vh",
-        backgroundImage: `url(${waveBackground})`,
+        backgroundImage: `url(${hero1})`,
         backgroundAttachment: "fixed", // Parallax effect
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -188,7 +184,7 @@ const ServicesPage = () => {
       </Container>
 
       {/* Services Cards */}
-      <Container sx={{ mt: 4 }}>
+      <Container sx={{ mt: 4, mb: 4 }}>
         <Grid container spacing={4}>
           {services.map((service) => (
             <Grid item xs={12} sm={6} md={4} key={service.title}>
@@ -206,7 +202,7 @@ const ServicesPage = () => {
                     flexDirection: "column",
                     justifyContent: "space-between",
                     backgroundColor: "rgba(0, 0, 0, 0.8)", // Dark background
-                    border: `.1px solid ${theme.palette.darkred.main}`, // Red border
+                    border: `.1px solid ${theme.palette.cardColor.main}`, // Red border
                     boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.8)",
                     transition: "transform 0.3s ease, box-shadow 0.3s ease",
                     "&:hover": {
