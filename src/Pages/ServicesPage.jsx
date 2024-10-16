@@ -1,7 +1,6 @@
 import React from "react";
 import { useTheme } from "@mui/material/styles";
 import { motion } from "framer-motion";
-
 import {
   Container,
   Typography,
@@ -13,16 +12,17 @@ import {
   CardMedia,
   Button,
 } from "@mui/material";
-
 import workerGrinding from "../img/worker-grinding.png";
 import solar from "../img/solar.png";
 import welderOnTop from "../img/welder-on-top.png";
 import welderInLift from "../img/welder-in-lift.png";
 import welder from "../img/welder.png";
-import MyNavBar from "../components/MyNavBar";
 import ActionBanner from "../components/ActionBanner";
 import services from "../data/services";
 import waveBackground from "../img/wave_background.png";
+import iBeam from "../img/i-beam.png";
+import building12 from "../img/buildingImages/building_12.png";
+import workersOnTop from "../img/workersOnTop-2.png";
 
 // Import icons
 import PrecisionManufacturingIcon from "@mui/icons-material/PrecisionManufacturing";
@@ -32,6 +32,7 @@ import HouseSidingIcon from "@mui/icons-material/HouseSiding";
 import SettingsSuggestIcon from "@mui/icons-material/SettingsSuggest";
 import CorporateFareIcon from "@mui/icons-material/CorporateFare";
 
+// Map icons to services
 const iconMapping = {
   ManufacturingIcon: (
     <PrecisionManufacturingIcon sx={{ color: "white", fontSize: 40 }} />
@@ -39,7 +40,6 @@ const iconMapping = {
   CorporateFareIcon: (
     <CorporateFareIcon sx={{ color: "white", fontSize: 40 }} />
   ),
-
   FoundationIcon: <FoundationIcon sx={{ color: "white", fontSize: 40 }} />,
   EngineeringIcon: <EngineeringIcon sx={{ color: "white", fontSize: 40 }} />,
   HouseSidingIcon: <HouseSidingIcon sx={{ color: "white", fontSize: 40 }} />,
@@ -50,204 +50,233 @@ const iconMapping = {
 
 const ServicesPage = () => {
   const theme = useTheme();
+
+  // Handle click to navigate to specific service details
   const handleServicesClick = (id) => () => {
-    window.location.href = `/services/${id}`; // Use href to navigate to the project display page with the project ID
+    window.location.href = `/services/${id}`;
   };
 
   return (
     <Box
       sx={{
         width: "100vw",
-        minHeight: "75vh",
+        minHeight: "100vh",
         backgroundImage: `url(${waveBackground})`,
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
+        backgroundAttachment: "fixed", // Parallax effect
+        backgroundSize: "cover",
+        backgroundPosition: "center",
         color: "white",
-        textAlign: "center",
         position: "relative",
+        textAlign: "center",
         overflow: "hidden",
-        mt: { xs: 8, sm: "auto", md: "600", lg: "200", xl: 7 }, // responsive breakpoints xs=0, sm=600, md=900, lg=1200, xl=1536
       }}
     >
+      {/* Image Grid Section */}
       <Box
         sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "flex-end",
-          alignItems: "center",
-          position: "relative",
+          display: "grid",
+          gridTemplateColumns: "repeat(3, 1fr)", // 3 equal columns
+          gridTemplateRows: "repeat(2, 1fr)", // 2 equal rows
+          gap: ".005rem", // Small gap between images
+          width: "100%",
+          height: "75vh",
           overflow: "hidden",
         }}
       >
-        <Box
-          sx={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gridTemplateRows: "repeat(2, 1fr)",
-            gap: ".005rem",
+        <motion.img
+          src={workerGrinding}
+          alt="Worker Grinding"
+          style={{
+            gridColumn: "1 / 2", // First column
+            gridRow: "1 / 2", // First row
             width: "100%",
-            height: "75vh",
+            height: "100%",
+            objectFit: "cover",
           }}
-        >
-          <img
-            src={workerGrinding}
-            alt="Worker Grinding"
-            style={{
-              gridColumn: "1 / 2",
-              gridRow: "1 / 2",
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-            }}
-          />
-          <img
-            src={solar}
-            alt="Solar"
-            style={{
-              gridColumn: "2 / 3",
-              gridRow: "1 / 2",
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-            }}
-          />
-          <img
-            src={welderOnTop}
-            alt="Welder On Top"
-            style={{
-              gridColumn: "3 / 4",
-              gridRow: "1 / 2",
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-            }}
-          />
-          <img
-            src={welderInLift}
-            alt="Welder In Lift"
-            style={{
-              gridColumn: "1 / 2",
-              gridRow: "2 / 3",
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-            }}
-          />
-          <img
-            src={welder}
-            alt="Welder"
-            style={{
-              gridColumn: "2 / 4",
-              gridRow: "2 / 3",
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-            }}
-          />
-        </Box>
-
-        <Container
-          sx={{
-            backgroundColor: theme.palette.background.default,
-            padding: "20px",
-            opacity: 0.8,
-            position: "absolute",
-            bottom: 0,
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        />
+        <motion.img
+          src={solar}
+          alt="Solar"
+          style={{
+            gridColumn: "2 / 3", // Second column
+            gridRow: "1 / 2", // First row
             width: "100%",
-            textAlign: "center",
-            color: "white",
+            height: "100%",
+            objectFit: "cover",
           }}
-        >
-          <motion.p
-            initial={{ y: "100%" }}
-            animate={{ y: 0 }}
-            exit={{ y: "-100%" }}
-            transition={{ duration: 0.5, delay: 0 }}
-          >
-            <Typography variant="h2" gutterBottom>
-              Our Services
-            </Typography>
-            <Typography variant="body1" paragraph>
-              <strong>
-                At SalTex Steel Construction, we offer a comprehensive range of
-                construction services tailored to meet the unique needs of each
-                project. Our expert team ensures the highest standards of
-                quality, safety, and efficiency in every job we undertake. From
-                initial planning and design to final construction and project
-                management, we are committed to delivering exceptional results
-                on time and within budget.
-              </strong>
-            </Typography>
-          </motion.p>
-        </Container>
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        />
+        <motion.img
+          src={welderOnTop}
+          alt="Welder On Top"
+          style={{
+            gridColumn: "3 / 4", // Third column
+            gridRow: "1 / 2", // First row
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+          }}
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        />
+        <motion.img
+          src={workersOnTop}
+          alt="Welder In Lift"
+          style={{
+            gridColumn: "1 / 2", // First column
+            gridRow: "2 / 3", // Second row
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+          }}
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        />
+        <motion.img
+          src={welder}
+          alt="Welder"
+          style={{
+            gridColumn: "2 / 4", // Spans from second to fourth column
+            gridRow: "2 / 3", // Second row
+            width: "100%",
+            height: "100%",
+            objectFit: "cover", // Ensures proper fit
+          }}
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        />
       </Box>
 
-      <Container>
-        <Grid container spacing={4} sx={{ mt: 2, padding: "30px" }}>
+      {/* Services Introduction */}
+      <Container
+        sx={{
+          backgroundColor: "rgba(0, 0, 0, 0.7)", // Semi-transparent background for readability
+          padding: "30px",
+          marginTop: "-10vh",
+          position: "relative",
+          zIndex: 2,
+        }}
+      >
+        <motion.div
+          initial={{ y: "100%", opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <Typography variant="h2" gutterBottom>
+            Our Services
+          </Typography>
+          <Typography variant="body1" paragraph>
+            <strong>
+              At SalTex Steel Construction, we offer a comprehensive range of
+              construction services tailored to meet the unique needs of each
+              project. Our expert team ensures the highest standards of quality,
+              safety, and efficiency in every job we undertake. From initial
+              planning and design to final construction and project management,
+              we are committed to delivering exceptional results on time and
+              within budget.
+            </strong>
+          </Typography>
+        </motion.div>
+      </Container>
+
+      {/* Services Cards */}
+      <Container sx={{ mt: 4 }}>
+        <Grid container spacing={4}>
           {services.map((service) => (
             <Grid item xs={12} sm={6} md={4} key={service.title}>
-              <Card
-                sx={{
-                  maxWidth: 345,
-                  backgroundColor: "rgba(0, 0, 0, 0.7)",
-                  border: `3px solid ${theme.palette.darkgray.main}`,
-                  "&:hover": {
-                    transform: "scale(1.05)",
-                    transition: "all 0.3s ease-in-out",
-                  },
-                }}
+              <motion.div
+                whileHover={{ scale: 1.05 }} // Hover scale effect
+                transition={{ duration: 0.3 }}
               >
-                <CardMedia
-                  component="img"
-                  alt={`${service.title} image`}
-                  height="140"
-                  image={service.image}
-                />
-                <CardContent>
+                <Card
+                  onClick={handleServicesClick(service.id)}
+                  sx={{
+                    position: "relative",
+                    maxWidth: 345,
+                    minHeight: 320,
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                    backgroundColor: "rgba(0, 0, 0, 0.8)", // Dark background
+                    border: `.1px solid ${theme.palette.darkred.main}`, // Red border
+                    boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.8)",
+                    transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                    "&:hover": {
+                      boxShadow: "0px 6px 8px rgba(0, 0, 0, 1)", // Deeper shadow on hover
+                      border: `.1px solid ${theme.palette.darkred.main}`, // Hover keeps red border
+                      "& .hover-banner": {
+                        opacity: 1, // Show banner on hover
+                      },
+                    },
+                  }}
+                >
+                  {/* Service Image */}
+                  <CardMedia
+                    component="img"
+                    alt={`${service.title} image`}
+                    height="180"
+                    image={service.image}
+                  />
+
+                  {/* Hover Banner */}
                   <Box
+                    className="hover-banner"
                     sx={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      backgroundColor: "rgba(0, 0, 0, 0.7)", // Dark overlay on hover
+                      color: "white",
                       display: "flex",
                       justifyContent: "center",
-                      mb: 2,
+                      alignItems: "center",
+                      opacity: 0, // Hidden by default
+                      transition: "opacity 0.3s ease-in-out", // Smooth fade-in
+                      pointerEvents: "none",
                     }}
                   >
-                    {iconMapping[service.icon]}
+                    <Typography variant="h6" color={"red"}>
+                      Click for more
+                    </Typography>
                   </Box>
-                  <Typography
-                    style={{ borderBottom: "1px solid rgb(255,0,0)" }}
-                    gutterBottom
-                    variant="h5"
-                    component="div"
-                    sx={{ color: "white" }}
-                  >
-                    {service.title}
-                  </Typography>
-                  <CardActions sx={{ justifyContent: "center" }}>
-                    <Button
-                      onClick={handleServicesClick(service.id)}
-                      size="small"
-                      variant="contained"
+
+                  {/* Service Info */}
+                  <CardContent sx={{ flexGrow: 1 }}>
+                    <Box
+                      sx={{ display: "flex", justifyContent: "center", mb: 2 }}
+                    >
+                      {iconMapping[service.icon]}
+                    </Box>
+                    <Typography
+                      variant="h5"
                       sx={{
-                        backgroundColor: theme.palette.darkred.main,
                         color: "white",
-                        "&:hover": {
-                          backgroundColor: theme.palette.darkred.main,
-                          transform: "scale(1.05)",
-                          transition: "all 0.3s ease-in-out",
-                        },
+                        borderBottom: `2px solid ${theme.palette.darkred.main}`, // Red underline
+                        pb: 1,
+                        mb: 2,
                       }}
                     >
-                      Click to Learn More
-                    </Button>
-                  </CardActions>
-                </CardContent>
-              </Card>
+                      {service.title}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </motion.div>
             </Grid>
           ))}
         </Grid>
       </Container>
+
+      {/* Action Banner */}
       <ActionBanner />
     </Box>
   );

@@ -14,24 +14,19 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import workersFraming from "../img/workers-framing.png"; // Image imports
-import welder from "../img/welder.png";
-import hotel from "../img/hotel.png";
-import education from "../img/education.png";
-import healthcare from "../img/healthcare.png";
-import industrial from "../img/industrial.png";
-import office from "../img/office.png";
-import retail from "../img/retail.png";
-import inspector from "../img/inspector.png";
-import religious from "../img/religious.png";
-import restoration from "../img/restoration.png";
-import solar from "../img/solar.png";
-import workerGrinding from "../img/worker-grinding.png";
-import welderOnTop from "../img/welder-on-top.png";
-import welderManufacturing from "../img/welder-manufacturing.png";
-import welderInLift from "../img/welder-in-lift.png";
-import pilar from "../img/pilar.png";
 import "../swipersStyles/autoplaySwiper.css"; // Import Swiper styles
+
+import building1 from "../img/buildingImages/building_1.png";
+import building2 from "../img/buildingImages/building_2.png";
+import building3 from "../img/buildingImages/building_3.png";
+import building4 from "../img/buildingImages/building_4.png";
+import building5 from "../img/buildingImages/building_5.png";
+import building6 from "../img/buildingImages/building_6.png";
+import building7 from "../img/buildingImages/building_7.png";
+import building8 from "../img/buildingImages/building_8.png";
+import building9 from "../img/buildingImages/building_9.png";
+import building10 from "../img/buildingImages/building_10.png";
+import building11 from "../img/buildingImages/building_11.png";
 
 const ProjectsSwiper = () => {
   // State to track whether a section is being spoken aloud
@@ -43,23 +38,17 @@ const ProjectsSwiper = () => {
     description:
       "At SalTex Steel Construction, we don’t just build structures—we create environments that elevate communities. From modern schools to cutting-edge healthcare facilities, each project reflects our commitment to quality, innovation, and efficiency. Our clients trust us across sectors—education, healthcare, industrial, and more—because we consistently deliver on what matters: seamless technology integration, strict budget adherence, and exceeding expectations. Our track record speaks for itself. SalTex brings visions to life with a focus on safety, functionality, and long-term value. Your vision is our blueprint for excellence.",
     imagePortfolio: [
-      workersFraming,
-      welder,
-      hotel,
-      education,
-      healthcare,
-      industrial,
-      office,
-      retail,
-      inspector,
-      religious,
-      restoration,
-      solar,
-      workerGrinding,
-      welderOnTop,
-      welderManufacturing,
-      welderInLift,
-      pilar,
+      building1,
+      building2,
+      building3,
+      building4,
+      building5,
+      building6,
+      building7,
+      building8,
+      building9,
+      building10,
+      building11,
     ],
   };
 
