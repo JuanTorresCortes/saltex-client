@@ -11,23 +11,19 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 // Import image assets
-import workersFraming from "../img/workers-framing.png";
-import hotel from "../img/hotel.png";
-import education from "../img/education.png";
-import healthcare from "../img/healthcare.png";
 import industrial from "../img/industrial.png";
-import office from "../img/office.png";
-import retail from "../img/retail.png";
-import religious from "../img/religious.png";
-import restoration from "../img/restoration.png";
-import solar from "../img/solar.png";
 import workerGrinding from "../img/worker-grinding.png";
 import welder from "../img/welder.png";
 import welderOnTop from "../img/welder-on-top.png";
 import welderManufacturing from "../img/welder-manufacturing.png";
 import welderInLift from "../img/welder-in-lift.png";
-import inspector from "../img/inspector.png";
-import pilar from "../img/pilar.png";
+import workerWelding1 from "../img/workerFraming_1.png";
+import welderOnsite from "../img/welderOnsite.png";
+import steel1 from "../img/steelFrame/steel_1.png";
+import steel4 from "../img/steelFrame/steel_4.png";
+import steel3 from "../img/steelFrame/steel_3.png";
+import steel2 from "../img/steelFrame/steel_2.png";
+import steel5 from "../img/steelFrame/steel_5.png";
 
 const ServicesSwiper = () => {
   // State to track if text is currently being spoken
@@ -38,23 +34,19 @@ const ServicesSwiper = () => {
     title: "OUR SERVICES",
     description: ` SalTex Steel Construction offers a wide range of services tailored to meet the needs of diverse industries. Our Structural Steel service ensures precise and stable steel frameworks for construction projects. We also provide Custom Manufacturing, creating high-quality products customized to your specific needs. Our Engineering services cover everything from design to maintenance, while Light Gauge Framing offers cost-effective, flexible solutions for commercial projects. For a complete construction experience, our Ground Up Package takes you from concept to completion. Plus, our Consultation services provide expert guidance and planning for your commercial builds.`,
     imagePortfolio: [
-      pilar,
+      steel1,
+      welderOnsite,
+      workerWelding1,
+      steel4,
       welderInLift,
+      steel3,
       welderManufacturing,
       welderOnTop,
       workerGrinding,
-      solar,
-      restoration,
-      religious,
-      inspector,
-      retail,
-      office,
+      steel5,
       industrial,
-      healthcare,
-      education,
-      hotel,
       welder,
-      workersFraming,
+      steel2,
     ],
   };
 
