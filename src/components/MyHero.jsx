@@ -12,117 +12,126 @@ const MyHero = () => {
 
   // Handle button click to navigate to the services page
   const handleClick = () => {
-    window.location.href = `/services`; // Simple navigation to the services page
+    window.location.href = `/services`;
   };
 
-  // Styled component for the hero section, including background image and responsive adjustments
+  // Parallax background effect for better depth
+  const parallaxEffect = {
+    backgroundAttachment: "fixed", // Adds a parallax effect
+  };
+
+  // Styled component for the hero section
   const HeroSection = styled(Box)(({ theme }) => ({
     display: "flex",
-    justifyContent: "flex-start", // Align content to the start by default
-    alignItems: "flex-end",
-    height: "80vh",
+    justifyContent: isSmallScreen ? "center" : "flex-start", // Center on small screens
+    alignItems: "center", // Vertically center on all screens
+    height: "100vh", // Full height of the viewport
     width: "100vw",
-    backgroundImage: `url(${hero1})`, // Hero background image
-    backgroundSize: "cover", // Cover the entire section
+    backgroundImage: `url(${hero1})`,
+    backgroundSize: "cover", // Ensure full coverage of the background image
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     color: "#fff", // Text color
     position: "relative", // For overlay and content positioning
-    textAlign: "left", // Align text to the left
-    padding: theme.spacing(4), // Padding for spacing
-    [theme.breakpoints.down("sm")]: {
-      justifyContent: "center", // Center content on smaller screens
-    },
+    textAlign: "center", // Center text for a better focus point
+    padding: theme.spacing(4),
+    ...parallaxEffect, // Add parallax effect
     [theme.breakpoints.down("md")]: {
       padding: theme.spacing(2),
     },
   }));
 
-  // Overlay to improve text visibility over the background image
+  // Darkened overlay for better text contrast
   const Overlay = styled(Box)(({ theme }) => ({
     position: "absolute",
     top: 0,
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: "rgba(0, 0, 0, 0.3)", // Semi-transparent overlay for better readability
+    backgroundColor: "rgba(0, 0, 0, 0.5)", // Increased darkness for better contrast
   }));
 
-  // Container for hero content, handles responsive layout
+  // Container for the hero content
   const ContentBox = styled(Box)(({ theme }) => ({
-    zIndex: 1, // Ensure content stays above the overlay
+    zIndex: 1, // Keep content above the overlay
     display: "flex",
-    flexDirection: "column", // Stack content vertically
-    alignItems: "flex-start", // Align content to the left
-    maxWidth: "600px", // Limit content width for readability
+    flexDirection: "column",
+    alignItems: "center", // Center content on all screens
+    maxWidth: "600px",
     [theme.breakpoints.down("md")]: {
-      maxWidth: "90%",
-      alignItems: "center", // Center content on medium and smaller screens
+      maxWidth: "90%", // Max width on smaller screens
     },
   }));
 
   return (
     <HeroSection
-      role="banner" // ARIA role for the hero section as a landmark region
-      aria-label="Hero section showcasing our steel construction company" // Descriptive label for screen readers
+      role="banner"
+      aria-label="Hero section showcasing our steel construction company"
     >
       {/* Background overlay */}
       <Overlay />
 
       {/* Content box for hero text and button */}
       <ContentBox>
-        {/* Main Heading */}
-        <Typography
-          variant={isSmallScreen ? "h5" : "h3"} // Responsive font size
-          component="h1"
-          gutterBottom
-          sx={{
-            fontWeight: 300, // Lighter font weight
-            letterSpacing: "2px", // Spacing for a more elegant look
-            lineHeight: 1.2, // Adjusted line height for readability
-            textTransform: "uppercase", // Uppercase heading
-          }}
-        >
-          A Commercial Steel Construction Company
-        </Typography>
-
-        {/* Subheading */}
-        <Typography
-          variant={isSmallScreen ? "body1" : "h5"} // Responsive typography based on screen size
-          component="p"
-          gutterBottom
-          sx={{
-            fontWeight: 300, // Lighter font for subtext
-            lineHeight: 1.6, // Increased line height for readability
-            letterSpacing: "0.5px", // Slight letter spacing
-            marginBottom: theme.spacing(4), // Margin below the subheading
-            maxWidth: "100%", // Ensure text wraps properly
-          }}
-        >
-          Constructing a commercial building is a significant investment, and
-          design, durability, and precision are crucial. We simplify the process
-          by concentrating on these core aspects. We proudly deliver steel
-          construction solutions for projects across the Greater Houston area.
-        </Typography>
-
-        {/* Call to Action Button */}
+        {/* Animated main heading */}
         <motion.div
-          whileHover={{ scale: 1.05 }} // Framer Motion hover effect for scaling
-          transition={{ duration: 0.3 }} // Smooth transition effect on hover
+          initial={{ opacity: 0, y: -50 }} // Animation start point
+          animate={{ opacity: 1, y: 0 }} // Animation end point
+          transition={{ duration: 0.8 }} // Smooth transition
         >
+          <Typography
+            variant={isSmallScreen ? "h4" : "h2"} // Responsive font size
+            component="h1"
+            gutterBottom
+            sx={{
+              fontWeight: 600, // Bolder headline for emphasis
+              letterSpacing: "2px",
+              textTransform: "uppercase",
+            }}
+          >
+            A Commercial Steel Construction Company
+          </Typography>
+        </motion.div>
+
+        {/* Subheading with fade-in effect */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }} // Fade-in with slight movement
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.5 }} // Delayed for a smooth reveal
+        >
+          <Typography
+            variant={isSmallScreen ? "body1" : "h5"}
+            component="p"
+            gutterBottom
+            sx={{
+              fontWeight: 300,
+              lineHeight: 1.6,
+              letterSpacing: "0.5px",
+              marginBottom: theme.spacing(4),
+              maxWidth: "100%",
+            }}
+          >
+            Constructing a commercial building is a significant investment. We
+            proudly deliver steel construction solutions for projects across
+            Greater Houston.
+          </Typography>
+        </motion.div>
+
+        {/* Call to action button with hover effect */}
+        <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
           <Button
             variant="contained"
             size="large"
             onClick={handleClick}
             sx={{
-              backgroundColor: "black", // Custom button background color
-              color: "white", // Button text color
-              border: `.1px solid ${theme.palette.darkred.main}`, // Custom border color
-              padding: theme.spacing(1.5, 4), // Button padding
-              fontWeight: 600, // Bold text
+              backgroundColor: "black",
+              color: "white",
+              border: `.1px solid ${theme.palette.darkred.main}`,
+              padding: theme.spacing(1.5, 4),
+              fontWeight: 600,
               "&:hover": {
-                backgroundColor: theme.palette.darkred.main, // Hover background color
-                color: "black", // Text color on hover
+                backgroundColor: theme.palette.darkred.main,
+                color: "black",
               },
             }}
           >
