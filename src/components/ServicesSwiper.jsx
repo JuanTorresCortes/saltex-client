@@ -24,6 +24,8 @@ import steel4 from "../img/steelFrame/steel_4.png";
 import steel3 from "../img/steelFrame/steel_3.png";
 import steel2 from "../img/steelFrame/steel_2.png";
 import steel5 from "../img/steelFrame/steel_5.png";
+import workerWelding11 from "../img/workerWelding_11.png";
+import redSteel from "../img/redSteel.png";
 
 const ServicesSwiper = () => {
   // State to track if text is currently being spoken
@@ -41,12 +43,14 @@ const ServicesSwiper = () => {
       welderInLift,
       steel3,
       welderManufacturing,
+      redSteel,
       welderOnTop,
       workerGrinding,
       steel5,
       industrial,
       welder,
       steel2,
+      workerWelding11,
     ],
   };
 
